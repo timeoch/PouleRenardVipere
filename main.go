@@ -217,21 +217,22 @@ type World struct {
 	visionR   [SpeciesCount]float64
 	fleeR     [SpeciesCount]float64
 	restThr   [SpeciesCount]int16
-	qx, qy    float64 // position de la requête en cours (hautes herbes)
-	self      *Agent  // agent qui interroge la grille (chasse en meute)
 	events    [EventRing]Event
 	obsDirty  bool
 
 	focusState  uint8
 	focusTarget int
 
+	// Phase parallèle (workers.go) : un contexte de décision par worker et le
+	// lot partagé de la phase en cours, alloués une fois pour toute la partie.
+	Workers int
+	minds   []mind
+	batch   batch
+
 	vulnFn     func(*Agent) bool
-	seeFn      func(*Agent) bool
-	guardFn    func(*Agent) bool
 	prisonerFn func(*Agent) bool
 	awakeFn    func(*Agent) bool
 	guardianFn func(*Agent) bool
-	packFn     func(*Agent) bool
 }
 
 // NewWorld crée une partie avec la configuration par défaut (toutes les règles).
@@ -245,12 +246,10 @@ func NewWorldWith(cfg Config) *World {
 	w.pcg = *rand.NewPCG(uint64(cfg.Seed), 0x5eed)
 	w.rng = rand.New(&w.pcg)
 	w.vulnFn = w.isVulnerable
-	w.seeFn = w.canSee
-	w.guardFn = w.isGuardTarget
 	w.prisonerFn = func(b *Agent) bool { return b.Prisoner }
 	w.awakeFn = func(b *Agent) bool { return !b.Prisoner && !b.Exhausted }
 	w.guardianFn = func(b *Agent) bool { return !b.Prisoner && !b.Exhausted && b.Role == Gardien }
-	w.packFn = func(b *Agent) bool { return b != w.self && !b.Exhausted }
+	w.initWorkers(cfg.Workers)
 	total := cfg.PerSpecies * SpeciesCount
 	w.prevV = make([]float32, 2*total)
 	w.flowQueue = make([]int32, 0, GridCells)
@@ -411,23 +410,24 @@ func (w *World) isVulnerable(b *Agent) bool {
 	return !b.Prisoner && b.Immune == 0 && !w.Camps[b.Species].Contains(b.X, b.Y)
 }
 
-// visible : dans les hautes herbes, un agent n'est repéré que de près.
-func (w *World) visible(b *Agent) bool {
-	if w.Terrain[CellIndex(b.X, b.Y)] != TerrGrass {
+// visible : dans les hautes herbes, un agent n'est repéré que de près (par
+// rapport à l'agent qui cherche, m.qx, m.qy).
+func (m *mind) visible(b *Agent) bool {
+	if m.w.Terrain[CellIndex(b.X, b.Y)] != TerrGrass {
 		return true
 	}
-	dx, dy := b.X-w.qx, b.Y-w.qy
+	dx, dy := b.X-m.qx, b.Y-m.qy
 	return dx*dx+dy*dy <= GrassSight*GrassSight
 }
 
-func (w *World) canSee(b *Agent) bool { return w.isVulnerable(b) && w.visible(b) }
+func (m *mind) canSee(b *Agent) bool { return m.w.isVulnerable(b) && m.visible(b) }
 
 // isGuardTarget : proie vulnérable et visible qui rôde près du camp de son prédateur.
-func (w *World) isGuardTarget(b *Agent) bool {
-	if !w.canSee(b) {
+func (m *mind) isGuardTarget(b *Agent) bool {
+	if !m.canSee(b) {
 		return false
 	}
-	c := &w.Camps[w.predOf(b.Species)]
+	c := &m.w.Camps[m.w.predOf(b.Species)]
 	dx, dy := b.X-c.X, b.Y-c.Y
 	return dx*dx+dy*dy <= GuardRadius*GuardRadius
 }
@@ -438,10 +438,11 @@ func (w *World) isGuardTarget(b *Agent) bool {
 
 // Update avance la partie d'un tick.
 //
-//  1. Préparation : nuit, renversement, centres de gravité, grilles.
-//  2. Décision : chaque agent choisit sa vitesse à partir des positions de
-//     début de tick (lecture seule des autres agents).
-//  3. Déplacement : application des vitesses avec collisions et terriers.
+//  1. Préparation : nuit, renversement, centres de gravité, grilles,
+//     compteurs propres à chaque agent.
+//  2. Décision (parallèle) : chaque agent choisit sa vitesse à partir de
+//     l'état de début de tick ; il n'écrit que dans sa propre entrée.
+//  3. Déplacement (parallèle) : vitesses appliquées avec collisions et terriers.
 //  4. Bonus ramassés, captures, libérations, évasions, temps de prison.
 //  5. Statistiques, rôles, chemins, fin de manche.
 func (w *World) Update() {
@@ -451,15 +452,11 @@ func (w *World) Update() {
 	w.Tick++
 	w.seasons()
 	w.prepare()
-	for i := range w.Agents {
-		w.decide(i)
-	}
+	w.parallel(phaseDecide)
 	if naiveAlloc {
 		w.prevV = make([]float32, len(w.prevV))
 	}
-	for i := range w.Agents {
-		w.move(i)
-	}
+	w.parallel(phaseMove)
 	for sp := Species(0); sp < SpeciesCount; sp++ {
 		w.free[sp].Build(w.Agents, sp, false)
 	}
@@ -524,6 +521,31 @@ func (w *World) prepare() {
 		w.restThr[sp] = w.Genomes[sp].restThreshold()
 		w.free[sp].Build(w.Agents, sp, false)
 	}
+	w.tickCounters()
+}
+
+// tickCounters met à jour ce que les autres agents lisent pendant la décision
+// (immunité, sortie de l'épuisement) avant qu'elle commence : en parallèle,
+// aucun agent ne doit voir un voisin à moitié mis à jour.
+func (w *World) tickCounters() {
+	for i := range w.Agents {
+		a := &w.Agents[i]
+		if a.Prisoner {
+			continue
+		}
+		if a.Immune > 0 {
+			a.Immune--
+		}
+		if a.Boost > 0 {
+			a.Boost--
+		}
+		if a.Exhausted {
+			a.recover(w.Camps[a.Species].Contains(a.X, a.Y))
+			if a.Stamina >= StaminaResumeSprint {
+				a.Exhausted = false
+			}
+		}
+	}
 }
 
 // mark note ce que fait l'agent suivi par l'interface.
@@ -533,34 +555,27 @@ func (w *World) mark(i int, state uint8, target int) {
 	}
 }
 
-func (w *World) decide(i int) {
+// decide choisit la vitesse de l'agent i. Appelée en parallèle : elle lit les
+// autres agents mais n'écrit que dans a (et dans m, propre au worker).
+func (m *mind) decide(i int) {
+	w := m.w
 	a := &w.Agents[i]
 	a.VX, a.VY = 0, 0
 	if a.Prisoner {
 		w.mark(i, StPrisoner, -1)
 		return
 	}
-	if a.Immune > 0 {
-		a.Immune--
-	}
-	if a.Boost > 0 {
-		a.Boost--
-	}
-	home := &w.Camps[a.Species]
-	inHome := home.Contains(a.X, a.Y)
-
-	// Épuisé : immobile jusqu'à reprendre son souffle.
+	// Épuisé : immobile jusqu'à reprendre son souffle (voir tickCounters).
 	if a.Exhausted {
-		a.recover(inHome)
-		if a.Stamina >= StaminaResumeSprint {
-			a.Exhausted = false
-		}
 		w.mark(i, StExhausted, -1)
 		return
 	}
+	m.rng.seed(w.Seed, w.Tick, i)
+	home := &w.Camps[a.Species]
+	inHome := home.Contains(a.X, a.Y)
 
 	if i == w.Player {
-		w.playerMove(i, a, inHome)
+		m.playerMove(i, a, inHome)
 		return
 	}
 
@@ -568,7 +583,7 @@ func (w *World) decide(i int) {
 	// camp, intouchables mais incapables de capturer ou de libérer.
 	if a.Immune > 0 {
 		dx, dy := w.toward(a, a.Species)
-		w.steer(a, dx, dy, a.Speed*EscortFactor)
+		m.steer(a, dx, dy, a.Speed*EscortFactor)
 		w.mark(i, StEscort, -1)
 		return
 	}
@@ -576,7 +591,7 @@ func (w *World) decide(i int) {
 	// 1. Fuite devant les prédateurs proches (sauf à l'abri dans son camp).
 	if !inHome {
 		if fx, fy, n := w.threat(a); n > 0 {
-			w.flee(i, a, home, fx, fy)
+			m.flee(i, a, home, fx, fy)
 			return
 		}
 	}
@@ -589,7 +604,7 @@ func (w *World) decide(i int) {
 		if a.Stamina >= StaminaRestUntil {
 			a.Resting = false
 		} else {
-			w.rest(i, a, home, inHome)
+			m.rest(i, a, home, inHome)
 			return
 		}
 	}
@@ -599,20 +614,20 @@ func (w *World) decide(i int) {
 	case Liberateur, Leurre:
 		if c := w.jailFor(a); c >= 0 {
 			if a.Role == Leurre {
-				w.decoyMove(i, a, c, inHome)
+				m.decoyMove(i, a, c, inHome)
 			} else {
-				w.rescueMove(i, a, c, inHome)
+				m.rescueMove(i, a, c, inHome)
 			}
 			return
 		}
 	case Gardien:
-		w.guardMove(i, a, home, prey, inHome)
+		m.guardMove(i, a, home, prey, inHome)
 		return
 	}
 
 	// 3. Chasse de la proie visible la plus proche.
-	if j := w.spot(a, prey, w.seeFn); j >= 0 {
-		w.chase(i, a, j)
+	if j := m.spot(a, prey, m.seeFn); j >= 0 {
+		m.chase(i, a, j)
 		return
 	}
 
@@ -621,9 +636,9 @@ func (w *World) decide(i int) {
 		if k, d := w.nearestItem(a); k >= 0 {
 			it := &w.Items[k]
 			if d < 150 {
-				w.sprint(a, it.X-a.X, it.Y-a.Y, ChaseFactor)
+				m.sprint(a, it.X-a.X, it.Y-a.Y, ChaseFactor)
 			} else {
-				w.walk(a, it.X-a.X, it.Y-a.Y, inHome)
+				m.walk(a, it.X-a.X, it.Y-a.Y, inHome)
 			}
 			w.mark(i, StItem, -1)
 			return
@@ -631,7 +646,7 @@ func (w *World) decide(i int) {
 	}
 
 	// 5. Errance vers le centre de gravité des proies.
-	w.roam(a, inHome)
+	m.roam(a, inHome)
 	w.mark(i, StRoam, -1)
 }
 
@@ -664,7 +679,8 @@ func (w *World) threat(a *Agent) (fx, fy float64, n int) {
 	return
 }
 
-func (w *World) flee(i int, a *Agent, home *Camp, fx, fy float64) {
+func (m *mind) flee(i int, a *Agent, home *Camp, fx, fy float64) {
+	w := m.w
 	fx, fy = unit(fx, fy)
 	hd := hypot(home.X-a.X, home.Y-a.Y)
 	if hd < HomeRetreatRadius || a.Stamina < 2*w.restThr[a.Species] || (fx == 0 && fy == 0) {
@@ -684,7 +700,7 @@ func (w *World) flee(i int, a *Agent, home *Camp, fx, fy float64) {
 			}
 		}
 	}
-	w.sprint(a, fx, fy, FleeFactor)
+	m.sprint(a, fx, fy, FleeFactor)
 	w.mark(i, StFlee, -1)
 }
 
@@ -716,25 +732,27 @@ func (w *World) herd(a *Agent) (float64, float64, bool) {
 	return ux, uy, ux != 0 || uy != 0
 }
 
-func (w *World) rest(i int, a *Agent, home *Camp, inHome bool) {
+func (m *mind) rest(i int, a *Agent, home *Camp, inHome bool) {
+	w := m.w
 	hd := hypot(home.X-a.X, home.Y-a.Y)
 	switch {
 	case inHome:
-		a.WanderAng += (w.rng.Float64() - 0.5) * 0.4
-		w.walk(a, math.Cos(a.WanderAng)+(home.X-a.X)/home.R, math.Sin(a.WanderAng)+(home.Y-a.Y)/home.R, true)
+		a.WanderAng += (m.rng.Float64() - 0.5) * 0.4
+		m.walk(a, math.Cos(a.WanderAng)+(home.X-a.X)/home.R, math.Sin(a.WanderAng)+(home.Y-a.Y)/home.R, true)
 	case hd < HomeRetreatRadius:
 		dx, dy := w.toward(a, a.Species)
-		w.walk(a, dx, dy, false)
+		m.walk(a, dx, dy, false)
 	default:
-		w.roam(a, false)
+		m.roam(a, false)
 	}
 	w.mark(i, StRest, -1)
 }
 
 // spot : proie la plus proche à portée de vue, repérée et sans obstacle sur
 // la ligne de vue ; -1 s'il n'y en a pas.
-func (w *World) spot(a *Agent, prey Species, accept func(*Agent) bool) int {
-	w.qx, w.qy = a.X, a.Y
+func (m *mind) spot(a *Agent, prey Species, accept func(*Agent) bool) int {
+	w := m.w
+	m.qx, m.qy = a.X, a.Y
 	j, _ := w.free[prey].Nearest(w.Agents, a.X, a.Y, w.visionR[a.Species], accept)
 	if j >= 0 && !w.lineClear(a.X, a.Y, w.Agents[j].X, w.Agents[j].Y) {
 		return -1
@@ -744,7 +762,8 @@ func (w *World) spot(a *Agent, prey Species, accept func(*Agent) bool) int {
 
 // chase sprinte vers la proie j, en visant sa position future (anticipation)
 // et en la prenant en tenaille quand un congénère est proche (meute).
-func (w *World) chase(i int, a *Agent, j int) {
+func (m *mind) chase(i int, a *Agent, j int) {
+	w := m.w
 	b := &w.Agents[j]
 	tx, ty := b.X, b.Y
 	d := hypot(b.X-a.X, b.Y-a.Y)
@@ -754,8 +773,8 @@ func (w *World) chase(i int, a *Agent, j int) {
 		ty += float64(w.prevV[2*j+1]) * t
 	}
 	if w.Rules.PackHunt && d > 40 && i%3 != 0 {
-		w.self = a
-		if k, _ := w.free[a.Species].Nearest(w.Agents, a.X, a.Y, PackRadius, w.packFn); k >= 0 {
+		m.self = a
+		if k, _ := w.free[a.Species].Nearest(w.Agents, a.X, a.Y, PackRadius, m.packFn); k >= 0 {
 			// Point de visée décalé sur le flanc de la proie : la moitié de la
 			// meute passe à gauche, l'autre à droite.
 			sn, cs := flankSin, flankCos
@@ -768,7 +787,7 @@ func (w *World) chase(i int, a *Agent, j int) {
 			ty += (ux*sn + uy*cs) * r
 		}
 	}
-	w.sprint(a, tx-a.X, ty-a.Y, ChaseFactor)
+	m.sprint(a, tx-a.X, ty-a.Y, ChaseFactor)
 	w.mark(i, StChase, j)
 }
 
@@ -787,76 +806,81 @@ func (w *World) jailFor(a *Agent) int {
 	return best
 }
 
-func (w *World) rescueMove(i int, a *Agent, c int, inHome bool) {
+func (m *mind) rescueMove(i int, a *Agent, c int, inHome bool) {
+	w := m.w
 	jail := &w.Camps[c]
 	dx, dy := jail.X-a.X, jail.Y-a.Y
 	d := hypot(dx, dy)
 	if d > jail.R+30 {
 		fx, fy := w.flowDir(&w.campFlow[c], a.X, a.Y, jail.X, jail.Y)
 		if d < 700 {
-			w.sprint(a, fx, fy, ChaseFactor)
+			m.sprint(a, fx, fy, ChaseFactor)
 		} else {
-			w.walk(a, fx, fy, inHome)
+			m.walk(a, fx, fy, inHome)
 		}
 		w.mark(i, StRescue, -1)
 		return
 	}
 	if j, _ := w.jail[a.Species].Nearest(w.Agents, a.X, a.Y, 2*jail.R, w.prisonerFn); j >= 0 {
 		b := &w.Agents[j]
-		w.sprint(a, b.X-a.X, b.Y-a.Y, ChaseFactor)
+		m.sprint(a, b.X-a.X, b.Y-a.Y, ChaseFactor)
 		w.mark(i, StRescue, j)
 		return
 	}
-	w.walk(a, dx, dy, inHome)
+	m.walk(a, dx, dy, inHome)
 	w.mark(i, StRescue, -1)
 }
 
 // decoyMove : près de la prison, le leurre provoque le gardien le plus proche
 // sans entrer dans sa zone de capture ; la fuite l'entraîne ensuite au loin.
-func (w *World) decoyMove(i int, a *Agent, c int, inHome bool) {
+func (m *mind) decoyMove(i int, a *Agent, c int, inHome bool) {
+	w := m.w
 	jail := &w.Camps[c]
 	if hypot(jail.X-a.X, jail.Y-a.Y) < DecoyRange {
 		if j, d := w.free[c].Nearest(w.Agents, a.X, a.Y, 1.2*w.visionR[a.Species], w.guardianFn); j >= 0 {
 			g := &w.Agents[j]
 			dx, dy := g.X-a.X, g.Y-a.Y
 			if d > DecoyTaunt {
-				w.walk(a, dx, dy, inHome)
+				m.walk(a, dx, dy, inHome)
 			} else {
-				w.walk(a, -dy, dx, inHome) // tourne autour du gardien
+				m.walk(a, -dy, dx, inHome) // tourne autour du gardien
 			}
 			w.mark(i, StDecoy, j)
 			return
 		}
 	}
-	w.rescueMove(i, a, c, inHome)
+	m.rescueMove(i, a, c, inHome)
 }
 
-func (w *World) guardMove(i int, a *Agent, home *Camp, prey Species, inHome bool) {
-	if j := w.spot(a, prey, w.guardFn); j >= 0 {
-		w.chase(i, a, j)
+func (m *mind) guardMove(i int, a *Agent, home *Camp, prey Species, inHome bool) {
+	w := m.w
+	if j := m.spot(a, prey, m.guardFn); j >= 0 {
+		m.chase(i, a, j)
 		return
 	}
 	// Ronde autour du camp.
-	a.WanderAng += 0.004 + (w.rng.Float64()-0.5)*0.01
+	a.WanderAng += 0.004 + (m.rng.Float64()-0.5)*0.01
 	tx := home.X + math.Cos(a.WanderAng)*(home.R+120)
 	ty := home.Y + math.Sin(a.WanderAng)*(home.R+120)
-	w.walk(a, tx-a.X, ty-a.Y, inHome)
+	m.walk(a, tx-a.X, ty-a.Y, inHome)
 	w.mark(i, StGuard, -1)
 }
 
-func (w *World) roam(a *Agent, inHome bool) {
-	a.WanderAng += (w.rng.Float64() - 0.5) * 0.3
+func (m *mind) roam(a *Agent, inHome bool) {
+	w := m.w
+	a.WanderAng += (m.rng.Float64() - 0.5) * 0.3
 	dx, dy := math.Cos(a.WanderAng), math.Sin(a.WanderAng)
 	prey := w.preyOf(a.Species)
 	if w.Stats[prey].Free > 0 {
 		cx, cy := unit(w.flowDir(&w.preyFlow[prey], a.X, a.Y, w.centerX[prey], w.centerY[prey]))
 		dx, dy = 0.6*dx+0.4*cx, 0.6*dy+0.4*cy
 	}
-	w.walk(a, dx, dy, inHome)
+	m.walk(a, dx, dy, inHome)
 }
 
 // playerMove : l'agent piloté au clavier marche, ou sprinte avec Maj.
-func (w *World) playerMove(i int, a *Agent, inHome bool) {
+func (m *mind) playerMove(i int, a *Agent, inHome bool) {
+	w := m.w
 	w.mark(i, StPlayer, -1)
 	in := w.Input
 	if in.DX == 0 && in.DY == 0 {
@@ -864,9 +888,9 @@ func (w *World) playerMove(i int, a *Agent, inHome bool) {
 		return
 	}
 	if in.Sprint {
-		w.sprint(a, float64(in.DX), float64(in.DY), ChaseFactor)
+		m.sprint(a, float64(in.DX), float64(in.DY), ChaseFactor)
 	} else {
-		w.walk(a, float64(in.DX), float64(in.DY), inHome)
+		m.walk(a, float64(in.DX), float64(in.DY), inHome)
 	}
 }
 
@@ -884,27 +908,29 @@ func (a *Agent) recover(inHome bool) {
 	a.Stamina = min(a.Stamina+r, MaxStamina)
 }
 
-func (w *World) sprint(a *Agent, dx, dy, factor float64) {
+func (m *mind) sprint(a *Agent, dx, dy, factor float64) {
 	if a.Boost > 0 {
-		w.steer(a, dx, dy, a.Speed*factor*BoostFactor)
+		m.steer(a, dx, dy, a.Speed*factor*BoostFactor)
 		return
 	}
 	a.Stamina -= StaminaDrainSprint
 	if a.Stamina <= 0 {
+		// À bout de souffle. Exhausted n'est posé qu'au déplacement (move) :
+		// les voisins le lisent pendant la décision.
 		a.Stamina = 0
-		a.Exhausted = true
 		a.Resting = true
 		return
 	}
-	w.steer(a, dx, dy, a.Speed*factor)
+	m.steer(a, dx, dy, a.Speed*factor)
 }
 
-func (w *World) walk(a *Agent, dx, dy float64, inHome bool) {
+func (m *mind) walk(a *Agent, dx, dy float64, inHome bool) {
 	a.recover(inHome)
-	w.steer(a, dx, dy, a.Speed*WalkFactor)
+	m.steer(a, dx, dy, a.Speed*WalkFactor)
 }
 
-func (w *World) steer(a *Agent, dx, dy, speed float64) {
+func (m *mind) steer(a *Agent, dx, dy, speed float64) {
+	w := m.w
 	d := hypot(dx, dy)
 	if d < 1e-9 {
 		dx, dy, d = math.Cos(a.WanderAng), math.Sin(a.WanderAng), 1
@@ -916,13 +942,16 @@ func (w *World) steer(a *Agent, dx, dy, speed float64) {
 	case TerrGrass:
 		speed *= GrassFactor
 	}
-	a.VX = dx/d*speed + (w.rng.Float64()-0.5)*0.5
-	a.VY = dy/d*speed + (w.rng.Float64()-0.5)*0.5
+	a.VX = dx/d*speed + (m.rng.Float64()-0.5)*0.5
+	a.VY = dy/d*speed + (m.rng.Float64()-0.5)*0.5
 }
 
 func (w *World) move(i int) {
 	a := &w.Agents[i]
 	w.prevV[2*i], w.prevV[2*i+1] = float32(a.VX), float32(a.VY)
+	if a.Stamina == 0 && !a.Prisoner {
+		a.Exhausted = true // endurance vidée par un sprint pendant la décision
+	}
 	if a.Prisoner || (a.VX == 0 && a.VY == 0) {
 		return
 	}

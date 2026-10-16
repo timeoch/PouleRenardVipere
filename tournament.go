@@ -70,6 +70,7 @@ func RunTournament(ctx context.Context, cfg Config, n int, onResult func(GameRes
 			for seed := range jobs {
 				c := cfg
 				c.Seed = seed
+				c.Workers = 1 // le parallélisme est entre les parties, pas dedans
 				r, ok := PlayGame(ctx, c)
 				if !ok {
 					return

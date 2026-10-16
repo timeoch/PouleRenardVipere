@@ -1,8 +1,12 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"math"
 	"math/rand"
+	"runtime"
+	"runtime/metrics"
 	"testing"
 	"time"
 	"unsafe"
@@ -114,6 +118,31 @@ func TestDeterminism(t *testing.T) {
 			t.Fatalf("%s : deux graines différentes donnent le même état", c.name)
 		}
 		t.Logf("%s : empreinte après 300 ticks (seed=%d) : %x", c.name, MasterSeed, a)
+	}
+}
+
+// TestParallelMatchesSequential : la phase parallèle donne exactement la même
+// partie quel que soit le nombre de workers.
+func TestParallelMatchesSequential(t *testing.T) {
+	for _, c := range []struct {
+		name string
+		cfg  func(int64) Config
+	}{{"toutes", DefaultConfig}, {"classique", ClassicConfig}} {
+		run := func(workers int) uint64 {
+			cfg := c.cfg(MasterSeed)
+			cfg.Workers = workers
+			w := NewWorldWith(cfg)
+			for i := 0; i < 400; i++ {
+				w.Update()
+			}
+			return fingerprint(w)
+		}
+		ref := run(1)
+		for _, n := range []int{2, 3, 8, runtime.NumCPU()} {
+			if got := run(n); got != ref {
+				t.Fatalf("%s : %d workers donnent %x au lieu de %x (1 worker)", c.name, n, got, ref)
+			}
+		}
 	}
 }
 
@@ -468,34 +497,98 @@ func TestFullGameTimeline(t *testing.T) {
 	}
 }
 
+// benchWorkers : workers de la phase parallèle pendant BenchmarkUpdate. 1 par
+// défaut pour comparer les versions à charge égale (un seul cœur).
+//
+//	go test -run='^$' -bench=BenchmarkUpdate . -workers=8
+var benchWorkers = flag.Int("workers", 1, "workers de la phase parallèle (BenchmarkUpdate)")
+
+// warmed garde l'état de chaque partie de référence au tick de préchauffage.
+// Il est calculé une fois par processus, sur tous les cœurs (même résultat
+// qu'en séquentiel), puis restauré à chaque passe : -count=10 ne rejoue pas
+// dix fois les 1 500 ticks de préchauffage, ce qui compte pour la version naïve.
+var warmed = map[string]*Snapshot{}
+
+func warmWorld(name string, cfg Config, ticks, workers int) *World {
+	cfg.Workers = workers
+	w := NewWorldWith(cfg)
+	if ticks == 0 {
+		return w
+	}
+	s, ok := warmed[name]
+	if !ok {
+		cfg.Workers = runtime.NumCPU()
+		ref := NewWorldWith(cfg)
+		for i := 0; i < ticks; i++ {
+			ref.Update()
+		}
+		s = ref.Snapshot()
+		warmed[name] = s
+	}
+	w.Restore(s)
+	return w
+}
+
+var benchCases = []struct {
+	name   string
+	cfg    Config
+	warmup int
+}{
+	{"Debut", DefaultConfig(MasterSeed), 0},
+	{"MiPartie_t1500", DefaultConfig(MasterSeed), 1500},
+	{"Classique_t1500", ClassicConfig(MasterSeed), 1500},
+}
+
+// gcSamples : cycles de ramasse-miettes et temps CPU estimé du GC (tous cœurs
+// confondus), lus avant et après les ticks mesurés.
+var gcSamples = []metrics.Sample{{Name: "/gc/cycles/total:gc-cycles"}, {Name: "/cpu/classes/gc/total:cpu-seconds"}}
+
+func gcStats() (uint64, float64) {
+	metrics.Read(gcSamples)
+	return gcSamples[0].Value.Uint64(), gcSamples[1].Value.Float64()
+}
+
+func benchTicks(b *testing.B, w *World) {
+	b.ReportAllocs()
+	runtime.GC()
+	b.ResetTimer()
+	c0, g0 := gcStats()
+	for i := 0; i < b.N; i++ {
+		w.Update()
+	}
+	b.StopTimer()
+	c1, g1 := gcStats()
+	if sec := b.Elapsed().Seconds(); sec > 0 {
+		b.ReportMetric(sec*1000/float64(b.N), "ms/tick")
+		b.ReportMetric(float64(b.N)/sec, "tps")
+		b.ReportMetric(float64(c1-c0)/float64(b.N), "gc/tick")
+		b.ReportMetric((g1-g0)*1000/float64(b.N), "gc-ms/tick")
+	}
+}
+
 // BenchmarkUpdate : protocole de mesure (seed 42, 100 ticks).
 //
-//	go test -run='^$' -bench=BenchmarkUpdate -benchtime=100x -benchmem -count=3 .
+//	go test -run='^$' -bench=BenchmarkUpdate -benchtime=100x -benchmem -count=10 .
 func BenchmarkUpdate(b *testing.B) {
-	for _, c := range []struct {
-		name   string
-		cfg    Config
-		warmup int
-	}{
-		{"Debut", DefaultConfig(MasterSeed), 0},
-		{"MiPartie_t1500", DefaultConfig(MasterSeed), 1500},
-		{"Classique_t1500", ClassicConfig(MasterSeed), 1500},
-	} {
+	for _, c := range benchCases {
 		b.Run(c.name, func(b *testing.B) {
-			w := NewWorldWith(c.cfg)
-			for i := 0; i < c.warmup; i++ {
-				w.Update()
-			}
-			b.ReportAllocs()
-			b.ResetTimer()
-			for i := 0; i < b.N; i++ {
-				w.Update()
-			}
-			b.StopTimer()
-			if sec := b.Elapsed().Seconds(); sec > 0 {
-				b.ReportMetric(sec*1000/float64(b.N), "ms/tick")
-				b.ReportMetric(float64(b.N)/sec, "tps")
-			}
+			benchTicks(b, warmWorld(c.name, c.cfg, c.warmup, *benchWorkers))
+		})
+	}
+}
+
+// BenchmarkWorkers : passage à l'échelle de la phase parallèle en milieu de
+// partie, de 1 worker à tous les cœurs logiques.
+//
+//	go test -run='^$' -bench=BenchmarkWorkers -benchtime=100x -count=10 .
+func BenchmarkWorkers(b *testing.B) {
+	c := benchCases[1]
+	for _, n := range []int{1, 2, 3, 4, 6, 8, 10, 12, 16} {
+		if n > runtime.GOMAXPROCS(0) {
+			break
+		}
+		b.Run(fmt.Sprintf("w%02d", n), func(b *testing.B) {
+			benchTicks(b, warmWorld(c.name, c.cfg, c.warmup, n))
 		})
 	}
 }

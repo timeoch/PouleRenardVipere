@@ -185,6 +185,7 @@ type Config struct {
 	MaxTicks   int // durée de la manche en ticks
 	Tuning     Tuning
 	Genomes    [SpeciesCount]Genome
+	Workers    int // goroutines de la phase parallèle (0 : DefaultWorkers)
 }
 
 func DefaultConfig(seed int64) Config {
