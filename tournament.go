@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 	"runtime"
 	"sync"
 	"sync/atomic"
@@ -16,6 +17,8 @@ type GameResult struct {
 	Ticks  int               `json:"ticks"`
 	Elim   bool              `json:"elim"` // finie par élimination avant le coup de sifflet
 	Free   [SpeciesCount]int `json:"free"`
+
+	Telemetry []TickRow `json:"-"` // état de chaque tick (PlayGame avec record)
 }
 
 // Tally agrège les résultats d'un tournoi.
@@ -42,22 +45,30 @@ func (t *Tally) Add(r GameResult) {
 }
 
 // PlayGame joue une partie complète ; false si ctx est annulé avant la fin.
+// Avec record, GameResult.Telemetry reçoit l'état de chaque tick.
 //
 // Arrêt précoce : l'annulation de ctx est relayée dans un booléen atomique,
 // lu à chaque tick pour le prix d'une lecture mémoire. Une partie abandonnée
 // (tournoi arrêté, onglet fermé) s'arrête au tick suivant au lieu de finir sa
 // tranche de 300 ticks.
-func PlayGame(ctx context.Context, cfg Config) (GameResult, bool) {
+func PlayGame(ctx context.Context, cfg Config, record bool) (GameResult, bool) {
 	var stop atomic.Bool
 	defer context.AfterFunc(ctx, func() { stop.Store(true) })()
 	w := NewWorldWith(cfg)
+	var rows []TickRow
+	if record {
+		rows = make([]TickRow, 0, SpeciesCount*w.MaxTicks)
+	}
 	for !w.Finished {
 		if w.Tick%cancelEvery == 0 && stop.Load() {
 			return GameResult{}, false
 		}
 		w.Update()
+		if record {
+			rows = appendTelemetry(rows, w)
+		}
 	}
-	r := GameResult{Seed: cfg.Seed, Winner: w.Winner, Ticks: w.Tick, Elim: w.Tick < w.MaxTicks}
+	r := GameResult{Seed: cfg.Seed, Winner: w.Winner, Ticks: w.Tick, Elim: w.Tick < w.MaxTicks, Telemetry: rows}
 	for sp := range w.Stats {
 		r.Free[sp] = w.Stats[sp].Free
 	}
@@ -83,7 +94,7 @@ func tournamentWorkers(n int) int {
 // RunTournament joue n parties (graines cfg.Seed … cfg.Seed+n-1) sur tous les
 // cœurs sauf un, et appelle onResult après chacune depuis une seule goroutine.
 // Chaque partie reste déterministe : seul l'ordre d'arrivée varie.
-func RunTournament(ctx context.Context, cfg Config, n int, onResult func(GameResult)) {
+func RunTournament(ctx context.Context, cfg Config, n int, record bool, onResult func(GameResult)) {
 	jobs := make(chan int64)
 	results := make(chan GameResult)
 	var wg sync.WaitGroup
@@ -95,7 +106,7 @@ func RunTournament(ctx context.Context, cfg Config, n int, onResult func(GameRes
 				c := cfg
 				c.Seed = seed
 				c.Workers = 1 // le parallélisme est entre les parties, pas dedans
-				r, ok := PlayGame(ctx, c)
+				r, ok := PlayGame(ctx, c, record)
 				if !ok {
 					return
 				}
@@ -148,19 +159,36 @@ func clockText(ticks int) string {
 	return fmt.Sprintf("%d:%02d", s/60, s%60)
 }
 
-func runTournamentCLI(cfg Config, n int) {
+func runTournamentCLI(cfg Config, n int, store *Store) {
 	fmt.Printf("Tournoi : %d parties, graines %d à %d, 3 × %d agents, %s par manche, règles : %s, %d parties en parallèle\n",
 		n, cfg.Seed, cfg.Seed+int64(n)-1, cfg.PerSpecies, clockText(cfg.MaxTicks), cfg.Rules, tournamentWorkers(n))
 	start := time.Now()
 	t := Tally{Total: n}
-	RunTournament(context.Background(), cfg, n, func(r GameResult) {
+	ctx := context.Background()
+	rows := 0
+	var saving time.Duration
+	RunTournament(ctx, cfg, n, store != nil, func(r GameResult) {
 		t.Add(r)
 		winner := "égalité"
 		if r.Winner >= 0 {
 			winner = speciesNames[r.Winner]
 		}
-		fmt.Printf("[%3d/%d] graine %-6d %-8s en %5.1f s simulées | libres P/R/V %4d %4d %4d\n",
-			t.Done, n, r.Seed, winner, float64(r.Ticks)/float64(TargetTPS), r.Free[0], r.Free[1], r.Free[2])
+		saved := ""
+		if store != nil {
+			t0 := time.Now()
+			c := cfg
+			c.Seed = r.Seed
+			id, err := store.SaveRun(ctx, c, r, r.Telemetry)
+			if err != nil {
+				fmt.Fprintln(os.Stderr, "enregistrement :", err)
+				os.Exit(1)
+			}
+			saving += time.Since(t0)
+			rows += len(r.Telemetry)
+			saved = fmt.Sprintf(" | partie n° %d, %d lignes en %v", id, len(r.Telemetry), time.Since(t0).Round(time.Millisecond))
+		}
+		fmt.Printf("[%3d/%d] graine %-6d %-8s en %5.1f s simulées | libres P/R/V %4d %4d %4d%s\n",
+			t.Done, n, r.Seed, winner, float64(r.Ticks)/float64(TargetTPS), r.Free[0], r.Free[1], r.Free[2], saved)
 	})
 	el := time.Since(start)
 	fmt.Printf("\nBilan en %.1f s de calcul (%.2f parties/s) :\n", el.Seconds(), float64(n)/el.Seconds())
@@ -169,4 +197,7 @@ func runTournamentCLI(cfg Config, n int) {
 	}
 	fmt.Printf("  Égalités %3d\n", t.Draws)
 	fmt.Printf("  Durée moyenne %.0f s, %d parties finies par élimination\n", t.AvgTicks/float64(TargetTPS), t.Elims)
+	if store != nil {
+		fmt.Printf("  %d lignes de télémétrie enregistrées en %v (%.0f lignes/s)\n", rows, saving.Round(time.Millisecond), float64(rows)/saving.Seconds())
+	}
 }

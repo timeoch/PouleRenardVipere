@@ -653,7 +653,7 @@ func (s *session) tournament(ctx context.Context, n int, send func(any)) {
 	go func() {
 		t := Tally{Total: n}
 		send(tournamentMessage{Type: "tournament", ID: id, Tally: t, Running: true})
-		RunTournament(tctx, cfg, n, func(r GameResult) {
+		RunTournament(tctx, cfg, n, false, func(r GameResult) {
 			t.Add(r)
 			send(tournamentMessage{Type: "tournament", ID: id, Tally: t, Running: t.Done < t.Total, Last: &r})
 		})

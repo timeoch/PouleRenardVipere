@@ -1,0 +1,22 @@
+# Base des mesures de persistance (tournois, télémétrie par tick).
+#   docker compose up -d --wait
+#   go run . -tournoi 40 -db postgres://prv:prv@localhost:5434/prv
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: prv
+      POSTGRES_PASSWORD: prv
+      POSTGRES_DB: prv
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - prv-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U prv -d prv"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  prv-data:

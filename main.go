@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	_ "embed"
 	"flag"
 	"fmt"
@@ -1237,6 +1238,7 @@ func main() {
 	workers := flag.Int("workers", 0, "workers de la phase parallèle d'une partie (0 : la moitié des cœurs logiques)")
 	trames := flag.String("trames", "bin", "format des trames envoyées au navigateur : bin ou json")
 	pprofAddr := flag.String("pprof", "", "adresse du profileur net/http/pprof (ex. localhost:6060), désactivé si vide")
+	dbURL := flag.String("db", "", "PostgreSQL où enregistrer les tournois (ex. postgres://prv:prv@localhost:5434/prv)")
 	tWorkers := flag.Int("tournoi-workers", 0, "parties jouées en même temps pendant un tournoi (0 : cœurs logiques - 1)")
 	flag.Parse()
 
@@ -1262,12 +1264,23 @@ func main() {
 		runTicksCLI(serverDefaults, *ticks)
 		return
 	}
+	var store *Store
+	if *dbURL != "" {
+		if store, err = OpenStore(context.Background(), *dbURL); err != nil {
+			fmt.Fprintln(os.Stderr, "PostgreSQL :", err)
+			os.Exit(1)
+		}
+		defer store.Close()
+	}
 	if *tournoi > 0 {
-		runTournamentCLI(serverDefaults, *tournoi)
+		runTournamentCLI(serverDefaults, *tournoi, store)
 		return
 	}
 
 	mux := http.NewServeMux()
+	if store != nil {
+		mux.HandleFunc("/api/courbe", store.curveHandler)
+	}
 	mux.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/" {
 			http.NotFound(rw, r)

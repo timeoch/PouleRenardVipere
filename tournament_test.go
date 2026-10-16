@@ -35,7 +35,7 @@ func BenchmarkTournament(b *testing.B) {
 			TournamentWorkers = k
 			for i := 0; i < b.N; i++ {
 				done := 0
-				RunTournament(context.Background(), cfg, games, func(GameResult) { done++ })
+				RunTournament(context.Background(), cfg, games, false, func(GameResult) { done++ })
 				if done != games {
 					b.Fatalf("%d parties sur %d", done, games)
 				}
@@ -64,7 +64,7 @@ func TestTournamentCancelLatency(t *testing.T) {
 			ctx, cancel := context.WithCancel(context.Background())
 			done := make(chan time.Time)
 			go func() {
-				RunTournament(ctx, cfg, 50, func(GameResult) {})
+				RunTournament(ctx, cfg, 50, false, func(GameResult) {})
 				done <- time.Now()
 			}()
 			time.Sleep(time.Duration(1500+300*r) * time.Millisecond) // en pleine partie
