@@ -1,12 +1,15 @@
 package main
 
 import (
+	"bytes"
 	"context"
+	"encoding/binary"
 	"encoding/json"
 	"math"
 	"net/url"
 	"sort"
 	"strconv"
+	"sync"
 	"time"
 	"unsafe"
 
@@ -124,7 +127,65 @@ type frameMessage struct {
 	Genomes    [SpeciesCount]Genome            `json:"genomes"`
 	// Agents : triplets [x, y, code] à plat. code = espèce (bits 0-1)
 	// | rôle << 2 | prisonnier << 4 | épuisé << 5 | immunisé << 6 | sprint gratuit << 7.
-	Agents []int16 `json:"agents"`
+	// Absents de l'en-tête JSON des trames binaires (ils suivent en int16).
+	Agents []int16 `json:"agents,omitempty"`
+}
+
+// ---------------------------------------------------------------------------
+// Trames binaires
+// ---------------------------------------------------------------------------
+
+// jsonFrames : trames en JSON texte, format et envoi d'origine (-trames json).
+var jsonFrames bool
+
+// framePool recycle les tampons des trames binaires entre la boucle de la
+// partie, qui les remplit, et l'envoyeur, qui les rend après l'envoi (ou la
+// boucle, quand une trame pas encore partie est remplacée par la suivante).
+var framePool = sync.Pool{New: func() any {
+	b := make([]byte, 0, 64<<10)
+	return &b
+}}
+
+// frameEncoder écrit les trames binaires d'une session. L'en-tête JSON passe
+// par un tampon et un encodeur réutilisés d'une trame à l'autre.
+type frameEncoder struct {
+	hdr bytes.Buffer
+	enc *json.Encoder
+}
+
+func newFrameEncoder() *frameEncoder {
+	e := &frameEncoder{}
+	e.enc = json.NewEncoder(&e.hdr)
+	return e
+}
+
+// appendBinary ajoute la trame f à dst :
+//
+//	[0:4]   longueur n de l'en-tête JSON (uint32 petit-boutiste, n pair)
+//	[4:4+n] en-tête JSON : tout sauf les agents
+//	[4+n:]  agents : triplets int16 petit-boutistes (x, y, code)
+//
+// Les agents sont copiés tels qu'ils sont en mémoire (amd64 et arm64 sont
+// petit-boutistes) : 6 octets par agent au lieu de ~14 caractères en JSON, et
+// le navigateur les lit avec un Int16Array posé sur le tampon, sans décodage.
+func (e *frameEncoder) appendBinary(dst []byte, f *frameMessage) ([]byte, error) {
+	agents := f.Agents
+	f.Agents = nil
+	e.hdr.Reset()
+	err := e.enc.Encode(f)
+	f.Agents = agents
+	if err != nil {
+		return dst, err
+	}
+	if e.hdr.Len()%2 == 1 {
+		e.hdr.WriteByte(' ') // Int16Array exige un décalage pair
+	}
+	dst = binary.LittleEndian.AppendUint32(dst, uint32(e.hdr.Len()))
+	dst = append(dst, e.hdr.Bytes()...)
+	if len(agents) > 0 {
+		dst = append(dst, unsafe.Slice((*byte)(unsafe.Pointer(&agents[0])), 2*len(agents))...)
+	}
+	return dst, nil
 }
 
 type tournamentMessage struct {
@@ -373,22 +434,33 @@ func wsHandler() websocket.Handler {
 		// navigateur lit moins vite que 30 trames/s, les trames intermédiaires
 		// sont abandonnées au lieu de bloquer la simulation.
 		ctrl := make(chan []byte, 32)
-		latest := make(chan []byte, 1)
+		latest := make(chan *[]byte, 1)
 		go func() {
 			defer cancel()
 			for {
-				var data []byte
 				select {
-				case data = <-ctrl:
-				default:
-					select {
-					case <-ctx.Done():
+				case data := <-ctrl:
+					if websocket.Message.Send(ws, string(data)) != nil {
 						return
-					case data = <-ctrl:
-					case data = <-latest:
+					}
+					continue
+				default:
+				}
+				var err error
+				select {
+				case <-ctx.Done():
+					return
+				case data := <-ctrl:
+					err = websocket.Message.Send(ws, string(data))
+				case bp := <-latest:
+					if jsonFrames {
+						err = websocket.Message.Send(ws, string(*bp))
+					} else {
+						err = websocket.Message.Send(ws, *bp) // []byte : trame binaire, sans copie
+						framePool.Put(bp)
 					}
 				}
-				if err := websocket.Message.Send(ws, string(data)); err != nil {
+				if err != nil {
 					return
 				}
 			}
@@ -403,16 +475,22 @@ func wsHandler() websocket.Handler {
 			case <-ctx.Done():
 			}
 		}
-		publish := func(data []byte) {
+		publish := func(bp *[]byte) {
 			select {
-			case <-latest: // trame précédente pas encore envoyée : on la remplace
+			case old := <-latest: // trame précédente pas encore envoyée : on la remplace
+				if !jsonFrames {
+					framePool.Put(old)
+				}
 			default:
 			}
-			latest <- data
+			latest <- bp
 		}
 		dropFrame := func() {
 			select {
-			case <-latest:
+			case old := <-latest:
+				if !jsonFrames {
+					framePool.Put(old)
+				}
 			default:
 			}
 		}
@@ -448,6 +526,7 @@ func wsHandler() websocket.Handler {
 		tickMs := 0.0
 		buf := make([]int16, 0, len(s.w.Agents)*3)
 		var evBuf []Event
+		fe := newFrameEncoder()
 
 		for {
 			select {
@@ -502,11 +581,21 @@ func wsHandler() websocket.Handler {
 
 			frame := s.frame(buf[:0], evBuf[:0], tps, tickMs)
 			buf, evBuf = frame.Agents, frame.Events
-			data, err := json.Marshal(frame)
+			if jsonFrames {
+				data, err := json.Marshal(frame)
+				if err != nil {
+					return
+				}
+				publish(&data)
+				continue
+			}
+			bp := framePool.Get().(*[]byte)
+			data, err := fe.appendBinary((*bp)[:0], &frame)
 			if err != nil {
 				return
 			}
-			publish(data)
+			*bp = data
+			publish(bp)
 		}
 	}
 }

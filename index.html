@@ -2133,6 +2133,7 @@
         if ($("evolve").checked) q.set("evolve", "1");
         const proto = location.protocol === "https:" ? "wss" : "ws";
         ws = new WebSocket(`${proto}://${location.host}/ws?${q}`);
+        ws.binaryType = "arraybuffer";
         ws.onopen = () => $("dot").classList.add("on");
         ws.onclose = () => {
           $("dot").classList.remove("on");
@@ -2140,11 +2141,21 @@
           $("subtitle").textContent = "Déconnecté · « Relancer » pour une nouvelle partie";
         };
         ws.onmessage = (ev) => {
-          const m = JSON.parse(ev.data);
+          const m = typeof ev.data === "string" ? JSON.parse(ev.data) : decodeFrame(ev.data);
           if (m.type === "init") onInit(m);
           else if (m.type === "tournament") onTournament(m);
           else if (init) onFrame(m);
         };
+      }
+
+      // Trame binaire : longueur de l'en-tête (uint32), en-tête JSON, puis les
+      // agents en int16 (x, y, code), lus sur place sans copie ni décodage.
+      const utf8 = new TextDecoder();
+      function decodeFrame(buf) {
+        const n = new DataView(buf).getUint32(0, true);
+        const m = JSON.parse(utf8.decode(new Uint8Array(buf, 4, n)));
+        m.agents = new Int16Array(buf, 4 + n);
+        return m;
       }
 
       function togglePause() {

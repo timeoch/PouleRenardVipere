@@ -1235,6 +1235,7 @@ func main() {
 	duree := flag.Float64("duree", float64(DefaultMinutes), fmt.Sprintf("durée d'une manche en minutes (0,5 à %d)", MaxMinutes))
 	port := flag.Int("port", Port, "port HTTP du serveur")
 	workers := flag.Int("workers", 0, "workers de la phase parallèle d'une partie (0 : la moitié des cœurs logiques)")
+	trames := flag.String("trames", "bin", "format des trames envoyées au navigateur : bin ou json")
 	pprofAddr := flag.String("pprof", "", "adresse du profileur net/http/pprof (ex. localhost:6060), désactivé si vide")
 	flag.Parse()
 
@@ -1244,6 +1245,7 @@ func main() {
 		os.Exit(2)
 	}
 	DefaultWorkers = *workers
+	jsonFrames = *trames == "json"
 	serverDefaults.Seed = *seed
 	serverDefaults.Rules = rules
 	serverDefaults.PerSpecies = *individus
@@ -1274,7 +1276,7 @@ func main() {
 	})
 	mux.Handle("/ws", wsHandler())
 
-	fmt.Printf("Arène Poule · Renard · Vipère sur http://localhost:%d (seed %d, 3 × %d agents, %s par manche, règles : %s)\n",
-		*port, *seed, serverDefaults.PerSpecies, clockText(serverDefaults.MaxTicks), rules)
+	fmt.Printf("Arène Poule · Renard · Vipère sur http://localhost:%d (seed %d, 3 × %d agents, %s par manche, règles : %s, trames %s)\n",
+		*port, *seed, serverDefaults.PerSpecies, clockText(serverDefaults.MaxTicks), rules, *trames)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf("localhost:%d", *port), mux))
 }
