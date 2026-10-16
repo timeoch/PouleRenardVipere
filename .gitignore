@@ -1,0 +1,6 @@
+# Binaires compilés par run_benchmarks.sh (recompilables avec les tags)
+bench/bin/
+# Page intermédiaire de la conversion du rapport en PDF
+docs/rapport.html
+# Binaires
+*.exe
