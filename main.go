@@ -225,9 +225,10 @@ type World struct {
 
 	// Phase parallèle (workers.go) : un contexte de décision par worker et le
 	// lot partagé de la phase en cours, alloués une fois pour toute la partie.
-	Workers int
-	minds   []mind
-	batch   batch
+	Workers   int
+	minds     []mind
+	batch     batch
+	capTarget []int32 // proie au contact de chaque agent (phaseCapture)
 
 	vulnFn     func(*Agent) bool
 	prisonerFn func(*Agent) bool
@@ -252,6 +253,7 @@ func NewWorldWith(cfg Config) *World {
 	w.initWorkers(cfg.Workers)
 	total := cfg.PerSpecies * SpeciesCount
 	w.prevV = make([]float32, 2*total)
+	w.capTarget = make([]int32, total)
 	w.flowQueue = make([]int32, 0, GridCells)
 
 	// Camps aux sommets d'un triangle équilatéral : chaque espèce est à la
@@ -320,9 +322,8 @@ func NewWorldWith(cfg Config) *World {
 	w.assignRoles()
 	w.buildCampFlows()
 	w.buildPreyFlows()
-	for sp := Species(0); sp < SpeciesCount; sp++ {
-		w.jail[sp].Build(w.Agents, sp, true)
-	}
+	BuildAll(&w.free, w.Agents, false) // alloue ici les tampons des grilles, pas au premier tick
+	BuildAll(&w.jail, w.Agents, true)
 	return w
 }
 
@@ -457,16 +458,12 @@ func (w *World) Update() {
 		w.prevV = make([]float32, len(w.prevV))
 	}
 	w.parallel(phaseMove)
-	for sp := Species(0); sp < SpeciesCount; sp++ {
-		w.free[sp].Build(w.Agents, sp, false)
-	}
+	BuildAll(&w.free, w.Agents, false)
 	if w.Rules.Bonuses {
 		w.pickups()
 	}
 	w.captures()
-	for sp := Species(0); sp < SpeciesCount; sp++ {
-		w.jail[sp].Build(w.Agents, sp, true)
-	}
+	BuildAll(&w.jail, w.Agents, true)
 	w.rescues()
 	if w.Rules.Escape {
 		w.escapes()
@@ -519,8 +516,8 @@ func (w *World) prepare() {
 		}
 		w.visionR[sp], w.fleeR[sp] = v, f
 		w.restThr[sp] = w.Genomes[sp].restThreshold()
-		w.free[sp].Build(w.Agents, sp, false)
 	}
+	BuildAll(&w.free, w.Agents, false)
 	w.tickCounters()
 }
 
@@ -976,15 +973,37 @@ func (w *World) move(i int) {
 	}
 }
 
+// captureTarget : proie vulnérable au contact de l'agent i, -1 s'il n'y en a
+// pas ou si i ne peut pas capturer.
+func (w *World) captureTarget(i int) int {
+	a := &w.Agents[i]
+	if a.Prisoner || a.Exhausted || a.Immune > 0 {
+		return -1
+	}
+	j, _ := w.free[w.preyOf(a.Species)].Nearest(w.Agents, a.X, a.Y, CaptureRadius, w.vulnFn)
+	return j
+}
+
+// captures : les cibles sont cherchées en parallèle sur l'état d'avant les
+// captures (phaseCapture), puis les captures sont appliquées dans l'ordre des
+// agents. Une capture ne fait que retirer des proies : si la cible trouvée est
+// encore libre, c'est toujours la plus proche ; sinon on la recherche. Même
+// résultat que la boucle séquentielle d'origine.
 func (w *World) captures() {
+	w.parallel(phaseCapture)
 	for i := range w.Agents {
-		a := &w.Agents[i]
-		if a.Prisoner || a.Exhausted || a.Immune > 0 {
-			continue
-		}
-		j, _ := w.free[w.preyOf(a.Species)].Nearest(w.Agents, a.X, a.Y, CaptureRadius, w.vulnFn)
+		j := int(w.capTarget[i])
 		if j < 0 {
 			continue
+		}
+		a := &w.Agents[i]
+		if a.Prisoner {
+			continue // capturé plus tôt dans la boucle
+		}
+		if !w.isVulnerable(&w.Agents[j]) {
+			if j = w.captureTarget(i); j < 0 {
+				continue
+			}
 		}
 		if w.Rules.Strength && w.alliesAround(j) >= StrengthAllies {
 			// Le groupe fait front : le prédateur est repoussé et doit souffler.

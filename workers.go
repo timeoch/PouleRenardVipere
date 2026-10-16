@@ -24,8 +24,9 @@ var chunkAgents int64 = 128
 var DefaultWorkers = 0
 
 const (
-	phaseDecide uint8 = iota // vitesse de chaque agent
-	phaseMove                // déplacement
+	phaseDecide  uint8 = iota // vitesse de chaque agent
+	phaseMove                 // déplacement
+	phaseCapture              // proie au contact de chaque prédateur
 )
 
 // agentRand : générateur splitmix64 tiré de (graine, tick, agent). Chaque
@@ -99,6 +100,10 @@ func (b *batch) work() {
 		case phaseMove:
 			for i := lo; i < hi; i++ {
 				w.move(int(i))
+			}
+		case phaseCapture:
+			for i := lo; i < hi; i++ {
+				w.capTarget[i] = int32(w.captureTarget(int(i)))
 			}
 		}
 	}

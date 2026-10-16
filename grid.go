@@ -10,11 +10,12 @@ const naiveGrid = false
 // 50×50 dans une seule tranche contiguë (tri par comptage, O(N), 0 alloc en
 // régime permanent). colPrefix permet de savoir en O(1) si un segment vertical
 // de cellules est vide ; Cell.Start joue ce rôle pour les segments horizontaux.
+// colPrefix[cy*GridCols+cx] compte les agents des cellules (cx, 0…cy-1).
 type SpatialGrid struct {
 	Cells     [GridCells]Cell
 	Items     []int32
 	cellOf    []int32
-	colPrefix [GridCols * (GridRows + 1)]int32
+	colPrefix [(GridRows + 1) * GridCols]int32 // rangée par rangée : colPrefix[cy*GridCols+cx]
 }
 
 // Build indexe les agents de l'espèce sp, libres (prisoners=false) ou
@@ -60,15 +61,74 @@ func (g *SpatialGrid) Build(agents []Agent, sp Species, prisoners bool) {
 		cell.Count++
 	}
 	g.Items = g.Items[:active]
+	g.buildColPrefix()
+}
 
+// buildColPrefix parcourt les cellules dans l'ordre de la mémoire (rangée par
+// rangée) : lectures et écritures séquentielles, une ligne de cache sert 8
+// cellules au lieu d'une seule avec un parcours colonne par colonne.
+func (g *SpatialGrid) buildColPrefix() {
+	p := &g.colPrefix
 	for cx := 0; cx < GridCols; cx++ {
-		base := cx * (GridRows + 1)
-		var acc int32
-		g.colPrefix[base] = 0
-		for cy := 0; cy < GridRows; cy++ {
-			acc += g.Cells[cy*GridCols+cx].Count
-			g.colPrefix[base+cy+1] = acc
+		p[cx] = 0
+	}
+	for cy := 0; cy < GridRows; cy++ {
+		row, prev, next := cy*GridCols, cy*GridCols, (cy+1)*GridCols
+		for cx := 0; cx < GridCols; cx++ {
+			p[next+cx] = p[prev+cx] + g.Cells[row+cx].Count
 		}
+	}
+}
+
+// BuildAll indexe les trois espèces en un seul passage sur les agents au lieu
+// d'un passage par espèce : le tableau des agents (576 Ko) n'est lu qu'une
+// fois. La seconde passe ne relit pas les agents mais tag, qui garde l'espèce
+// et la cellule de chacun (36 Ko).
+func BuildAll(gs *[SpeciesCount]SpatialGrid, agents []Agent, prisoners bool) {
+	n := len(agents)
+	for sp := range gs {
+		g := &gs[sp]
+		if naiveAlloc || cap(g.cellOf) < n {
+			g.cellOf = make([]int32, n)
+			g.Items = make([]int32, n)
+		}
+		g.Items = g.Items[:n]
+		clear(g.Cells[:])
+	}
+	tag := gs[0].cellOf[:n] // espèce<<16 | cellule, -1 si l'agent n'est pas indexé
+	var active [SpeciesCount]int
+	for i := range agents {
+		a := &agents[i]
+		if a.Prisoner != prisoners {
+			tag[i] = -1
+			continue
+		}
+		c := int32(CellIndex(a.X, a.Y))
+		tag[i] = int32(a.Species)<<16 | c
+		gs[a.Species].Cells[c].Count++
+		active[a.Species]++
+	}
+	for sp := range gs {
+		cells := &gs[sp].Cells
+		var start int32
+		for i := range cells {
+			cells[i].Start = start
+			start += cells[i].Count
+			cells[i].Count = 0
+		}
+	}
+	for i, t := range tag {
+		if t < 0 {
+			continue
+		}
+		g := &gs[t>>16]
+		cell := &g.Cells[t&0xFFFF]
+		g.Items[cell.Start+cell.Count] = int32(i)
+		cell.Count++
+	}
+	for sp := range gs {
+		gs[sp].Items = gs[sp].Items[:active[sp]]
+		gs[sp].buildColPrefix()
 	}
 }
 
@@ -94,8 +154,7 @@ func (g *SpatialGrid) rowCount(cy, xl, xr int) int32 {
 }
 
 func (g *SpatialGrid) colCount(cx, yt, yd int) int32 {
-	base := cx * (GridRows + 1)
-	return g.colPrefix[base+yd+1] - g.colPrefix[base+yt]
+	return g.colPrefix[(yd+1)*GridCols+cx] - g.colPrefix[yt*GridCols+cx]
 }
 
 // Nearest retourne l'agent indexé le plus proche de (x, y), à une distance

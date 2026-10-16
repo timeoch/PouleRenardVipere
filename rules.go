@@ -1175,8 +1175,6 @@ func (w *World) Restore(s *Snapshot) {
 		w.obsDirty = true
 	}
 	w.refreshStats()
-	for sp := Species(0); sp < SpeciesCount; sp++ {
-		w.jail[sp].Build(w.Agents, sp, true)
-	}
+	BuildAll(&w.jail, w.Agents, true)
 	w.buildPreyFlows()
 }

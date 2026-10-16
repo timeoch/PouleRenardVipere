@@ -29,6 +29,12 @@ func (g *SpatialGrid) Build(agents []Agent, sp Species, prisoners bool) {
 	}
 }
 
+func BuildAll(gs *[SpeciesCount]SpatialGrid, agents []Agent, prisoners bool) {
+	for sp := range gs {
+		gs[sp].Build(agents, Species(sp), prisoners)
+	}
+}
+
 // CellRange et RowItems : une seule « rangée » qui contient tout le monde.
 func (g *SpatialGrid) CellRange(x, y, r float64) (cx0, cy0, cx1, cy1 int) {
 	return 0, 0, 0, 0
