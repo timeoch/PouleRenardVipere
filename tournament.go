@@ -102,6 +102,22 @@ func RunTournament(ctx context.Context, cfg Config, n int, onResult func(GameRes
 	}
 }
 
+// runTicksCLI joue une partie sans interface pendant n ticks (ou jusqu'à la
+// fin) : c'est la commande chronométrée par hyperfine. Le bilan final
+// permet de vérifier que deux versions jouent une partie comparable.
+func runTicksCLI(cfg Config, n int) {
+	w := NewWorldWith(cfg)
+	start := time.Now()
+	for w.Tick < n && !w.Finished {
+		w.Update()
+	}
+	el := time.Since(start)
+	fmt.Printf("%d ticks en %v (%.3f ms/tick, %d workers) | libres P/R/V %d %d %d | captures %d\n",
+		w.Tick, el.Round(time.Millisecond), float64(el.Microseconds())/1000/float64(max(w.Tick, 1)), w.Workers,
+		w.Stats[0].Free, w.Stats[1].Free, w.Stats[2].Free,
+		w.Stats[0].Captures+w.Stats[1].Captures+w.Stats[2].Captures)
+}
+
 // clockText écrit une durée en ticks sous la forme m:ss.
 func clockText(ticks int) string {
 	s := ticks / TargetTPS

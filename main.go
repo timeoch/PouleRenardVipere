@@ -8,6 +8,7 @@ import (
 	"math"
 	"math/rand/v2"
 	"net/http"
+	_ "net/http/pprof" // profileur, servi seulement avec -pprof
 	"os"
 )
 
@@ -1227,11 +1228,14 @@ var serverDefaults = DefaultConfig(MasterSeed)
 
 func main() {
 	tournoi := flag.Int("tournoi", 0, "joue N parties sans interface, en parallèle, et affiche le bilan")
+	ticks := flag.Int("ticks", 0, "joue une partie sans interface pendant N ticks et affiche le temps (mesures hyperfine)")
 	seed := flag.Int64("seed", MasterSeed, "graine de la première partie")
 	regles := flag.String("regles", "toutes", "règles actives : toutes, aucune, ou liste ("+RuleList()+")")
 	individus := flag.Int("individus", DefaultPerSpecies, fmt.Sprintf("individus par espèce (%d à %d)", MinPerSpecies, MaxPerSpecies))
 	duree := flag.Float64("duree", float64(DefaultMinutes), fmt.Sprintf("durée d'une manche en minutes (0,5 à %d)", MaxMinutes))
 	port := flag.Int("port", Port, "port HTTP du serveur")
+	workers := flag.Int("workers", 0, "workers de la phase parallèle d'une partie (0 : la moitié des cœurs logiques)")
+	pprofAddr := flag.String("pprof", "", "adresse du profileur net/http/pprof (ex. localhost:6060), désactivé si vide")
 	flag.Parse()
 
 	rules, err := ParseRules(*regles)
@@ -1239,11 +1243,21 @@ func main() {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(2)
 	}
+	DefaultWorkers = *workers
 	serverDefaults.Seed = *seed
 	serverDefaults.Rules = rules
 	serverDefaults.PerSpecies = *individus
 	serverDefaults.MaxTicks = MinutesToTicks(*duree)
 	serverDefaults = serverDefaults.Clamp()
+	if *pprofAddr != "" {
+		// Port d'administration séparé : le profileur n'est jamais exposé sur
+		// le port du jeu (le mux du jeu n'enregistre pas /debug/pprof).
+		go func() { log.Println(http.ListenAndServe(*pprofAddr, nil)) }()
+	}
+	if *ticks > 0 {
+		runTicksCLI(serverDefaults, *ticks)
+		return
+	}
 	if *tournoi > 0 {
 		runTournamentCLI(serverDefaults, *tournoi)
 		return
