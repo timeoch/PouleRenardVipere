@@ -409,6 +409,9 @@ func (w *World) buildFlow(f *FlowField, tx, ty float64) {
 		return
 	}
 	q := w.flowQueue[:0]
+	if naiveAlloc {
+		q = nil
+	}
 	d[start] = 0
 	q = append(q, int32(start))
 	for h := 0; h < len(q); h++ {

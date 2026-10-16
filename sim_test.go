@@ -47,6 +47,9 @@ func TestAgentFitsCacheLine(t *testing.T) {
 	sz := unsafe.Sizeof(Agent{})
 	n := DefaultPerSpecies * SpeciesCount
 	t.Logf("sizeof(Agent) = %d octets, %d agents = %d Ko contigus", sz, n, int(sz)*n/1024)
+	if naiveLayout {
+		t.Skip("version naïve de la structure (tag naive_layout)")
+	}
 	if sz > 64 {
 		t.Errorf("Agent doit tenir dans une ligne de cache de 64 octets, taille = %d", sz)
 	}

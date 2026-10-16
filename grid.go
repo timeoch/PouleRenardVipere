@@ -1,6 +1,10 @@
+//go:build !naive_grid
+
 package main
 
 import "math"
+
+const naiveGrid = false
 
 // SpatialGrid range les indices d'un sous-ensemble d'agents par cellule de
 // 50×50 dans une seule tranche contiguë (tri par comptage, O(N), 0 alloc en
@@ -17,7 +21,7 @@ type SpatialGrid struct {
 // prisonniers (prisoners=true). Les indices d'une cellule sont croissants.
 func (g *SpatialGrid) Build(agents []Agent, sp Species, prisoners bool) {
 	n := len(agents)
-	if cap(g.cellOf) < n {
+	if naiveAlloc || cap(g.cellOf) < n {
 		g.cellOf = make([]int32, n)
 		g.Items = make([]int32, n)
 	}
@@ -73,6 +77,9 @@ func (g *SpatialGrid) Build(agents []Agent, sp Species, prisoners bool) {
 func (g *SpatialGrid) RowItems(cy, cx0, cx1 int) []int32 {
 	a := &g.Cells[cy*GridCols+cx0]
 	b := &g.Cells[cy*GridCols+cx1]
+	if naiveAlloc {
+		return append([]int32(nil), g.Items[a.Start:b.Start+b.Count]...)
+	}
 	return g.Items[a.Start : b.Start+b.Count]
 }
 

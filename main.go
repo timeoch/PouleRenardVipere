@@ -99,7 +99,7 @@ const (
 	Leurre                 // attire les gardiens adverses loin de leur prison
 )
 
-// Agent : voir agent.go.
+// Agent : voir agent.go (64 octets) et agent_naive.go (version d'origine).
 
 type Obstacle struct {
 	X float64 `json:"x"`
@@ -131,7 +131,7 @@ type SpeciesStats struct {
 }
 
 // ---------------------------------------------------------------------------
-// Grille spatiale : cellules de 50×50 (voir grid.go)
+// Grille spatiale : cellules de 50×50 (voir grid.go et grid_naive.go)
 // ---------------------------------------------------------------------------
 
 // Cell décrit la plage [Start, Start+Count) de Items occupée par la cellule.
@@ -453,6 +453,9 @@ func (w *World) Update() {
 	w.prepare()
 	for i := range w.Agents {
 		w.decide(i)
+	}
+	if naiveAlloc {
+		w.prevV = make([]float32, len(w.prevV))
 	}
 	for i := range w.Agents {
 		w.move(i)

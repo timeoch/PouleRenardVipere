@@ -1,4 +1,8 @@
+//go:build !naive_layout
+
 package main
+
+const naiveLayout = false
 
 // Agent tient dans une ligne de cache de 64 octets (vérifié par les tests) :
 // champs triés par taille décroissante, aucun octet de remplissage entre eux.
