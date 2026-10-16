@@ -67,15 +67,28 @@ Toutes sont actives par défaut. On les coche ou décoche dans le panneau « Rè
 
 ```text
 .
-├── index.html     # Interface web (Canvas 2D, caméra, télémétrie, panneaux), embarquée dans le binaire
-├── main.go        # Paramètres, agents, grille spatiale, boucle de simulation, lancement
-├── rules.go       # Règles optionnelles, terrain, champs de distance, rôles, évolution, entrées, instantanés
-├── session.go     # Session WebSocket : ligne de temps (replay), vitesse, commandes, messages
-├── tournament.go  # Parties sans interface en parallèle (tournoi, interface et ligne de commande)
-├── sim_test.go    # Tests (déterminisme, invariants, replay, chemins, rôles, évolution, grille) et benchmark
+├── index.html          # Interface web (Canvas 2D, caméra, télémétrie, panneaux), embarquée dans le binaire
+├── main.go             # Paramètres, monde, boucle de simulation, décisions des agents, lancement
+├── agent.go            # Structure Agent (64 octets) ; agent_naive.go : version d'origine (88 octets)
+├── grid.go             # Grille spatiale ; grid_naive.go : recherche linéaire O(N²) d'origine
+├── alloc.go            # Interrupteur des allocations d'origine (alloc_naive.go)
+├── trig.go             # sincos en un appel ; trig_naive.go : math.Sin et math.Cos séparés
+├── workers.go          # Phase parallèle : pool de workers borné, lots, générateur par agent
+├── rules.go            # Règles optionnelles, terrain, champs de distance, rôles, évolution, entrées, instantanés
+├── session.go          # Session WebSocket : ligne de temps (replay), trames binaires, commandes
+├── tournament.go       # Parties sans interface en parallèle (tournoi, mode -ticks pour hyperfine)
+├── store.go            # Persistance PostgreSQL des tournois, cache LRU, API /api/courbe
+├── *_test.go           # Tests et benchmarks (simulation, trames, tournoi, base de données)
+├── tools/              # wsload (charge WebSocket), hfstats (statistiques hyperfine), flamegraph (SVG annotés)
+├── run_benchmarks.sh   # Toutes les mesures du rapport en une commande (Makefile : make bench)
+├── docker-compose.yml  # PostgreSQL 17 pour les mesures de persistance
+├── constitution.md     # Règles imposées aux assistants de code sur ce dépôt
+├── RAPPORT_AUDIT.pdf   # Rapport d'audit de performance
 ├── go.mod
 └── go.sum
 ```
+
+Les fichiers `*_naive.go` ne servent qu'aux mesures : ils remettent les choix de la première version derrière des tags de build (`go build -tags naive_grid .`), pour chiffrer chaque optimisation séparément.
 
 ## 3. Prérequis
 
@@ -103,7 +116,14 @@ go run . -individus 1000 -duree 2      # effectif par espèce et durée d'une ma
 go run . -regles night,terrain,escape  # règles par défaut des parties (toutes, aucune, ou une liste de clés)
 go run . -port 8090                    # autre port que 8081
 go run . -tournoi 100 -regles aucune   # 100 parties sans interface, en parallèle, puis le bilan
+go run . -workers 4                    # workers de la phase parallèle d'une partie (défaut : la moitié des cœurs logiques)
+go run . -ticks 300 -workers 1         # une partie sans interface pendant 300 ticks, chronométrée (hyperfine)
+go run . -trames json                  # trames JSON d'origine au lieu du format binaire
+go run . -pprof localhost:6060         # profileur net/http/pprof sur un port d'administration séparé
+go run . -tournoi 40 -db postgres://prv:prv@localhost:5434/prv   # enregistre les parties et leur télémétrie
 ```
+
+Avec `-db`, le serveur expose aussi `GET /api/courbe?run=ID&de=0&a=9000` (télémétrie d'une partie, servie par un cache LRU).
 
 Au premier chargement, la page reprend la configuration du serveur ; ensuite, celle choisie dans l'interface.
 
@@ -144,40 +164,40 @@ Vitesse de simulation : ¼×, ½×, 1×, 2× ou 4×. La barre d'espace met en pa
 ## 6. Tests & mesures
 
 ```bash
-go test -short .                                                          # déterminisme, invariants, replay, chemins, rôles, évolution, grille
-go test -run TestFullGameTimeline -v .                                    # partie complète (toutes les règles), coût du tick par tranche de 20 s
-go test -run='^$' -bench=BenchmarkUpdate -benchtime=100x -benchmem -count=3 .   # protocole de mesure (seed 42, 100 ticks)
-go run . -tournoi 11                                                      # équilibre des espèces sur 11 graines
+go test -short .                     # déterminisme, parallèle = séquentiel, invariants, replay, chemins, rôles, évolution, grille, trames
+go test -run TestFullGameTimeline -v .   # partie complète (toutes les règles), coût du tick par tranche de 20 s
+./run_benchmarks.sh                  # toutes les mesures du rapport d'audit (voir RAPPORT_AUDIT.pdf), résultats dans bench/
+RAPIDE=1 ./run_benchmarks.sh cpu     # version courte, pour vérifier que tout tourne
 ```
 
 Les tests vérifient notamment :
 
-- **Déterminisme**, avec et sans les règles optionnelles.
+- **Déterminisme**, avec et sans les règles optionnelles, et **parallélisme** : 1, 2, 3, 8 ou 12 workers jouent exactement la même partie.
 - **Invariants**, sur le jeu classique et avec toutes les règles :
   - les prisonniers sont dans la bonne prison et aucun agent libre ne se trouve dans un mur ou dans l'eau ;
   - l'effectif total est conservé, ainsi que celui de chaque espèce sans le syndrome de Stockholm ;
   - les statistiques et les décomptes par camp sont cohérents.
 - **Replay** : revenir en arrière puis rejouer redonne exactement la même partie, entrées du joueur comprises, et une nouvelle entrée ouvre bien une autre branche.
 - **Chemins** : sur 20 graines, chaque camp reste accessible depuis les deux autres malgré la rivière, et suivre le champ mène bien au camp.
-- **Effectif et durée** : une partie de 3 × 500 agents et 30 s se joue jusqu'au bout, avec renversement à mi-manche. Les bornes sont appliquées, et la mémoire du replay reste bornée pour la plus grande partie possible.
+- **Grille** : 67 500 requêtes du plus proche voisin donnent exactement le résultat d'un parcours linéaire.
+- **Trames binaires** : une trame relue redonne exactement l'en-tête et les agents d'origine.
+- **Base de données** (avec `PRV_DB`) : une partie enregistrée puis relue donne les mêmes lignes.
 
-Mesures de référence (Intel i5-12450H, Go 1.27.1, seed 42, médiane de 3 passes) :
+Mesures de référence (Intel i5-12450H sur secteur, Go 1.27.1, seed 42, médianes de 10 passes ; détail et protocole dans `RAPPORT_AUDIT.pdf`) :
 
 | Mesure | Valeur |
 |---|---|
 | `sizeof(Agent)` | 64 octets, soit une ligne de cache |
-| Tick, début de partie (toutes les règles) | 2,7 ms, 0 alloc/op |
-| Tick, mi-partie (t = 1 500, toutes les règles) | 7,3 ms, 0 alloc/op |
-| Tick, mi-partie (t = 1 500, jeu classique) | 6,0 ms, 0 alloc/op (9,3 ms avant le balayage par rangées et les chemins précalculés) |
-| Pire tranche de 20 s sur une partie complète | 8 à 10 ms selon les passes (budget 33,3 ms) |
-| Serveur réel | 30 TPS stables à 1×. À 4×, 120 TPS en début de partie, 90 à 120 TPS ensuite (moins si le navigateur charge aussi le processeur) |
-| Effectif plus grand (toutes les règles, pire tranche de 10 s sur les 100 premières secondes) | 1 000 par espèce : 2,7 ms ; 5 000 : 18 ms ; 10 000 : 56 ms, soit environ 18 TPS au lieu de 30 |
-| Tournoi de 11 parties (toutes les règles) | 277 s de calcul, contre 40 s pour une partie seule : facteur 1,6 en parallèle |
-| Équilibre sur ce tournoi (graines 42 à 52) | Poules 4, Renards 3, Vipères 4 victoires, toutes au coup de sifflet |
+| Tick, début de partie (toutes les règles) | 1,92 ms sur 1 worker, 0,88 ms sur 4 workers, 0 alloc/op |
+| Tick, mi-partie (t = 1 500, toutes les règles) | 1,79 ms sur 1 worker, 1,09 ms sur 4 workers, 0 alloc/op |
+| Tick, mi-partie (t = 1 500, jeu classique) | 1,6 à 1,7 ms sur 1 worker, 0,90 ms sur 4 workers |
+| Version naïve O(N²) (tags `naive_*`), début de partie | 135,8 ms, 106 Mo alloués et 47 cycles de GC par tick |
+| Passage à l'échelle | ×2,0 à 4 workers, plus rien au-delà (4 cœurs performants, 18 % du tick reste séquentiel) |
+| Trame envoyée au navigateur | binaire : 53,5 Kio en 23 µs ; JSON : 105 Kio en 398 µs |
+| Tournoi (parties de 10 s) | ×5,1 sur 11 parties en parallèle ; 40 parties de 5 min en 204 s |
+| Télémétrie en base | `COPY` : 209 000 lignes/s (281 en INSERT ligne à ligne) ; courbe d'une partie : 0,9 ms avec index, 28 ms sans |
 
-Le coût du tick affiché par le serveur est environ trois fois plus élevé que dans le benchmark. Le même tick coûte 3,2 ms enchaîné et 10,8 ms avec une pause de 22 ms entre deux ticks. Entre deux ticks, le processeur baisse sa fréquence ou bascule la tâche sur un cœur économe. Comparer des médianes de plusieurs passes, jamais une mesure isolée.
-
-Le tournoi ne gagne qu'un facteur 1,6 sur 11 cœurs. Chaque partie manipule environ 2 Mo de grilles et de chemins, soit 22 Mo pour 11 parties, bien plus que le cache L3 (12 Mo) : les parties se disputent la mémoire, et une partie des cœurs sont des cœurs économes.
+Le coût du tick affiché par le serveur est plus élevé que dans le benchmark. Entre deux ticks, le processeur baisse sa fréquence ou bascule la tâche sur un cœur économe. Sur batterie, tout est 2 à 3 fois plus lent. Comparer des médianes de plusieurs passes, sur secteur, jamais une mesure isolée.
 
 ## 7. Choix de performance
 
@@ -186,15 +206,15 @@ Le tournoi ne gagne qu'un facteur 1,6 sur 11 cœurs. Chaque partie manipule envi
 - **Balayage par rangées** : les cellules d'une rangée se suivent dans le tableau d'indices. Les recherches de voisinage (menaces, troupeau, alliés, gardiens) parcourent donc une seule tranche par rangée au lieu d'une par cellule.
 - **Champs de distance précalculés** : un parcours en largeur sur la grille donne, pour chaque cellule, le voisin à rejoindre vers chaque camp, recalculé seulement quand les haies changent. Il donne aussi le chemin vers le troupeau de chaque espèce, recalculé deux fois par seconde. Suivre un chemin coûte une lecture de tableau par agent.
 - **Obstacles et terrain indexés par cellule** : un test de collision ne regarde que le type de terrain et les obstacles qui recouvrent la cellule du point.
-- **Décision puis déplacement** : chaque agent décide à partir des positions de début de tick, en lecture seule, puis tous les agents se déplacent. L'anticipation lit la vitesse du tick précédent dans un tableau à part. Le résultat ne dépend pas de l'ordre de déplacement. Ce qui touche plusieurs agents à la fois (capture, libération, évasion, changement d'espèce, bonus) se fait dans des phases séquentielles.
+- **Décision puis déplacement, en parallèle** : chaque agent décide à partir de l'état de début de tick et n'écrit que dans sa propre entrée ; ce que lisent ses voisins (immunité, épuisement) est mis à jour hors de la phase parallèle. Décision, déplacement et recherche des captures tournent sur un pool de workers partagé par toutes les parties du processus (borné à GOMAXPROCS − 1), par lots de 128 agents distribués avec un compteur atomique. Chaque agent tire ses nombres aléatoires d'un splitmix64 dérivé de (graine, tick, agent) : la partie est identique quel que soit le nombre de workers (`TestParallelMatchesSequential`). Les captures sont appliquées ensuite dans l'ordre des agents, ce qui donne exactement le résultat de la boucle séquentielle.
 - **Zéro allocation par tick** : les événements passent par un tampon circulaire et les rôles par un tirage dérivé de la graine (splitmix64), sans consommer le générateur de la partie.
 - **Replay par instantanés** : toutes les 5 s simulées, la session copie l'état de valeur du monde, les agents et les haies (~0,7 Mo pour 9 000 agents). Pour les grandes et longues parties, les instantanés s'espacent afin de rester sous ~150 Mo : au pire un toutes les 30 s, pour 30 000 agents pendant 30 minutes. Le générateur PCG de `math/rand/v2` se copie par valeur. Revenir au tick t restaure le dernier instantané, puis rejoue les ticks manquants en réappliquant les entrées enregistrées. Les caches (grilles, chemins, index des haies) sont reconstruits à l'identique.
 - **Envoi découplé** : la boucle de simulation publie la dernière trame et un envoyeur séparé la transmet. Un navigateur lent perd des trames mais ne ralentit jamais la simulation. Les messages de contrôle (début de manche, tournoi) passent en priorité et ne sont jamais perdus.
+- **Trames binaires** : un en-tête JSON court (statistiques, événements, agent suivi), puis les agents en triplets int16 copiés tels quels depuis la mémoire. Le navigateur pose un `Int16Array` sur le tampon reçu, sans décodage. Les tampons sont recyclés par un `sync.Pool` entre la boucle et l'envoyeur. `-trames json` remet le format d'origine pour comparer.
+- **Persistance des tournois** (`-db`) : télémétrie de chaque tick écrite en un seul `COPY` par partie, lue par une requête qui passe par l'index `(run_id, tick)`, avec un cache LRU borné devant la base.
 - **Rendu par pixels sur deux calques** : le décor (terrain, haies, camps, chaleur) n'est redessiné que quand la vue change. Les agents sont tamponnés via un masque précalculé dans un tampon transparent, au lieu de tracer 9 000 formes vectorielles.
 
 ### Pistes d'exercices
 
-- Paralléliser la phase de décision par goroutines : elle est déjà en lecture seule, mais le générateur pseudo-aléatoire partagé doit devenir un générateur par agent pour rester déterministe. C'est la condition pour tenir 4× en milieu de partie sur une machine modeste.
-- Passer les trames en binaire (`Int16Array`) au lieu de JSON pour diviser le débit réseau par 3 environ.
-- Comparer une version naïve O(N²) des recherches de voisinage avec le protocole de mesure ci-dessus.
+- Réduire la partie séquentielle du tick (reconstruction des grilles, libérations, statistiques), qui limite le gain du parallélisme au-delà de 4 workers (loi d'Amdahl, voir le rapport).
 - Lancer l'évolution dans le tournoi : plusieurs générations sans interface, pour voir vers quelles stratégies convergent les espèces.
