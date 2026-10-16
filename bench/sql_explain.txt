@@ -1,0 +1,56 @@
+=== RUN   TestStoreRoundTrip
+--- PASS: TestStoreRoundTrip (1.00s)
+=== RUN   TestExplainCurve
+    store_test.go:200: sans index (partie 8, ticks 4500 à 4799) :
+        Gather Merge  (cost=17187.41..17274.21 rows=744 width=18) (actual time=23.524..25.715 rows=900 loops=1)
+          Workers Planned: 2
+          Workers Launched: 2
+          Buffers: shared hit=8251
+          ->  Sort  (cost=16187.38..16188.31 rows=372 width=18) (actual time=22.011..22.028 rows=300 loops=3)
+                Sort Key: tick
+                Sort Method: quicksort  Memory: 60kB
+                Buffers: shared hit=8251
+                Worker 0:  Sort Method: quicksort  Memory: 25kB
+                Worker 1:  Sort Method: quicksort  Memory: 25kB
+                ->  Parallel Seq Scan on run_ticks  (cost=0.00..16171.50 rows=372 width=18) (actual time=14.534..21.832 rows=300 loops=3)
+                      Filter: ((tick >= 4500) AND (tick <= 4799) AND (run_id = '8'::bigint))
+                      Rows Removed by Filter: 366900
+                      Buffers: shared hit=8139
+        Planning:
+          Buffers: shared hit=31
+        Planning Time: 0.164 ms
+        Execution Time: 25.788 ms
+    store_test.go:200: sans index, 2e passe (pages en cache) (partie 8, ticks 4500 à 4799) :
+        Gather Merge  (cost=17187.41..17274.21 rows=744 width=18) (actual time=22.837..25.247 rows=900 loops=1)
+          Workers Planned: 2
+          Workers Launched: 2
+          Buffers: shared hit=8251
+          ->  Sort  (cost=16187.38..16188.31 rows=372 width=18) (actual time=21.098..21.113 rows=300 loops=3)
+                Sort Key: tick
+                Sort Method: quicksort  Memory: 60kB
+                Buffers: shared hit=8251
+                Worker 0:  Sort Method: quicksort  Memory: 25kB
+                Worker 1:  Sort Method: quicksort  Memory: 25kB
+                ->  Parallel Seq Scan on run_ticks  (cost=0.00..16171.50 rows=372 width=18) (actual time=13.927..20.952 rows=300 loops=3)
+                      Filter: ((tick >= 4500) AND (tick <= 4799) AND (run_id = '8'::bigint))
+                      Rows Removed by Filter: 366900
+                      Buffers: shared hit=8139
+        Planning Time: 0.058 ms
+        Execution Time: 25.318 ms
+    store_test.go:200: avec l'index (run_id, tick) (partie 8, ticks 4500 à 4799) :
+        Index Scan using run_ticks_run_tick on run_ticks  (cost=0.43..1437.01 rows=841 width=18) (actual time=0.024..0.129 rows=900 loops=1)
+          Index Cond: ((run_id = '8'::bigint) AND (tick >= 4500) AND (tick <= 4799))
+          Buffers: shared hit=7 read=5
+        Planning:
+          Buffers: shared hit=22 read=1
+        Planning Time: 0.199 ms
+        Execution Time: 0.182 ms
+    store_test.go:200: avec l'index, 2e passe (partie 8, ticks 4500 à 4799) :
+        Index Scan using run_ticks_run_tick on run_ticks  (cost=0.43..1437.01 rows=841 width=18) (actual time=0.016..0.114 rows=900 loops=1)
+          Index Cond: ((run_id = '8'::bigint) AND (tick >= 4500) AND (tick <= 4799))
+          Buffers: shared hit=12
+        Planning Time: 0.047 ms
+        Execution Time: 0.153 ms
+--- PASS: TestExplainCurve (0.48s)
+PASS
+ok  	poule-renard-vipere	4.556s

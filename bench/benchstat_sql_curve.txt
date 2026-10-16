@@ -1,0 +1,26 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+                    │ bench/sql_curve.txt │
+                    │       sec/op        │
+Curve/sans_index-12           28.33m ± 3%
+Curve/index-12                910.3µ ± 8%
+Curve/cache_lru-12            26.96n ± 3%
+geomean                       88.58µ
+
+                    │ bench/sql_curve.txt │
+                    │        B/op         │
+Curve/sans_index-12        110.0Ki ± 0%
+Curve/index-12             110.1Ki ± 0%
+Curve/cache_lru-12           0.000 ± 0%
+geomean                                 ¹
+¹ summaries must be >0 to compute geomean
+
+                    │ bench/sql_curve.txt │
+                    │      allocs/op      │
+Curve/sans_index-12         1.810k ± 0%
+Curve/index-12              1.810k ± 0%
+Curve/cache_lru-12           0.000 ± 0%
+geomean                                 ¹
+¹ summaries must be >0 to compute geomean

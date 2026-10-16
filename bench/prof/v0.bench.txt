@@ -1,0 +1,6 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkUpdate/Debut-12         	      52	 114809537 ns/op	        26.65 gc-ms/tick	        31.67 gc/tick	       114.8 ms/tick	         8.710 tps	110919817 B/op	    9087 allocs/op
+PASS

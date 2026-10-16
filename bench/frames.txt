@@ -1,0 +1,25 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkFrame/json-12         	    3010	    390880 ns/op	    107495 B/frame	  231081 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    2848	    400200 ns/op	    107495 B/frame	  232192 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    2998	    395181 ns/op	    107495 B/frame	  231254 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    3034	    400622 ns/op	    107495 B/frame	  234644 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    3084	    398941 ns/op	    107495 B/frame	  232741 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    2986	    400604 ns/op	    107495 B/frame	  232810 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    3123	    395218 ns/op	    107495 B/frame	  231396 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    2979	    395919 ns/op	    107495 B/frame	  232469 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    2990	    397721 ns/op	    107495 B/frame	  231600 B/op	       5 allocs/op
+BenchmarkFrame/json-12         	    2958	    408654 ns/op	    107495 B/frame	  231785 B/op	       5 allocs/op
+BenchmarkFrame/binary-12       	   52080	     23233 ns/op	     54778 B/frame	     614 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   51590	     23286 ns/op	     54778 B/frame	     614 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   50667	     23450 ns/op	     54778 B/frame	     613 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   51885	     23229 ns/op	     54778 B/frame	     615 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   52335	     23264 ns/op	     54778 B/frame	     619 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   51901	     23417 ns/op	     54778 B/frame	     613 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   51000	     23328 ns/op	     54778 B/frame	     614 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   52203	     23297 ns/op	     54778 B/frame	     615 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   51486	     23235 ns/op	     54778 B/frame	     615 B/op	       2 allocs/op
+BenchmarkFrame/binary-12       	   51428	     23427 ns/op	     54778 B/frame	     619 B/op	       2 allocs/op
+PASS

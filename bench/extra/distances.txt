@@ -1,0 +1,1 @@
+    count_test.go:15: par tick (début de partie, 30 ticks) : Nearest 17999 appels, 53999200 candidats ; RowItems 9001 appels, 27003700 candidats ; total 81002900 distances

@@ -1,0 +1,187 @@
+File: v2.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v2.test.exe2026-10-16 15:18:20.6551404 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:30 CEST
+-----------+-------------------------------------------------------
+     bytes:  320kB
+  688.56kB   compress/flate.(*fastGen).addBlock
+             compress/flate.(*fastEncL1).encode
+             compress/flate.(*compressor).deflateFast
+             compress/flate.(*compressor).close
+             compress/flate.(*Writer).Close (inline)
+             compress/gzip.(*Writer).Close
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  64kB
+  544.67kB   compress/flate.(*compressor).init
+             compress/flate.NewWriter (inline)
+             compress/gzip.(*Writer).Write
+             runtime/pprof.(*profileBuilder).flush
+             runtime/pprof.(*profileBuilder).pbSample
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  264kB
+  655.29kB   compress/flate.NewWriter (inline)
+             compress/gzip.(*Writer).Write
+             runtime/pprof.(*profileBuilder).flush
+             runtime/pprof.(*profileBuilder).pbSample
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  776kB
+    1.94MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    2.29MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  776kB
+  994.45kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    1.14MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  32B
+  512.02kB   syscall.(*DLL).FindProc
+             syscall.(*LazyProc).Find
+             syscall.(*LazyProc).mustFind (inline)
+             syscall.(*LazyProc).Addr (inline)
+             syscall.regEnumKeyEx
+             syscall.RegEnumKeyEx (inline)
+             internal/syscall/windows/registry.Key.ReadSubKeyNames
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  16B
+  512.01kB   syscall.ByteSliceFromString
+             syscall.BytePtrFromString (inline)
+             syscall.(*DLL).FindProc
+             syscall.(*LazyProc).Find
+             syscall.(*LazyProc).mustFind (inline)
+             syscall.(*LazyProc).Addr (inline)
+             syscall.regEnumKeyEx
+             syscall.RegEnumKeyEx (inline)
+             internal/syscall/windows/registry.Key.ReadSubKeyNames
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  64B
+  512.03kB   time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  48B
+  512.02kB   testing.(*B).ResetTimer
+             testing.(*B).runN
+             testing.runBenchmarks
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  1MB
+    1.16MB   runtime/pprof.StartCPUProfile
+             testing/internal/testdeps.TestDeps.StartCPUProfile
+             testing.(*M).before
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  896B
+  512.44kB   testing.init
+             runtime.doInit1
+             runtime.doInit (inline)
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.mstart1
+             runtime.mstart0
+             runtime.mstart
+-----------+-------------------------------------------------------

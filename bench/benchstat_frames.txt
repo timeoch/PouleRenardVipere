@@ -1,0 +1,27 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+                │ bench/frames.txt │
+                │      sec/op      │
+Frame/json-12          398.3µ ± 1%
+Frame/binary-12        23.29µ ± 1%
+geomean                96.32µ
+
+                │ bench/frames.txt │
+                │     B/frame      │
+Frame/json-12         105.0Ki ± 0%
+Frame/binary-12       53.49Ki ± 0%
+geomean               74.94Ki
+
+                │ bench/frames.txt │
+                │       B/op       │
+Frame/json-12         226.6Ki ± 0%
+Frame/binary-12         614.5 ± 1%
+geomean               11.66Ki
+
+                │ bench/frames.txt │
+                │    allocs/op     │
+Frame/json-12           5.000 ± 0%
+Frame/binary-12         2.000 ± 0%
+geomean                 3.162

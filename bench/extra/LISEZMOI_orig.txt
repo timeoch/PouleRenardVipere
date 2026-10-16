@@ -1,0 +1,3 @@
+Mesure ponctuelle, hors run_benchmarks.sh : code du projet tel qu'il était au début de l'audit
+(copie de sauvegarde, pas dans le dépôt), sur secteur, go test -bench BenchmarkUpdate -benchtime 100x -count 10.
+Même mesure isolée faite plus tôt sur batterie (1 passe) : Debut 5,24 ms, MiPartie 6,30 ms, Classique 4,99 ms.

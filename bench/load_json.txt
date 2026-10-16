@@ -1,0 +1,5 @@
+8 clients, 15 s : 3608 trames (0 binaires, 3608 texte)
+trames/s par client : 30.1
+taille moyenne      : 103.9 Ko
+débit total         : 24.40 Mo/s (3.05 Mo/s par client)
+écart entre trames  : p50 33.4ms, p99 37.7ms, max 39.1ms

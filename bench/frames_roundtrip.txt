@@ -1,0 +1,4 @@
+=== RUN   TestBinaryFrameRoundTrip
+    frames_test.go:49: trame t=1500 : JSON 107495 octets, binaire 54778 octets (en-tête 774) : 2.0× moins
+--- PASS: TestBinaryFrameRoundTrip (1.53s)
+PASS

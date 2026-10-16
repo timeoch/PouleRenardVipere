@@ -1,0 +1,1798 @@
+File: v1.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v1.test.exe2026-10-16 15:18:11.0697079 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:21 CEST
+-----------+-------------------------------------------------------
+     bytes:  320kB
+  688.56kB   compress/flate.(*fastGen).addBlock
+             compress/flate.(*fastEncL1).encode
+             compress/flate.(*compressor).deflateFast
+             compress/flate.(*compressor).close
+             compress/flate.(*Writer).Close (inline)
+             compress/gzip.(*Writer).Close
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  6.75kB
+  515.38kB   runtime/pprof.(*protobuf).varint (inline)
+             runtime/pprof.(*protobuf).length (inline)
+             runtime/pprof.(*protobuf).string (inline)
+             runtime/pprof.(*protobuf).strings
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  4.75kB
+  514.38kB   runtime/pprof.(*profileBuilder).stringIndex (inline)
+             runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  4.75kB
+  514.38kB   runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  1.12kB
+  512.56kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.75kB
+  512.88kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  768B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2kB
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  4kB
+     514kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  4kB
+   11.04MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+    5.52MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2.62kB
+   11.53MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+   74.75MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.12kB
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.12kB
+   18.05MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3kB
+    6.02MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3kB
+   27.58MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2.62kB
+   59.65MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  48B
+  512.02kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2.25kB
+    3.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2.25kB
+   16.04MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2kB
+   17.03MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.75kB
+   18.53MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.75kB
+    7.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.50kB
+   11.52MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.25kB
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.12kB
+    3.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1kB
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  896B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  96B
+  512.05kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  768B
+  512.38kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  24B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  80B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  704B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  256B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  96B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  320B
+       4MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  448B
+       4MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  416B
+    3.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  64B
+  512.03kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).alliesAround
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  288B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  176B
+       4MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  384B
+    3.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  128B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  352B
+    6.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  480B
+    5.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  112B
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  160B
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  224B
+    3.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  208B
+    5.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  448B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).alliesAround
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  144B
+       7MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  576B
+       3MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  240B
+       7MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  192B
+    5.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  320B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).alliesAround
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  640B
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  512B
+      10MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  224B
+  512.11kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).alliesAround
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  352B
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1kB
+   46.55MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  48B
+  512.02kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  288B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.50kB
+   17.02MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.38kB
+   35.55MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.50kB
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.25kB
+   26.03MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1.12kB
+   74.58MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  80B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  48B
+    2.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  112B
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  896B
+  512.44kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  32B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  480B
+  512.23kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).alliesAround
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  576B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  448B
+   33.51MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  704B
+  512.34kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  896B
+   96.08MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  640B
+   32.52MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  64B
+  512.03kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  208B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  512B
+   21.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  704B
+   27.52MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  576B
+   38.52MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  768B
+   34.02MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  480B
+   29.51MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  64B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+    5.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+    9.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  144B
+   30.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+    4.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  240B
+    1.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  24B
+       8MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+  512.01kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  80B
+  512.04kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  384B
+       1MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  256B
+   19.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  416B
+   23.51MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  384B
+   24.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  352B
+   33.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  144B
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  192B
+   32.51MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  32B
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  96B
+   24.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+   89.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  224B
+   20.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  112B
+   20.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  240B
+      17MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2kB
+    1.50MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  208B
+   25.51MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  176B
+       2MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  176B
+   30.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  64B
+      17MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  160B
+  512.08kB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).guardsNear
+             poule-renard-vipere.(*World).escapes
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  320B
+   25.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  288B
+   37.01MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  80B
+      23MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  160B
+   21.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  128B
+   28.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  32B
+   17.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  48B
+   27.50MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  12kB
+    6.07MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  5.25kB
+    3.52MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  8kB
+    3.02MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16kB
+   11.17MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  112B
+  512.05kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  21.25kB
+    1.02MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  28kB
+  526.13kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildCampFlows (inline)
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    1.14MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+   20.27MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  21.25kB
+    9.19MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  28kB
+   21.07MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  334.22MB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  310.31MB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  341.50MB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  72kB
+  180.63MB   poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  308.75MB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  311.35MB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  329.02MB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+  512.01kB   syscall.UTF16ToString
+             internal/syscall/windows/registry.Key.GetMUIStringValue
+             time.matchZoneKey
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  776kB
+    1.94MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  72kB
+  548.84kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildCampFlows (inline)
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  32B
+  512.02kB   syscall.UTF16ToString
+             internal/syscall/windows/registry.Key.GetMUIStringValue
+             time.matchZoneKey
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  776kB
+  994.45kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    1.14MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  48B
+  512.02kB   testing.(*B).ResetTimer
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  64B
+  512.03kB   time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  112B
+  512.05kB   regexp/syntax.(*parser).newRegexp (inline)
+             regexp/syntax.(*parser).literal
+             regexp/syntax.parse
+             regexp/syntax.Parse (inline)
+             regexp.compile
+             regexp.Compile (inline)
+             testing/internal/testdeps.TestDeps.MatchString
+             testing.simpleMatch.verify
+             testing.newMatcher
+             testing.runBenchmarks
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  160B
+  512.08kB   compress/gzip.NewWriterLevel
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  128kB
+  578.66kB   runtime/pprof.StartCPUProfile
+             testing/internal/testdeps.TestDeps.StartCPUProfile
+             testing.(*M).before
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  1MB
+    1.16MB   runtime/pprof.StartCPUProfile
+             testing/internal/testdeps.TestDeps.StartCPUProfile
+             testing.(*M).before
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  896B
+  512.44kB   testing.init
+             runtime.doInit1
+             runtime.doInit (inline)
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.mstart1
+             runtime.mstart0
+             runtime.mstart
+-----------+-------------------------------------------------------

@@ -1,0 +1,6 @@
+v0 : 300 ticks en 33.672s (112.240 ms/tick, 1 workers) | libres P/R/V 2980 3000 3000 | captures 20
+v1 : 300 ticks en 680ms (2.266 ms/tick, 1 workers) | libres P/R/V 2980 3000 3000 | captures 20
+v2 : 300 ticks en 577ms (1.923 ms/tick, 1 workers) | libres P/R/V 2980 3000 3000 | captures 20
+v3 : 300 ticks en 586ms (1.955 ms/tick, 1 workers) | libres P/R/V 2980 3000 3000 | captures 20
+v4 : 300 ticks en 581ms (1.936 ms/tick, 1 workers) | libres P/R/V 2980 3000 3000 | captures 20
+v5 : 300 ticks en 268ms (0.893 ms/tick, 4 workers) | libres P/R/V 2980 3000 3000 | captures 20

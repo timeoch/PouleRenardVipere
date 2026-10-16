@@ -1,0 +1,49 @@
+Tournoi : 40 parties, graines 42 à 81, 3 × 3000 agents, 5:00 par manche, règles : toutes, 11 parties en parallèle
+[  1/40] graine 50     Poules   en 300.0 s simulées | libres P/R/V 3287 2799  979 | partie n° 8, 27000 lignes en 158ms
+[  2/40] graine 49     Renards  en 300.0 s simulées | libres P/R/V  188 5071 2339 | partie n° 9, 27000 lignes en 143ms
+[  3/40] graine 43     Renards  en 300.0 s simulées | libres P/R/V  377 6986  696 | partie n° 10, 27000 lignes en 118ms
+[  4/40] graine 47     Vipères  en 300.0 s simulées | libres P/R/V 2791 1772 3047 | partie n° 11, 27000 lignes en 209ms
+[  5/40] graine 52     Poules   en 300.0 s simulées | libres P/R/V 3374 3071  758 | partie n° 12, 27000 lignes en 144ms
+[  6/40] graine 48     Renards  en 300.0 s simulées | libres P/R/V 1981 3086 2060 | partie n° 13, 27000 lignes en 193ms
+[  7/40] graine 44     Renards  en 300.0 s simulées | libres P/R/V 1973 3285 1965 | partie n° 14, 27000 lignes en 99ms
+[  8/40] graine 46     Vipères  en 300.0 s simulées | libres P/R/V 1591 2613 3484 | partie n° 15, 27000 lignes en 84ms
+[  9/40] graine 42     Poules   en 300.0 s simulées | libres P/R/V 3558 1004 3035 | partie n° 16, 27000 lignes en 486ms
+[ 10/40] graine 45     Poules   en 300.0 s simulées | libres P/R/V 3016 2346 1946 | partie n° 17, 27000 lignes en 202ms
+[ 11/40] graine 51     Renards  en 300.0 s simulées | libres P/R/V 2814 3713 1289 | partie n° 18, 27000 lignes en 295ms
+[ 12/40] graine 54     Poules   en 300.0 s simulées | libres P/R/V 3192  889 2421 | partie n° 19, 27000 lignes en 194ms
+[ 13/40] graine 59     Vipères  en 300.0 s simulées | libres P/R/V 2183 2290 2870 | partie n° 20, 27000 lignes en 176ms
+[ 14/40] graine 58     Vipères  en 300.0 s simulées | libres P/R/V 2325 1940 3134 | partie n° 21, 27000 lignes en 235ms
+[ 15/40] graine 56     Vipères  en 300.0 s simulées | libres P/R/V 2473 1744 2817 | partie n° 22, 27000 lignes en 152ms
+[ 16/40] graine 62     Vipères  en 300.0 s simulées | libres P/R/V 3355  623 3642 | partie n° 23, 27000 lignes en 66ms
+[ 17/40] graine 55     Renards  en 300.0 s simulées | libres P/R/V 3357 3837  568 | partie n° 24, 27000 lignes en 78ms
+[ 18/40] graine 57     Renards  en 300.0 s simulées | libres P/R/V 2673 4798  350 | partie n° 25, 27000 lignes en 92ms
+[ 19/40] graine 63     Poules   en 300.0 s simulées | libres P/R/V 3055 2643 1966 | partie n° 26, 27000 lignes en 93ms
+[ 20/40] graine 60     Vipères  en 300.0 s simulées | libres P/R/V 1214 2094 3837 | partie n° 27, 27000 lignes en 87ms
+[ 21/40] graine 61     Poules   en 300.0 s simulées | libres P/R/V 2867 2528 2167 | partie n° 28, 27000 lignes en 131ms
+[ 22/40] graine 53     Poules   en 300.0 s simulées | libres P/R/V 4355 1451 1608 | partie n° 29, 27000 lignes en 286ms
+[ 23/40] graine 64     Renards  en 300.0 s simulées | libres P/R/V  653 4194 2773 | partie n° 30, 27000 lignes en 145ms
+[ 24/40] graine 68     Poules   en 300.0 s simulées | libres P/R/V 3181  508 3112 | partie n° 31, 27000 lignes en 69ms
+[ 25/40] graine 67     Poules   en 300.0 s simulées | libres P/R/V 3371 1729 2495 | partie n° 32, 27000 lignes en 124ms
+[ 26/40] graine 70     Renards  en 300.0 s simulées | libres P/R/V  570 5619 1504 | partie n° 33, 27000 lignes en 72ms
+[ 27/40] graine 65     Renards  en 300.0 s simulées | libres P/R/V 1318 3765 2937 | partie n° 34, 27000 lignes en 83ms
+[ 28/40] graine 73     Poules   en 300.0 s simulées | libres P/R/V 2840 2787 1258 | partie n° 35, 27000 lignes en 258ms
+[ 29/40] graine 69     Vipères  en 300.0 s simulées | libres P/R/V 1614 1397 4056 | partie n° 36, 27000 lignes en 243ms
+[ 30/40] graine 66     Renards  en 300.0 s simulées | libres P/R/V 2416 4291  703 | partie n° 37, 27000 lignes en 106ms
+[ 31/40] graine 72     Vipères  en 300.0 s simulées | libres P/R/V 1663 1431 4451 | partie n° 38, 27000 lignes en 80ms
+[ 32/40] graine 71     Poules   en 300.0 s simulées | libres P/R/V 3282 2773  433 | partie n° 39, 27000 lignes en 56ms
+[ 33/40] graine 74     Poules   en 300.0 s simulées | libres P/R/V 3682 1225 2673 | partie n° 40, 27000 lignes en 47ms
+[ 34/40] graine 75     Vipères  en 300.0 s simulées | libres P/R/V 1558 2084 2966 | partie n° 41, 27000 lignes en 48ms
+[ 35/40] graine 76     Poules   en 300.0 s simulées | libres P/R/V 3847 1223 1891 | partie n° 42, 27000 lignes en 49ms
+[ 36/40] graine 77     Renards  en 300.0 s simulées | libres P/R/V 1621 4836  561 | partie n° 43, 27000 lignes en 38ms
+[ 37/40] graine 78     Poules   en 300.0 s simulées | libres P/R/V 3073 2783  972 | partie n° 44, 27000 lignes en 37ms
+[ 38/40] graine 79     Vipères  en 300.0 s simulées | libres P/R/V  206 2905 4012 | partie n° 45, 27000 lignes en 66ms
+[ 39/40] graine 81     Vipères  en 300.0 s simulées | libres P/R/V 2696  403 3674 | partie n° 46, 27000 lignes en 40ms
+[ 40/40] graine 80     Vipères  en 300.0 s simulées | libres P/R/V 2011 1113 3881 | partie n° 47, 27000 lignes en 27ms
+
+Bilan en 203.7 s de calcul (0.20 parties/s) :
+  Poules    15 victoires (37.5 %)
+  Renards   12 victoires (30.0 %)
+  Vipères   13 victoires (32.5 %)
+  Égalités   0
+  Durée moyenne 300 s, 0 parties finies par élimination
+  1080000 lignes de télémétrie enregistrées en 5.309s (203424 lignes/s)

@@ -1,0 +1,396 @@
+File: v0.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v0.test.exe2026-10-16 15:18:01.340045 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:11 CEST
+-----------+-------------------------------------------------------
+     bytes:  18.62kB
+  521.37kB   runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   runtime/pprof.(*profileBuilder).stringIndex (inline)
+             runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  128B
+  512.06kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  8kB
+    1.01MB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  21.25kB
+  522.70kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  8kB
+  516.01kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  12kB
+    3.04MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).herd
+             poule-renard-vipere.(*mind).flee
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  8kB
+    1.51MB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  112B
+  512.05kB   runtime.mallocgc
+             runtime.newobject
+             runtime.acquireSudog
+             runtime.semacquire1
+             runtime.semacquire (inline)
+             runtime.gcMarkDone
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+     bytes:  5.25kB
+  514.63kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1kB
+  512.50kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  12kB
+    2.53MB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  12kB
+    1.52MB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  256B
+  512.12kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2kB
+       1MB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  5.25kB
+    1.01MB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).prepare
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  64B
+  512.03kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  72kB
+    2.68MB   poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  12kB
+    5.38GB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16kB
+  520.04kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildCampFlows (inline)
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  776kB
+  994.45kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  16B
+  512.01kB   runtime.mallocgcSmallScanNoHeaderSC2
+             runtime.mallocgc
+             runtime.growslice
+             runtime.(*timers).addHeap
+             runtime.(*timer).maybeAdd
+             runtime.(*timer).modify
+             runtime.(*timer).reset (inline)
+             runtime.(*scavengerState).sleep
+             runtime.bgscavenge
+-----------+-------------------------------------------------------
+     bytes:  12kB
+  113.82MB   poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  48B
+  512.02kB   syscall.UTF16ToString
+             internal/syscall/windows/registry.Key.GetMUIStringValue
+             time.matchZoneKey
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  48B
+  512.02kB   syscall.UTF16FromString
+             syscall.UTF16PtrFromString (inline)
+             internal/syscall/windows/registry.ExpandString
+             internal/syscall/windows/registry.Key.GetMUIStringValue
+             time.matchZoneKey
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  16B
+  512.01kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   poule-renard-vipere.(*SpatialGrid).Build (inline)
+             poule-renard-vipere.BuildAll (inline)
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  40kB
+    1.04MB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  3.38kB
+  513.69kB   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildCampFlows (inline)
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  776kB
+  994.45kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  304kB
+  678.95kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.mstart1
+             runtime.mstart0
+             runtime.mstart
+-----------+-------------------------------------------------------
+     bytes:  160B
+  512.08kB   compress/gzip.NewWriterLevel
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  32kB
+  528.17kB   regexp.(*bitState).reset
+             regexp.(*Regexp).backtrack
+             regexp.(*Regexp).find
+             regexp.(*Regexp).doMatch (inline)
+             regexp.(*Regexp).MatchString (inline)
+             testing/internal/testdeps.TestDeps.MatchString
+             testing.simpleMatch.verify
+             testing.newMatcher
+             testing.runBenchmarks
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  1MB
+    1.16MB   runtime/pprof.StartCPUProfile
+             testing/internal/testdeps.TestDeps.StartCPUProfile
+             testing.(*M).before
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  896B
+  512.44kB   testing.init
+             runtime.doInit1
+             runtime.doInit (inline)
+             runtime.main
+-----------+-------------------------------------------------------

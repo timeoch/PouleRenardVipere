@@ -1,0 +1,4 @@
+# fieldalignment, version naïve (tag naive_layout)
+C:\Users\timti\PouleRenardVipere\agent_naive.go:13:12: Agent has size 88 (allocator size class 96) but the optimal size is 64 leading to a waste of 32 bytes (33%)
+# fieldalignment, version optimisée
+agent.go : aucun octet perdu

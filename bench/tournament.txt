@@ -1,0 +1,23 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkTournament/p01-12         	       1	7388908800 ns/op	         0.5414 parties/s
+BenchmarkTournament/p01-12         	       1	7005518000 ns/op	         0.5710 parties/s
+BenchmarkTournament/p01-12         	       1	7007898900 ns/op	         0.5708 parties/s
+BenchmarkTournament/p02-12         	       1	7392687100 ns/op	         1.082 parties/s
+BenchmarkTournament/p02-12         	       1	7346503500 ns/op	         1.089 parties/s
+BenchmarkTournament/p02-12         	       1	7299330300 ns/op	         1.096 parties/s
+BenchmarkTournament/p04-12         	       1	7861033400 ns/op	         2.035 parties/s
+BenchmarkTournament/p04-12         	       1	7802515600 ns/op	         2.051 parties/s
+BenchmarkTournament/p04-12         	       1	7828591000 ns/op	         2.044 parties/s
+BenchmarkTournament/p06-12         	       1	9469308700 ns/op	         2.535 parties/s
+BenchmarkTournament/p06-12         	       1	9010998900 ns/op	         2.663 parties/s
+BenchmarkTournament/p06-12         	       1	9064396300 ns/op	         2.648 parties/s
+BenchmarkTournament/p08-12         	       1	10975548000 ns/op	         2.916 parties/s
+BenchmarkTournament/p08-12         	       1	12026487000 ns/op	         2.661 parties/s
+BenchmarkTournament/p08-12         	       1	11903835300 ns/op	         2.688 parties/s
+BenchmarkTournament/p11-12         	       1	15595320800 ns/op	         2.821 parties/s
+BenchmarkTournament/p11-12         	       1	15165825000 ns/op	         2.901 parties/s
+BenchmarkTournament/p11-12         	       1	15087755100 ns/op	         2.916 parties/s
+PASS

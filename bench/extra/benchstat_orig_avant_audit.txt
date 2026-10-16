@@ -1,0 +1,40 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+                          │ C:/Users/timti/AppData/Local/Temp/prv/extra/orig.txt │
+                          │                        sec/op                        │
+Update/Debut-12                                                      2.406m ± 1%
+Update/MiPartie_t1500-12                                             2.309m ± 3%
+Update/Classique_t1500-12                                            1.963m ± 2%
+geomean                                                              2.217m
+
+                          │ C:/Users/timti/AppData/Local/Temp/prv/extra/orig.txt │
+                          │                       ms/tick                        │
+Update/Debut-12                                                       2.405 ± 1%
+Update/MiPartie_t1500-12                                              2.309 ± 3%
+Update/Classique_t1500-12                                             1.962 ± 2%
+geomean                                                               2.217
+
+                          │ C:/Users/timti/AppData/Local/Temp/prv/extra/orig.txt │
+                          │                         tps                          │
+Update/Debut-12                                                       415.7 ± 1%
+Update/MiPartie_t1500-12                                              433.1 ± 3%
+Update/Classique_t1500-12                                             509.5 ± 2%
+geomean                                                               451.0
+
+                          │ C:/Users/timti/AppData/Local/Temp/prv/extra/orig.txt │
+                          │                         B/op                         │
+Update/Debut-12                                                   2.399Ki ± 0%
+Update/MiPartie_t1500-12                                            0.000 ± 0%
+Update/Classique_t1500-12                                           0.000 ± 0%
+geomean                                                                        ¹
+¹ summaries must be >0 to compute geomean
+
+                          │ C:/Users/timti/AppData/Local/Temp/prv/extra/orig.txt │
+                          │                      allocs/op                       │
+Update/Debut-12                                                     0.000 ± 0%
+Update/MiPartie_t1500-12                                            0.000 ± 0%
+Update/Classique_t1500-12                                           0.000 ± 0%
+geomean                                                                        ¹
+¹ summaries must be >0 to compute geomean

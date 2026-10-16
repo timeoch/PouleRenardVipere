@@ -1,0 +1,36 @@
+File: v1.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v1.test.exe2026-10-16 15:18:11.0697079 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:35:13 CEST
+Duration: 8.23s, Total samples = 9360ms (113.73%)
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 6550ms, 69.98% of 9360ms total
+Dropped 115 nodes (cum <= 46.80ms)
+Showing top 25 nodes out of 97
+      flat  flat%   sum%        cum   cum%
+     980ms 10.47% 10.47%     1370ms 14.64%  poule-renard-vipere.(*World).herd
+     490ms  5.24% 15.71%     1320ms 14.10%  poule-renard-vipere.(*SpatialGrid).Nearest
+     460ms  4.91% 20.62%     1170ms 12.50%  poule-renard-vipere.(*World).threat
+     440ms  4.70% 25.32%      460ms  4.91%  poule-renard-vipere.(*SpatialGrid).Nearest.func1 (inline)
+     420ms  4.49% 29.81%      700ms  7.48%  poule-renard-vipere.BuildAll
+     340ms  3.63% 33.44%      370ms  3.95%  math.sin
+     330ms  3.53% 36.97%     1030ms 11.00%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+     240ms  2.56% 39.53%      310ms  3.31%  poule-renard-vipere.(*World).Blocked
+     240ms  2.56% 42.09%      240ms  2.56%  poule-renard-vipere.cellCoord (inline)
+     230ms  2.46% 44.55%      230ms  2.46%  poule-renard-vipere.(*World).rescues
+     220ms  2.35% 46.90%      220ms  2.35%  poule-renard-vipere.(*World).flowDir
+     210ms  2.24% 49.15%     5590ms 59.72%  poule-renard-vipere.(*mind).decide
+     200ms  2.14% 51.28%      200ms  2.14%  poule-renard-vipere.(*SpatialGrid).rowCount (inline)
+     190ms  2.03% 53.31%      190ms  2.03%  poule-renard-vipere.(*agentRand).Float64 (inline)
+     190ms  2.03% 55.34%      240ms  2.56%  poule-renard-vipere.unit (inline)
+     180ms  1.92% 57.26%      190ms  2.03%  runtime.unlock2
+     160ms  1.71% 58.97%      240ms  2.56%  poule-renard-vipere.(*mind).steer
+     160ms  1.71% 60.68%      180ms  1.92%  runtime.lock2
+     160ms  1.71% 62.39%      190ms  2.03%  runtime.preemptM
+     150ms  1.60% 64.00%      150ms  1.60%  runtime.memclrNoHeapPointers
+     140ms  1.50% 65.49%      150ms  1.60%  poule-renard-vipere.(*World).buildFlow
+     110ms  1.18% 66.67%      110ms  1.18%  math.cos
+     110ms  1.18% 67.84%      110ms  1.18%  runtime.memmove
+     100ms  1.07% 68.91%     1040ms 11.11%  poule-renard-vipere.(*mind).roam
+     100ms  1.07% 69.98%      590ms  6.30%  runtime.growslice

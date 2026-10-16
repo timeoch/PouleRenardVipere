@@ -1,0 +1,454 @@
+./main.go:145:6: can inline cellCoord
+./main.go:156:6: can inline CellIndex
+./grid.go:137:6: can inline (*SpatialGrid).RowItems
+./grid.go:150:6: can inline (*SpatialGrid).rowCount
+./grid.go:156:6: can inline (*SpatialGrid).colCount
+./grid.go:171:10: can inline (*SpatialGrid).Nearest.func1
+./main.go:90:6: can inline PreyOf
+./main.go:93:6: can inline PredatorOf
+./main.go:120:6: can inline (*Camp).Contains
+./main.go:414:6: can inline (*World).isVulnerable
+./main.go:254:17: can inline NewWorldWith.func1
+./main.go:255:14: can inline NewWorldWith.func2
+./main.go:256:17: can inline NewWorldWith.func3
+./main.go:406:6: can inline (*World).predOf
+./workers.go:67:6: can inline (*mind).init
+./workers.go:71:13: can inline (*mind).init.func1
+./main.go:1210:6: can inline hypot
+./main.go:1212:6: can inline unit
+./main.go:338:14: can inline (*World).indexObstacles.func1
+./main.go:347:29: can inline (*World).indexObstacles.func2
+./main.go:357:29: can inline (*World).indexObstacles.func3
+./main.go:301:28: can inline NewWorldWith.func4
+./main.go:399:6: can inline (*World).preyOf
+./main.go:906:6: can inline (*Agent).recover
+./main.go:553:6: can inline (*World).mark
+./workers.go:36:6: can inline (*agentRand).seed
+./workers.go:40:6: can inline (*agentRand).Float64
+./workers.go:183:4: can inline (*World).spawnEach.func1.deferwrap1
+./workers.go:182:3: can inline (*World).spawnEach.gowrap1
+./workers.go:125:7: can inline poolJobs.func1.1
+./main.go:1082:6: can inline (*World).release
+./main.go:1185:6: can inline (*World).finish
+./main.go:1284:22: can inline main.func2
+./main.go:1261:6: can inline main.func1
+./main.go:1273:3: can inline main.deferwrap1
+./main.go:1228:35: inlining call to DefaultConfig
+./main.go:1228:35: inlining call to AllRules
+./main.go:1228:35: inlining call to (*Rules).fields
+./main.go:157:18: inlining call to cellCoord
+./main.go:157:52: inlining call to cellCoord
+./grid.go:42:23: inlining call to CellIndex
+./grid.go:42:23: inlining call to cellCoord
+./grid.go:42:23: inlining call to cellCoord
+./grid.go:106:23: inlining call to CellIndex
+./grid.go:106:23: inlining call to cellCoord
+./grid.go:106:23: inlining call to cellCoord
+./grid.go:147:18: inlining call to cellCoord
+./grid.go:147:44: inlining call to cellCoord
+./grid.go:147:70: inlining call to cellCoord
+./grid.go:147:96: inlining call to cellCoord
+./grid.go:166:18: inlining call to cellCoord
+./grid.go:167:18: inlining call to cellCoord
+./grid.go:201:8: inlining call to (*SpatialGrid).Nearest.func1
+./grid.go:205:27: inlining call to (*SpatialGrid).rowCount
+./grid.go:207:9: inlining call to (*SpatialGrid).Nearest.func1
+./grid.go:210:33: inlining call to (*SpatialGrid).rowCount
+./grid.go:212:9: inlining call to (*SpatialGrid).Nearest.func1
+./grid.go:219:27: inlining call to (*SpatialGrid).colCount
+./grid.go:221:9: inlining call to (*SpatialGrid).Nearest.func1
+./grid.go:224:33: inlining call to (*SpatialGrid).colCount
+./grid.go:226:9: inlining call to (*SpatialGrid).Nearest.func1
+./grid.go:233:27: inlining call to math.Sqrt
+./main.go:415:69: inlining call to (*Camp).Contains
+./main.go:421:26: inlining call to CellIndex
+./main.go:421:26: inlining call to cellCoord
+./main.go:421:26: inlining call to cellCoord
+./main.go:428:63: inlining call to (*World).isVulnerable
+./main.go:428:63: inlining call to (*Camp).Contains
+./main.go:408:16: inlining call to PreyOf
+./main.go:410:19: inlining call to PredatorOf
+./main.go:435:28: inlining call to (*World).predOf
+./main.go:435:28: inlining call to PreyOf
+./main.go:435:28: inlining call to PredatorOf
+./workers.go:141:21: inlining call to runtime.NumCPU
+./workers.go:146:18: inlining call to (*mind).init
+./main.go:1210:52: inlining call to math.Sqrt
+./main.go:1213:12: inlining call to hypot
+./main.go:1213:12: inlining call to math.Sqrt
+./main.go:339:22: inlining call to cellCoord
+./main.go:339:54: inlining call to cellCoord
+./main.go:340:23: inlining call to cellCoord
+./main.go:340:55: inlining call to cellCoord
+./main.go:371:17: inlining call to CellIndex
+./main.go:371:17: inlining call to cellCoord
+./main.go:371:17: inlining call to cellCoord
+./main.go:247:17: inlining call to Config.Clamp
+./main.go:251:22: inlining call to rand.NewPCG
+./main.go:252:18: inlining call to rand.New
+./main.go:266:44: inlining call to math.Sqrt
+./main.go:278:30: inlining call to rand.(*Rand).Float64
+./main.go:279:29: inlining call to rand.(*Rand).Float64
+./main.go:280:19: inlining call to rand.(*Rand).Float64
+./main.go:283:30: inlining call to rand.(*Rand).Float64
+./main.go:284:30: inlining call to rand.(*Rand).Float64
+./main.go:308:24: inlining call to rand.(*Rand).Float64
+./main.go:309:50: inlining call to rand.(*Rand).Float64
+./main.go:309:36: inlining call to math.Sqrt
+./main.go:310:26: inlining call to math.Cos
+./main.go:310:50: inlining call to math.Sin
+./main.go:318:34: inlining call to rand.(*Rand).Float64
+./main.go:319:28: inlining call to rand.(*Rand).Float64
+./main.go:320:44: inlining call to rand.(*Rand).IntN
+./main.go:327:18: inlining call to (*World).buildCampFlows
+./main.go:278:30: inlining call to rand.(*Rand).Uint64
+./main.go:279:29: inlining call to rand.(*Rand).Uint64
+./main.go:280:19: inlining call to rand.(*Rand).Uint64
+./main.go:283:30: inlining call to rand.(*Rand).Uint64
+./main.go:284:30: inlining call to rand.(*Rand).Uint64
+./main.go:308:24: inlining call to rand.(*Rand).Uint64
+./main.go:309:50: inlining call to rand.(*Rand).Uint64
+./main.go:318:34: inlining call to rand.(*Rand).Uint64
+./main.go:319:28: inlining call to rand.(*Rand).Uint64
+./main.go:244:69: inlining call to DefaultConfig
+./main.go:244:69: inlining call to AllRules
+./main.go:244:69: inlining call to (*Rules).fields
+./main.go:388:16: inlining call to hypot
+./main.go:388:16: inlining call to math.Sqrt
+./main.go:401:20: inlining call to PredatorOf
+./main.go:403:15: inlining call to PreyOf
+./main.go:544:41: inlining call to (*Camp).Contains
+./main.go:544:13: inlining call to (*Agent).recover
+./main.go:513:20: inlining call to (*World).IsNight
+./main.go:522:46: inlining call to Genome.restThreshold
+./main.go:522:46: inlining call to math.Round
+./main.go:522:46: inlining call to math.Float64bits
+./main.go:522:46: inlining call to math.Float64frombits
+./main.go:937:12: inlining call to hypot
+./main.go:939:18: inlining call to sincos
+./main.go:943:28: inlining call to CellIndex
+./main.go:949:36: inlining call to (*agentRand).Float64
+./main.go:950:36: inlining call to (*agentRand).Float64
+./main.go:937:12: inlining call to math.Sqrt
+./main.go:943:28: inlining call to cellCoord
+./main.go:943:28: inlining call to cellCoord
+./main.go:931:11: inlining call to (*Agent).recover
+./main.go:887:8: inlining call to (*World).mark
+./main.go:890:12: inlining call to (*Agent).recover
+./main.go:657:23: inlining call to (*World).predOf
+./main.go:661:31: inlining call to (*SpatialGrid).RowItems
+./main.go:671:56: inlining call to CellIndex
+./main.go:674:18: inlining call to math.Sqrt
+./main.go:657:23: inlining call to PreyOf
+./main.go:657:23: inlining call to PredatorOf
+./main.go:671:56: inlining call to cellCoord
+./main.go:671:56: inlining call to cellCoord
+./main.go:715:31: inlining call to (*SpatialGrid).RowItems
+./main.go:732:16: inlining call to unit
+./main.go:732:16: inlining call to hypot
+./main.go:732:16: inlining call to math.Sqrt
+./main.go:685:15: inlining call to unit
+./main.go:686:13: inlining call to hypot
+./main.go:688:17: inlining call to unit
+./main.go:698:18: inlining call to unit
+./main.go:705:8: inlining call to (*World).mark
+./main.go:685:15: inlining call to hypot
+./main.go:686:13: inlining call to math.Sqrt
+./main.go:688:17: inlining call to hypot
+./main.go:698:18: inlining call to hypot
+./main.go:685:15: inlining call to math.Sqrt
+./main.go:688:17: inlining call to math.Sqrt
+./main.go:698:18: inlining call to math.Sqrt
+./main.go:874:31: inlining call to (*agentRand).Float64
+./main.go:875:18: inlining call to sincos
+./main.go:876:18: inlining call to (*World).preyOf
+./main.go:878:17: inlining call to unit
+./main.go:876:18: inlining call to PredatorOf
+./main.go:876:18: inlining call to PreyOf
+./main.go:878:17: inlining call to hypot
+./main.go:878:17: inlining call to math.Sqrt
+./main.go:738:13: inlining call to hypot
+./main.go:741:32: inlining call to (*agentRand).Float64
+./main.go:742:19: inlining call to sincos
+./main.go:750:8: inlining call to (*World).mark
+./main.go:738:13: inlining call to math.Sqrt
+./main.go:804:16: inlining call to hypot
+./main.go:804:16: inlining call to math.Sqrt
+./main.go:815:12: inlining call to hypot
+./main.go:823:9: inlining call to (*World).mark
+./main.go:829:9: inlining call to (*World).mark
+./main.go:833:8: inlining call to (*World).mark
+./main.go:815:12: inlining call to math.Sqrt
+./main.go:841:10: inlining call to hypot
+./main.go:850:10: inlining call to (*World).mark
+./main.go:841:10: inlining call to math.Sqrt
+./main.go:771:12: inlining call to hypot
+./main.go:773:16: inlining call to math.Min
+./main.go:787:17: inlining call to math.Min
+./main.go:793:8: inlining call to (*World).mark
+./main.go:771:12: inlining call to math.Sqrt
+./main.go:864:39: inlining call to (*agentRand).Float64
+./main.go:865:18: inlining call to sincos
+./main.go:869:8: inlining call to (*World).mark
+./main.go:566:9: inlining call to (*World).mark
+./main.go:571:9: inlining call to (*World).mark
+./main.go:574:12: inlining call to (*agentRand).seed
+./main.go:576:25: inlining call to (*Camp).Contains
+./main.go:588:9: inlining call to (*World).mark
+./main.go:613:18: inlining call to (*World).preyOf
+./main.go:644:10: inlining call to (*World).mark
+./main.go:651:8: inlining call to (*World).mark
+./main.go:613:18: inlining call to PredatorOf
+./main.go:613:18: inlining call to PreyOf
+./main.go:964:26: inlining call to math.Max
+./main.go:964:17: inlining call to math.Min
+./main.go:965:26: inlining call to math.Max
+./main.go:965:17: inlining call to math.Min
+./main.go:990:25: inlining call to (*World).preyOf
+./main.go:990:25: inlining call to PredatorOf
+./main.go:990:25: inlining call to PreyOf
+./workers.go:187:11: inlining call to (*mind).init
+./workers.go:183:17: inlining call to sync.(*WaitGroup).Done
+./workers.go:86:26: inlining call to atomic.(*Int32).Add
+./workers.go:89:19: inlining call to atomic.(*Int64).Add
+./workers.go:128:15: inlining call to sync.(*WaitGroup).Done
+./workers.go:121:14: inlining call to sync.(*Once).Do
+./workers.go:121:14: inlining call to atomic.(*Bool).Load
+./workers.go:159:14: inlining call to atomic.(*Int64).Store
+./workers.go:160:14: inlining call to atomic.(*Int32).Store
+./main.go:1042:31: inlining call to (*SpatialGrid).RowItems
+./main.go:1060:11: inlining call to (*World).addHeat
+./main.go:1065:31: inlining call to math.Sqrt
+./main.go:1068:33: inlining call to math.Cos
+./main.go:1069:33: inlining call to math.Sin
+./main.go:1010:21: inlining call to (*World).isVulnerable
+./main.go:1027:10: inlining call to (*World).emit
+./main.go:1030:10: inlining call to (*World).emit
+./main.go:1010:21: inlining call to (*Camp).Contains
+./main.go:1110:14: inlining call to (*World).release
+./main.go:1114:14: inlining call to (*World).addHeat
+./main.go:1116:12: inlining call to (*World).emit
+./main.go:1119:12: inlining call to (*World).emit
+./main.go:1187:8: inlining call to (*World).emit
+./main.go:1204:9: inlining call to (*World).emit
+./main.go:1160:10: inlining call to (*World).emit
+./main.go:1164:11: inlining call to (*World).finish
+./main.go:1177:11: inlining call to (*World).finish
+./main.go:1164:11: inlining call to (*World).emit
+./main.go:1177:11: inlining call to (*World).emit
+./main.go:1286:17: inlining call to http.NotFound
+./main.go:1289:18: inlining call to http.Header.Set
+./main.go:1289:18: inlining call to textproto.MIMEHeader.Set
+./main.go:1231:21: inlining call to flag.Int
+./main.go:1232:19: inlining call to flag.Int
+./main.go:1233:20: inlining call to flag.Int64
+./main.go:1234:99: inlining call to RuleList
+./main.go:1234:23: inlining call to flag.String
+./main.go:1235:23: inlining call to flag.Int
+./main.go:1236:23: inlining call to flag.Float64
+./main.go:1237:18: inlining call to flag.Int
+./main.go:1238:21: inlining call to flag.Int
+./main.go:1239:23: inlining call to flag.String
+./main.go:1240:26: inlining call to flag.String
+./main.go:1241:22: inlining call to flag.String
+./main.go:1242:22: inlining call to flag.Int
+./main.go:1243:12: inlining call to flag.Parse
+./main.go:1256:42: inlining call to MinutesToTicks
+./main.go:1257:39: inlining call to Config.Clamp
+./main.go:1269:47: inlining call to context.Background
+./main.go:1280:25: inlining call to http.NewServeMux
+./main.go:1292:29: inlining call to wsHandler
+./main.go:1295:53: inlining call to clockText
+./main.go:1294:12: inlining call to fmt.Printf
+./main.go:1296:31: inlining call to http.ListenAndServe
+./main.go:1256:42: inlining call to math.Round
+./main.go:1256:42: inlining call to math.Float64bits
+./main.go:1256:42: inlining call to math.Float64frombits
+./main.go:1261:46: inlining call to http.ListenAndServe
+./main.go:1261:26: inlining call to log.Println
+./main.go:1273:20: inlining call to (*Store).Close
+./grid.go:70:7: g does not escape
+./grid.go:29:11: (*SpatialGrid).Build ignoring self-assignment in g.cellOf = g.cellOf[:n]
+./grid.go:30:10: (*SpatialGrid).Build ignoring self-assignment in g.Items = g.Items[:n]
+./grid.go:63:10: (*SpatialGrid).Build ignoring self-assignment in g.Items = g.Items[:active]
+./grid.go:23:7: g does not escape
+./grid.go:23:29: agents does not escape
+./grid.go:26:18: make([]int32, n) escapes to heap
+./grid.go:27:17: make([]int32, n) escapes to heap
+./grid.go:95:11: BuildAll ignoring self-assignment in g.Items = g.Items[:n]
+./grid.go:87:15: leaking param content: gs
+./grid.go:87:46: agents does not escape
+./grid.go:92:19: make([]int32, n) escapes to heap
+./grid.go:93:18: make([]int32, n) escapes to heap
+./grid.go:137:7: leaking param: g to result ~r0 level=1
+./grid.go:146:7: g does not escape
+./grid.go:150:7: g does not escape
+./grid.go:156:7: g does not escape
+./grid.go:165:7: g does not escape
+./grid.go:165:31: leaking param: agents
+./grid.go:165:70: accept does not escape
+./main.go:120:7: c does not escape
+./main.go:414:7: w does not escape
+./main.go:414:30: b does not escape
+./main.go:254:22: b does not escape
+./main.go:255:19: b does not escape
+./main.go:256:22: b does not escape
+./main.go:420:7: m does not escape
+./main.go:420:24: b does not escape
+./main.go:428:7: m does not escape
+./main.go:428:23: b does not escape
+./main.go:431:7: m does not escape
+./main.go:431:30: b does not escape
+./workers.go:136:7: leaking param: w
+./workers.go:71:18: b does not escape
+./workers.go:144:16: make([]mind, w.Workers) escapes to heap
+./workers.go:146:18: m.canSee escapes to heap
+./workers.go:146:18: m.isGuardTarget escapes to heap
+./workers.go:146:18: func literal escapes to heap
+./main.go:338:19: o does not escape
+./main.go:338:32: fn does not escape
+./main.go:334:7: w does not escape
+./main.go:338:14: func literal does not escape
+./main.go:347:29: func literal does not escape
+./main.go:355:19: make([]int16, total) escapes to heap
+./main.go:357:29: func literal does not escape
+./main.go:367:7: w does not escape
+./main.go:1127:7: w does not escape
+./main.go:490:7: w does not escape
+./main.go:301:64: NewWorldWith.func4 ignoring self-assignment in order[i], order[j] = order[j], order[i]
+./main.go:301:64: NewWorldWith.func4 ignoring self-assignment in order[i], order[j] = order[j], order[i]
+./main.go:248:7: &World{...} escapes to heap
+./main.go:251:22: &rand.PCG{...} does not escape
+./main.go:252:18: &rand.Rand{...} escapes to heap
+./main.go:253:14: w.isVulnerable escapes to heap
+./main.go:254:17: func literal escapes to heap
+./main.go:255:14: func literal escapes to heap
+./main.go:256:17: func literal escapes to heap
+./main.go:259:16: make([]float32, 2 * total) escapes to heap
+./main.go:260:20: make([]int32, total) escapes to heap
+./main.go:261:20: make([]int32, 0, 10000) escapes to heap
+./main.go:286:24: append escapes to heap
+./main.go:297:15: make([]Species, total) does not escape
+./main.go:301:28: func literal does not escape
+./main.go:303:17: make([]Agent, total) escapes to heap
+./main.go:320:44: "invalid argument to IntN" escapes to heap
+./main.go:386:7: w does not escape
+./main.go:399:7: w does not escape
+./main.go:406:7: w does not escape
+./main.go:531:7: w does not escape
+./main.go:511:7: leaking param content: w
+./main.go:935:7: m does not escape
+./main.go:935:22: a does not escape
+./main.go:914:7: m does not escape
+./main.go:914:23: a does not escape
+./main.go:930:7: m does not escape
+./main.go:930:21: a does not escape
+./main.go:885:7: m does not escape
+./main.go:885:34: a does not escape
+./main.go:901:7: w does not escape
+./main.go:901:24: a does not escape
+./main.go:656:7: w does not escape
+./main.go:656:24: a does not escape
+./main.go:709:7: w does not escape
+./main.go:709:22: a does not escape
+./main.go:683:7: m does not escape
+./main.go:683:28: a does not escape
+./main.go:683:38: home does not escape
+./main.go:872:7: m does not escape
+./main.go:872:21: a does not escape
+./main.go:736:7: m does not escape
+./main.go:736:28: a does not escape
+./main.go:736:38: home does not escape
+./main.go:797:7: w does not escape
+./main.go:797:25: a does not escape
+./main.go:811:7: leaking param content: m
+./main.go:811:34: a does not escape
+./main.go:838:7: leaking param content: m
+./main.go:838:33: a does not escape
+./main.go:755:7: leaking param content: m
+./main.go:755:21: a does not escape
+./main.go:755:45: accept does not escape
+./main.go:767:7: leaking param content: m
+./main.go:767:29: leaking param: a
+./main.go:857:7: leaking param content: m
+./main.go:857:33: leaking param: a
+./main.go:857:43: home does not escape
+./main.go:561:7: leaking param content: m
+./main.go:953:7: w does not escape
+./main.go:985:7: leaking param content: w
+./workers.go:178:7: leaking param: w
+./workers.go:71:18: b does not escape
+./workers.go:179:6: moved to heap: wg
+./workers.go:182:6: func literal escapes to heap
+./workers.go:186:10: &mind{} escapes to heap
+./workers.go:187:11: m.canSee escapes to heap
+./workers.go:187:11: m.isGuardTarget escapes to heap
+./workers.go:187:11: func literal escapes to heap
+./workers.go:84:7: leaking param content: b
+./workers.go:125:7: func literal escapes to heap
+./workers.go:121:15: func literal does not escape
+./workers.go:152:7: leaking param: w
+./main.go:1036:7: w does not escape
+./main.go:1058:7: w does not escape
+./main.go:999:7: leaking param: w
+./main.go:1093:7: leaking param content: w
+./main.go:1192:7: w does not escape
+./main.go:1151:7: w does not escape
+./main.go:453:7: leaking param: w
+./main.go:553:7: w does not escape
+./main.go:906:7: a does not escape
+./main.go:1082:7: w does not escape
+./main.go:1082:25: b does not escape
+./main.go:1185:7: w does not escape
+./main.go:1284:27: leaking param: rw
+./main.go:1284:51: r does not escape
+./main.go:1289:18: []string{...} escapes to heap
+./main.go:1234:101: "règles actives : toutes, aucune, ou liste (" + ~r0 + ")" escapes to heap
+./main.go:1235:67: ... argument does not escape
+./main.go:1235:104: 100 escapes to heap
+./main.go:1235:119: 10000 escapes to heap
+./main.go:1236:69: ... argument does not escape
+./main.go:1236:116: 30 escapes to heap
+./main.go:1247:15: ... argument does not escape
+./main.go:1261:6: func literal escapes to heap
+./main.go:1261:26: ... argument does not escape
+./main.go:1261:46: &http.Server{...} escapes to heap
+./main.go:1261:26: func literal does not escape
+./main.go:1269:47: context.backgroundCtx{} escapes to heap
+./main.go:1270:16: ... argument does not escape
+./main.go:1270:28: "PostgreSQL :" escapes to heap
+./main.go:1280:25: &http.ServeMux{} escapes to heap
+./main.go:1282:38: store.curveHandler escapes to heap
+./main.go:1284:22: func literal escapes to heap
+./main.go:1292:29: func literal escapes to heap
+./main.go:1294:12: ... argument does not escape
+./main.go:1295:3: *port escapes to heap
+./main.go:1295:10: *seed escapes to heap
+./main.go:1295:31: serverDefaults.PerSpecies escapes to heap
+./main.go:1295:53: ~r0 escapes to heap
+./main.go:1295:53: ... argument does not escape
+./main.go:1295:53: s / 60 escapes to heap
+./main.go:1295:53: s % 60 escapes to heap
+./main.go:1295:80: rules escapes to heap
+./main.go:1295:87: *trames escapes to heap
+./main.go:1296:11: ... argument does not escape
+./main.go:1296:43: ... argument does not escape
+./main.go:1296:60: *port escapes to heap
+./main.go:1296:31: &http.Server{...} escapes to heap
+./workers.go:36:7: r does not escape
+./workers.go:40:7: r does not escape
+./workers.go:67:7: leaking param: m
+./workers.go:67:21: leaking param: w
+./workers.go:71:18: b does not escape
+./workers.go:69:13: m.canSee escapes to heap
+./workers.go:70:15: m.isGuardTarget escapes to heap
+./workers.go:71:13: func literal escapes to heap
+./main.go:1027:10: index bounds check elided
+./main.go:1030:10: index bounds check elided
+./main.go:1116:12: index bounds check elided
+./main.go:1119:12: index bounds check elided
+./main.go:1160:10: index bounds check elided
+./main.go:1164:11: index bounds check elided
+./main.go:1177:11: index bounds check elided
+./main.go:1187:8: index bounds check elided
+./main.go:1204:9: index bounds check elided

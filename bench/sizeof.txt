@@ -1,0 +1,5 @@
+v0 :     sim_test.go:53: sizeof(Agent) = 88 octets, 9000 agents = 773 Ko contigus
+v1 :     sim_test.go:53: sizeof(Agent) = 88 octets, 9000 agents = 773 Ko contigus
+v2 :     sim_test.go:53: sizeof(Agent) = 88 octets, 9000 agents = 773 Ko contigus
+v3 :     sim_test.go:53: sizeof(Agent) = 64 octets, 9000 agents = 562 Ko contigus
+v4 :     sim_test.go:53: sizeof(Agent) = 64 octets, 9000 agents = 562 Ko contigus

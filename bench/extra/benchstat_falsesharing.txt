@@ -1,0 +1,59 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+               │   pad.txt    │              nopad.txt              │
+               │    sec/op    │    sec/op     vs base               │
+Workers/w04-12   966.5µ ± 10%   962.8µ ± 12%       ~ (p=0.853 n=10)
+Workers/w08-12   1.031m ±  3%   1.034m ±  2%       ~ (p=0.796 n=10)
+Workers/w12-12   1.032m ±  2%   1.040m ±  6%       ~ (p=0.481 n=10)
+geomean          1.009m         1.012m        +0.24%
+
+               │   pad.txt    │              nopad.txt              │
+               │  gc-ms/tick  │ gc-ms/tick  vs base                 │
+Workers/w04-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+Workers/w08-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+Workers/w12-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                     ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+               │   pad.txt    │              nopad.txt              │
+               │   gc/tick    │  gc/tick    vs base                 │
+Workers/w04-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+Workers/w08-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+Workers/w12-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                     ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+               │   pad.txt    │              nopad.txt              │
+               │   ms/tick    │   ms/tick     vs base               │
+Workers/w04-12   966.5m ± 10%   962.8m ± 12%       ~ (p=0.853 n=10)
+Workers/w08-12    1.031 ±  3%    1.034 ±  2%       ~ (p=0.753 n=10)
+Workers/w12-12    1.032 ±  2%    1.040 ±  6%       ~ (p=0.493 n=10)
+geomean           1.009          1.012        +0.23%
+
+               │   pad.txt   │              nopad.txt              │
+               │     tps     │     tps       vs base               │
+Workers/w04-12   1.035k ± 9%   1.039k ± 11%       ~ (p=0.839 n=10)
+Workers/w08-12    970.2 ± 3%    967.2 ±  2%       ~ (p=0.796 n=10)
+Workers/w12-12    969.0 ± 2%    961.4 ±  6%       ~ (p=0.481 n=10)
+geomean           990.9         988.6        -0.24%
+
+               │   pad.txt    │           nopad.txt            │
+               │     B/op     │    B/op     vs base            │
+Workers/w04-12    0.000 ± ?      1.000 ± ?  ~ (p=0.070 n=10)
+Workers/w08-12   0.5000 ± ?     0.0000 ± ?  ~ (p=1.000 n=10)
+Workers/w12-12   0.5000 ± ?     1.0000 ± ?  ~ (p=0.714 n=10)
+geomean                     ¹               ?                ¹
+¹ summaries must be >0 to compute geomean
+
+               │   pad.txt    │              nopad.txt              │
+               │  allocs/op   │ allocs/op   vs base                 │
+Workers/w04-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+Workers/w08-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+Workers/w12-12   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                     ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

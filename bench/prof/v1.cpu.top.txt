@@ -1,0 +1,51 @@
+File: v1.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v1.test.exe2026-10-16 15:18:11.0697079 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:35:13 CEST
+Duration: 8.23s, Total samples = 9.36s (113.73%)
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 5.27s, 56.30% of 9.36s total
+Dropped 115 nodes (cum <= 0.05s)
+Showing top 40 nodes out of 97
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      7.61s 81.30%  poule-renard-vipere.(*World).Update
+         0     0%     0%      7.61s 81.30%  poule-renard-vipere.BenchmarkUpdate.func1
+         0     0%     0%      7.61s 81.30%  poule-renard-vipere.benchTicks
+         0     0%     0%      7.61s 81.30%  testing.(*B).launch
+         0     0%     0%      7.61s 81.30%  testing.(*B).runN
+         0     0%     0%      6.35s 67.84%  poule-renard-vipere.(*World).parallel
+     0.03s  0.32%  0.32%      6.35s 67.84%  poule-renard-vipere.(*batch).work
+     0.21s  2.24%  2.56%      5.59s 59.72%  poule-renard-vipere.(*mind).decide
+     0.01s  0.11%  2.67%      1.61s 17.20%  poule-renard-vipere.(*mind).flee
+     0.98s 10.47% 13.14%      1.37s 14.64%  poule-renard-vipere.(*World).herd
+     0.49s  5.24% 18.38%      1.32s 14.10%  poule-renard-vipere.(*SpatialGrid).Nearest
+     0.46s  4.91% 23.29%      1.17s 12.50%  poule-renard-vipere.(*World).threat
+     0.04s  0.43% 23.72%      1.14s 12.18%  poule-renard-vipere.(*mind).spot
+     0.10s  1.07% 24.79%      1.04s 11.11%  poule-renard-vipere.(*mind).roam
+     0.33s  3.53% 28.31%      1.03s 11.00%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+         0     0% 28.31%      0.79s  8.44%  runtime.systemstack
+     0.42s  4.49% 32.80%      0.70s  7.48%  poule-renard-vipere.BuildAll
+         0     0% 32.80%      0.68s  7.26%  runtime.gcBgMarkWorker.func2
+         0     0% 32.80%      0.67s  7.16%  runtime.gcDrain
+     0.10s  1.07% 33.87%      0.59s  6.30%  runtime.growslice
+         0     0% 33.87%      0.53s  5.66%  runtime.gcBgMarkWorker
+     0.03s  0.32% 34.19%      0.53s  5.66%  runtime.mallocgc
+         0     0% 34.19%      0.49s  5.24%  runtime.gcDrainMarkWorkerDedicated (inline)
+         0     0% 34.19%      0.48s  5.13%  poule-renard-vipere.sincos
+     0.09s  0.96% 35.15%      0.47s  5.02%  poule-renard-vipere.(*World).move
+         0     0% 35.15%      0.47s  5.02%  runtime.bgsweep
+     0.44s  4.70% 39.85%      0.46s  4.91%  poule-renard-vipere.(*SpatialGrid).Nearest.func1 (inline)
+         0     0% 39.85%      0.37s  3.95%  math.Sin (inline)
+     0.34s  3.63% 43.48%      0.37s  3.95%  math.sin
+         0     0% 43.48%      0.37s  3.95%  poule-renard-vipere.(*World).prepare
+     0.24s  2.56% 46.05%      0.31s  3.31%  poule-renard-vipere.(*World).Blocked
+     0.01s  0.11% 46.15%      0.27s  2.88%  poule-renard-vipere.(*World).captures
+     0.01s  0.11% 46.26%      0.26s  2.78%  poule-renard-vipere.(*mind).guardMove
+         0     0% 46.26%      0.26s  2.78%  runtime.markroot
+     0.02s  0.21% 46.47%      0.24s  2.56%  poule-renard-vipere.(*World).captureTarget
+     0.16s  1.71% 48.18%      0.24s  2.56%  poule-renard-vipere.(*mind).steer
+     0.24s  2.56% 50.75%      0.24s  2.56%  poule-renard-vipere.cellCoord (inline)
+     0.19s  2.03% 52.78%      0.24s  2.56%  poule-renard-vipere.unit (inline)
+     0.10s  1.07% 53.85%      0.24s  2.56%  runtime.scanObject
+     0.23s  2.46% 56.30%      0.23s  2.46%  poule-renard-vipere.(*World).rescues

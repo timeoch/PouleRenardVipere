@@ -1,0 +1,36 @@
+File: v0.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v0.test.exe2026-10-16 15:18:01.340045 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:35:05 CEST
+Duration: 6.09s, Total samples = 6.97s (114.36%)
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 6.02s, 86.37% of 6.97s total
+Dropped 104 nodes (cum <= 0.03s)
+Showing top 25 nodes out of 59
+      flat  flat%   sum%        cum   cum%
+     3.10s 44.48% 44.48%      3.11s 44.62%  poule-renard-vipere.(*SpatialGrid).Nearest
+     2.02s 28.98% 73.46%      2.41s 34.58%  poule-renard-vipere.(*World).threat
+     0.20s  2.87% 76.33%      0.23s  3.30%  runtime.preemptM
+     0.13s  1.87% 78.19%      0.13s  1.87%  runtime.memmove
+     0.10s  1.43% 79.63%      0.12s  1.72%  runtime.scanblock
+     0.09s  1.29% 80.92%      0.09s  1.29%  runtime.typePointers.next
+     0.08s  1.15% 82.07%      0.23s  3.30%  runtime.scanObject
+     0.05s  0.72% 82.78%      0.05s  0.72%  runtime.asyncPreempt
+     0.05s  0.72% 83.50%      0.06s  0.86%  runtime.scanObjectsSmall
+     0.04s  0.57% 84.07%      0.04s  0.57%  runtime.unlock2
+     0.03s  0.43% 84.51%      0.05s  0.72%  runtime.lock2
+     0.03s  0.43% 84.94%      0.04s  0.57%  runtime.pcvalue
+     0.03s  0.43% 85.37%      0.06s  0.86%  runtime.tryDeferToSpanScan
+     0.01s  0.14% 85.51%      4.05s 58.11%  poule-renard-vipere.(*mind).decide
+     0.01s  0.14% 85.65%      0.14s  2.01%  runtime.(*gcControllerState).enlistWorker
+     0.01s  0.14% 85.80%      0.09s  1.29%  runtime.(*mcentral).cacheSpan
+     0.01s  0.14% 85.94%      0.04s  0.57%  runtime.(*mheap).initSpan
+     0.01s  0.14% 86.08%      0.76s 10.90%  runtime.gcDrain
+     0.01s  0.14% 86.23%      0.08s  1.15%  runtime.scanSpan
+     0.01s  0.14% 86.37%      0.06s  0.86%  runtime.sweepone
+         0     0% 86.37%      0.35s  5.02%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+         0     0% 86.37%      5.63s 80.77%  poule-renard-vipere.(*World).Update
+         0     0% 86.37%      1.54s 22.09%  poule-renard-vipere.(*World).captureTarget
+         0     0% 86.37%      1.54s 22.09%  poule-renard-vipere.(*World).captures
+         0     0% 86.37%      5.61s 80.49%  poule-renard-vipere.(*World).parallel

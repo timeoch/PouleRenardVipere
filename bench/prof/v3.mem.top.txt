@@ -1,0 +1,22 @@
+File: v3.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v3.test.exe2026-10-16 15:18:30.2169229 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:40 CEST
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 1024.34kB, 8.78% of 11660.76kB total
+      flat  flat%   sum%        cum   cum%
+  512.28kB  4.39%  4.39%   512.28kB  4.39%  runtime/metrics.runtime_readMetrics
+  512.05kB  4.39%  8.78%   512.05kB  4.39%  runtime.mallocgc
+         0     0%  8.78%   512.28kB  4.39%  poule-renard-vipere.BenchmarkUpdate.func1
+         0     0%  8.78%   512.28kB  4.39%  poule-renard-vipere.benchTicks
+         0     0%  8.78%   512.28kB  4.39%  poule-renard-vipere.gcStats
+         0     0%  8.78%   512.05kB  4.39%  runtime.acquireSudog
+         0     0%  8.78%   512.05kB  4.39%  runtime.gcBgMarkWorker
+         0     0%  8.78%   512.05kB  4.39%  runtime.gcMarkDone
+         0     0%  8.78%   512.05kB  4.39%  runtime.newobject
+         0     0%  8.78%   512.05kB  4.39%  runtime.semacquire (inline)
+         0     0%  8.78%   512.05kB  4.39%  runtime.semacquire1
+         0     0%  8.78%   512.28kB  4.39%  runtime/metrics.Read (inline)
+         0     0%  8.78%   512.28kB  4.39%  testing.(*B).run1.func1
+         0     0%  8.78%   512.28kB  4.39%  testing.(*B).runN

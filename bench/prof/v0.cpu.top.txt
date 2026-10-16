@@ -1,0 +1,51 @@
+File: v0.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v0.test.exe2026-10-16 15:18:01.340045 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:35:05 CEST
+Duration: 6.09s, Total samples = 6.97s (114.36%)
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 5.76s, 82.64% of 6.97s total
+Dropped 104 nodes (cum <= 0.03s)
+Showing top 40 nodes out of 59
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      5.63s 80.77%  poule-renard-vipere.(*World).Update
+         0     0%     0%      5.63s 80.77%  poule-renard-vipere.BenchmarkUpdate.func1
+         0     0%     0%      5.63s 80.77%  poule-renard-vipere.benchTicks
+         0     0%     0%      5.63s 80.77%  testing.(*B).runN
+         0     0%     0%      5.61s 80.49%  poule-renard-vipere.(*World).parallel
+         0     0%     0%      5.61s 80.49%  poule-renard-vipere.(*batch).work
+         0     0%     0%      5.54s 79.48%  testing.(*B).launch
+     0.01s  0.14%  0.14%      4.05s 58.11%  poule-renard-vipere.(*mind).decide
+     3.10s 44.48% 44.62%      3.11s 44.62%  poule-renard-vipere.(*SpatialGrid).Nearest
+     2.02s 28.98% 73.60%      2.41s 34.58%  poule-renard-vipere.(*World).threat
+         0     0% 73.60%      1.59s 22.81%  poule-renard-vipere.(*mind).spot
+         0     0% 73.60%      1.54s 22.09%  poule-renard-vipere.(*World).captureTarget
+         0     0% 73.60%      1.54s 22.09%  poule-renard-vipere.(*World).captures
+         0     0% 73.60%      0.91s 13.06%  runtime.systemstack
+         0     0% 73.60%      0.76s 10.90%  runtime.gcBgMarkWorker.func2
+     0.01s  0.14% 73.74%      0.76s 10.90%  runtime.gcDrain
+         0     0% 73.74%      0.62s  8.90%  runtime.gcDrainMarkWorkerDedicated (inline)
+         0     0% 73.74%      0.55s  7.89%  runtime.gcBgMarkWorker
+         0     0% 73.74%      0.35s  5.02%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+         0     0% 73.74%      0.30s  4.30%  runtime.markroot
+     0.20s  2.87% 76.61%      0.23s  3.30%  runtime.preemptM
+     0.08s  1.15% 77.76%      0.23s  3.30%  runtime.scanObject
+         0     0% 77.76%      0.22s  3.16%  runtime.growslice
+         0     0% 77.76%      0.19s  2.73%  runtime.mallocgc
+         0     0% 77.76%      0.19s  2.73%  runtime.markroot.func1
+         0     0% 77.76%      0.16s  2.30%  runtime.mallocgcSmallNoscan
+     0.01s  0.14% 77.91%      0.14s  2.01%  runtime.(*gcControllerState).enlistWorker
+         0     0% 77.91%      0.14s  2.01%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0% 77.91%      0.13s  1.87%  runtime.bgsweep
+     0.13s  1.87% 79.77%      0.13s  1.87%  runtime.memmove
+         0     0% 79.77%      0.13s  1.87%  runtime.preemptone
+     0.10s  1.43% 81.21%      0.12s  1.72%  runtime.scanblock
+         0     0% 81.21%      0.12s  1.72%  runtime.suspendG
+         0     0% 81.21%      0.11s  1.58%  runtime.markrootBlock
+         0     0% 81.21%      0.10s  1.43%  runtime.(*mcache).nextFree
+         0     0% 81.21%      0.09s  1.29%  runtime.(*mcache).refill
+     0.01s  0.14% 81.35%      0.09s  1.29%  runtime.(*mcentral).cacheSpan
+     0.09s  1.29% 82.64%      0.09s  1.29%  runtime.typePointers.next
+         0     0% 82.64%      0.09s  1.29%  testing.(*B).run1.func1
+         0     0% 82.64%      0.08s  1.15%  poule-renard-vipere.(*mind).guardMove

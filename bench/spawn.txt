@@ -1,0 +1,15 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkSpawnPerAgent-12    	      30	   7745463 ns/op	         2.003 gc-ms/tick	         0.8000 gc/tick	         7.745 ms/tick	       129.1 tps	 3116426 B/op	   90044 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7611497 ns/op	         0.8545 gc-ms/tick	         0.7000 gc/tick	         7.611 ms/tick	       131.4 tps	 3096081 B/op	   90003 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7675160 ns/op	         0.5936 gc-ms/tick	         0.7000 gc/tick	         7.675 ms/tick	       130.3 tps	 3096126 B/op	   90003 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7734900 ns/op	         4.504 gc-ms/tick	         0.7000 gc/tick	         7.735 ms/tick	       129.3 tps	 3103629 B/op	   90019 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7680467 ns/op	         2.504 gc-ms/tick	         0.6667 gc/tick	         7.680 ms/tick	       130.2 tps	 3096081 B/op	   90003 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7733510 ns/op	         1.023 gc-ms/tick	         0.7000 gc/tick	         7.734 ms/tick	       129.3 tps	 3096251 B/op	   90003 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7490020 ns/op	         3.770 gc-ms/tick	         0.7000 gc/tick	         7.490 ms/tick	       133.5 tps	 3096167 B/op	   90004 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7701473 ns/op	         5.927 gc-ms/tick	         0.6667 gc/tick	         7.701 ms/tick	       129.8 tps	 3096092 B/op	   90003 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   7758000 ns/op	         0.9448 gc-ms/tick	         0.6667 gc/tick	         7.758 ms/tick	       128.9 tps	 3096111 B/op	   90003 allocs/op
+BenchmarkSpawnPerAgent-12    	      30	   8216607 ns/op	         1.628 gc-ms/tick	         0.6667 gc/tick	         8.217 ms/tick	       121.7 tps	 3096313 B/op	   90005 allocs/op
+PASS

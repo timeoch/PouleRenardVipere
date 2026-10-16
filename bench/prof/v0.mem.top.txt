@@ -1,0 +1,20 @@
+File: v0.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v0.test.exe2026-10-16 15:18:01.340045 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:11 CEST
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 5630.11MB, 99.54% of 5656.09MB total
+Dropped 22 nodes (cum <= 28.28MB)
+      flat  flat%   sum%        cum   cum%
+ 5627.43MB 99.49% 99.49%  5627.43MB 99.49%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+    2.68MB 0.047% 99.54%  5643.73MB 99.78%  poule-renard-vipere.(*World).Update
+         0     0% 99.54%  5627.43MB 99.49%  poule-renard-vipere.(*World).parallel
+         0     0% 99.54%  5624.40MB 99.44%  poule-renard-vipere.(*World).threat
+         0     0% 99.54%  5627.43MB 99.49%  poule-renard-vipere.(*batch).work
+         0     0% 99.54%  5627.43MB 99.49%  poule-renard-vipere.(*mind).decide
+         0     0% 99.54%  5643.73MB 99.78%  poule-renard-vipere.BenchmarkUpdate.func1
+         0     0% 99.54%  5643.73MB 99.78%  poule-renard-vipere.benchTicks
+         0     0% 99.54%  5529.91MB 97.77%  testing.(*B).launch
+         0     0% 99.54%   113.82MB  2.01%  testing.(*B).run1.func1
+         0     0% 99.54%  5643.73MB 99.78%  testing.(*B).runN

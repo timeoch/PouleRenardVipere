@@ -1,0 +1,11 @@
+File: v4.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v4.test.exe2026-10-16 15:18:39.03764 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:49 CEST
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 512.25kB, 4.22% of 12132.50kB total
+      flat  flat%   sum%        cum   cum%
+  512.25kB  4.22%  4.22%   512.25kB  4.22%  runtime.mallocgc
+         0     0%  4.22%   512.25kB  4.22%  runtime.gcBgMarkWorker
+         0     0%  4.22%   512.25kB  4.22%  runtime.newobject

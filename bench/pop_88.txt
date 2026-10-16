@@ -1,0 +1,35 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkPopulation/n01000-12         	      30	    727463 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7275 ms/tick	      1375 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    713817 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7138 ms/tick	      1401 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    737640 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7376 ms/tick	      1356 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    718403 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7184 ms/tick	      1392 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    714037 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7140 ms/tick	      1400 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    707653 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7077 ms/tick	      1413 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    709947 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7099 ms/tick	      1409 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    755387 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7554 ms/tick	      1324 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    725007 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7250 ms/tick	      1379 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n01000-12         	      30	    705437 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.7054 ms/tick	      1418 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   2052820 ns/op	         0 gc-ms/tick	         0 gc/tick	         2.053 ms/tick	       487.1 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1853240 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.853 ms/tick	       539.6 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1877677 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.878 ms/tick	       532.6 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1888477 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.888 ms/tick	       529.5 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1909323 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.909 ms/tick	       523.7 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1907593 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.908 ms/tick	       524.2 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1986967 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.987 ms/tick	       503.3 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1866983 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.867 ms/tick	       535.6 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1928100 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.928 ms/tick	       518.6 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n03000-12         	      30	   1897313 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.897 ms/tick	       527.1 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6471557 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.472 ms/tick	       154.5 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6481067 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.481 ms/tick	       154.3 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6471160 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.471 ms/tick	       154.5 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6545947 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.546 ms/tick	       152.8 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6487980 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.488 ms/tick	       154.1 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6392950 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.393 ms/tick	       156.4 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6431410 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.431 ms/tick	       155.5 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6646553 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.647 ms/tick	       150.5 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6345003 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.345 ms/tick	       157.6 tps	       0 B/op	       0 allocs/op
+BenchmarkPopulation/n10000-12         	      30	   6365470 ns/op	         0 gc-ms/tick	         0 gc/tick	         6.365 ms/tick	       157.1 tps	       0 B/op	       0 allocs/op
+PASS

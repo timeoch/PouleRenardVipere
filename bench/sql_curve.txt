@@ -1,0 +1,36 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkCurve/sans_index-12         	      46	  28139074 ns/op	  112728 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      38	  28313789 ns/op	  112825 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      36	  29630658 ns/op	  112629 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      40	  27741158 ns/op	  112625 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      42	  28707029 ns/op	  112805 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      45	  29305458 ns/op	  112617 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      46	  28336304 ns/op	  112667 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      45	  27639227 ns/op	  112740 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      38	  28356968 ns/op	  112626 B/op	    1810 allocs/op
+BenchmarkCurve/sans_index-12         	      37	  27478232 ns/op	  112691 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1327	    919735 ns/op	  112701 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1234	    924462 ns/op	  112707 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1314	    891806 ns/op	  112701 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1412	    887966 ns/op	  112702 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1340	    891140 ns/op	  112702 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1252	    978800 ns/op	  112705 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1201	   1041871 ns/op	  112705 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1366	    959364 ns/op	  112703 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1354	    900823 ns/op	  112705 B/op	    1810 allocs/op
+BenchmarkCurve/index-12              	    1386	    894216 ns/op	  112704 B/op	    1810 allocs/op
+BenchmarkCurve/cache_lru-12          	42736716	        26.75 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	40771532	        26.87 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	45682437	        27.15 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	40096230	        28.00 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	42077800	        26.95 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	44244198	        27.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	42547759	        27.19 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	44881623	        26.79 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	45614194	        26.85 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCurve/cache_lru-12          	45637788	        26.97 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	poule-renard-vipere	44.134s

@@ -1,0 +1,12 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkSaveTelemetry/insert_unitaire-12         	       1	9508642800 ns/op	       284.0 lignes/s
+BenchmarkSaveTelemetry/insert_unitaire-12         	       1	9809928400 ns/op	       275.2 lignes/s
+BenchmarkSaveTelemetry/insert_unitaire-12         	       1	9609204700 ns/op	       281.0 lignes/s
+BenchmarkSaveTelemetry/copy-12                    	       1	  15749900 ns/op	    171430 lignes/s
+BenchmarkSaveTelemetry/copy-12                    	       1	  12822400 ns/op	    210569 lignes/s
+BenchmarkSaveTelemetry/copy-12                    	       1	  12899900 ns/op	    209304 lignes/s
+PASS
+ok  	poule-renard-vipere	33.064s

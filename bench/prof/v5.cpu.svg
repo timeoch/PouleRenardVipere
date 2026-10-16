@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="350" viewBox="0 0 1400 350" font-family="Consolas, 'DejaVu Sans Mono', monospace">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="10" y="24" font-size="17" font-weight="bold" fill="#222">V5 (pool de 4 workers) : profil CPU</text>
+<text x="10" y="44" font-size="12" fill="#555">i5-12450H, go test -bench BenchmarkUpdate/Debut · total 19,02 s · bleu : runtime Go · orange : code du jeu · vert : bibliothèque standard</text>
+<g><title>total — 19,02 s (100,0 %)</title><rect x="10.00" y="58.00" width="1380.00" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="13.00" y="70.50" font-size="11" fill="#1a1a1a">total 100,0 %</text></g>
+<g><title>poolJobs.func1.1 — 11,20 s (58,9 %)</title><rect x="10.00" y="76.00" width="812.62" height="17.00" fill="rgb(236,160,65)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="13.00" y="88.50" font-size="11" fill="#1a1a1a">poolJobs.func1.1 58,9 %</text></g>
+<g><title>(*batch).work — 11,20 s (58,9 %)</title><rect x="10.00" y="94.00" width="812.62" height="17.00" fill="rgb(232,132,51)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="13.00" y="106.50" font-size="11" fill="#1a1a1a">(*batch).work 58,9 %</text></g>
+<rect x="10.50" y="94.50" width="811.62" height="16.00" fill="none" stroke="#d00" stroke-width="2.2" rx="2"/>
+<g><title>(*mind).decide — 10,47 s (55,0 %)</title><rect x="10.00" y="112.00" width="759.65" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="13.00" y="124.50" font-size="11" fill="#1a1a1a">(*mind).decide 55,0 %</text></g>
+<g><title>(*mind).flee — 4,09 s (21,5 %)</title><rect x="10.00" y="130.00" width="296.75" height="17.00" fill="rgb(237,166,68)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="13.00" y="142.50" font-size="11" fill="#1a1a1a">(*mind).flee 21,5 %</text></g>
+<g><title>(*World).herd — 3,68 s (19,3 %)</title><rect x="10.00" y="148.00" width="267.00" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="13.00" y="160.50" font-size="11" fill="#1a1a1a">(*World).herd 19,3 %</text></g>
+<g><title>(*SpatialGrid).RowItems — 100 ms (0,5 %)</title><rect x="10.00" y="166.00" width="7.26" height="17.00" fill="rgb(231,126,48)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>unit — 80 ms (0,4 %)</title><rect x="17.26" y="166.00" width="5.80" height="17.00" fill="rgb(234,144,57)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).sprint — 120 ms (0,6 %)</title><rect x="277.00" y="148.00" width="8.71" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).steer — 120 ms (0,6 %)</title><rect x="277.00" y="166.00" width="8.71" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).toward — 100 ms (0,5 %)</title><rect x="285.71" y="148.00" width="7.26" height="17.00" fill="rgb(236,160,65)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).flowDir — 90 ms (0,5 %)</title><rect x="285.71" y="166.00" width="6.53" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>unit — 60 ms (0,3 %)</title><rect x="292.97" y="148.00" width="4.35" height="17.00" fill="rgb(234,144,57)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).tunnelNear — 50 ms (0,3 %)</title><rect x="297.32" y="148.00" width="3.63" height="17.00" fill="rgb(239,178,74)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).threat — 1,71 s (9,0 %)</title><rect x="306.75" y="130.00" width="124.07" height="17.00" fill="rgb(232,134,52)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="309.75" y="142.50" font-size="11" fill="#1a1a1a">(*World).threat</text></g>
+<g><title>(*SpatialGrid).RowItems — 500 ms (2,6 %)</title><rect x="306.75" y="148.00" width="36.28" height="17.00" fill="rgb(231,126,48)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="309.75" y="160.50" font-size="11" fill="#1a1a1a">(*S…</text></g>
+<g><title>CellIndex — 80 ms (0,4 %)</title><rect x="343.03" y="148.00" width="5.80" height="17.00" fill="rgb(240,184,77)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>cellCoord — 80 ms (0,4 %)</title><rect x="343.03" y="166.00" width="5.80" height="17.00" fill="rgb(236,158,64)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).spot — 1,53 s (8,0 %)</title><rect x="430.82" y="130.00" width="111.01" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="433.82" y="142.50" font-size="11" fill="#1a1a1a">(*mind).spot</text></g>
+<g><title>(*SpatialGrid).Nearest — 1,40 s (7,4 %)</title><rect x="430.82" y="148.00" width="101.58" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="433.82" y="160.50" font-size="11" fill="#1a1a1a">(*SpatialGrid…</text></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 670 ms (3,5 %)</title><rect x="430.82" y="166.00" width="48.61" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="433.82" y="178.50" font-size="11" fill="#1a1a1a">(*Spa…</text></g>
+<g><title>(*mind).canSee — 60 ms (0,3 %)</title><rect x="430.82" y="184.00" width="4.35" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).rowCount — 170 ms (0,9 %)</title><rect x="479.43" y="166.00" width="12.33" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).colCount — 100 ms (0,5 %)</title><rect x="491.77" y="166.00" width="7.26" height="17.00" fill="rgb(242,192,81)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>cellCoord — 30 ms (0,2 %)</title><rect x="499.02" y="166.00" width="2.18" height="17.00" fill="rgb(236,158,64)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).lineClear — 110 ms (0,6 %)</title><rect x="532.40" y="148.00" width="7.98" height="17.00" fill="rgb(234,144,57)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).Blocked — 80 ms (0,4 %)</title><rect x="532.40" y="166.00" width="5.80" height="17.00" fill="rgb(232,134,52)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).roam — 1,17 s (6,2 %)</title><rect x="541.83" y="130.00" width="84.89" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="544.83" y="142.50" font-size="11" fill="#1a1a1a">(*mind).ro…</text></g>
+<g><title>sincos — 470 ms (2,5 %)</title><rect x="541.83" y="148.00" width="34.10" height="17.00" fill="rgb(235,150,60)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="544.83" y="160.50" font-size="11" fill="#1a1a1a">sin…</text></g>
+<g><title>math.Sincos — 470 ms (2,5 %)</title><rect x="541.83" y="166.00" width="34.10" height="17.00" fill="rgb(187,218,143)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="544.83" y="178.50" font-size="11" fill="#1a1a1a">mat…</text></g>
+<g><title>(*mind).walk — 220 ms (1,2 %)</title><rect x="575.93" y="148.00" width="15.96" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).steer — 190 ms (1,0 %)</title><rect x="575.93" y="166.00" width="13.79" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*agentRand).Float64 — 30 ms (0,2 %)</title><rect x="575.93" y="184.00" width="2.18" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).flowDir — 210 ms (1,1 %)</title><rect x="591.89" y="148.00" width="15.24" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>unit — 120 ms (0,6 %)</title><rect x="607.13" y="148.00" width="8.71" height="17.00" fill="rgb(234,144,57)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*agentRand).Float64 — 40 ms (0,2 %)</title><rect x="615.84" y="148.00" width="2.90" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).guardMove — 890 ms (4,7 %)</title><rect x="626.72" y="130.00" width="64.57" height="17.00" fill="rgb(239,178,74)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="629.72" y="142.50" font-size="11" fill="#1a1a1a">(*mind)…</text></g>
+<g><title>(*mind).spot — 580 ms (3,0 %)</title><rect x="626.72" y="148.00" width="42.08" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="629.72" y="160.50" font-size="11" fill="#1a1a1a">(*mi…</text></g>
+<g><title>(*SpatialGrid).Nearest — 550 ms (2,9 %)</title><rect x="626.72" y="166.00" width="39.91" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="629.72" y="178.50" font-size="11" fill="#1a1a1a">(*Sp…</text></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 380 ms (2,0 %)</title><rect x="626.72" y="184.00" width="27.57" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).isGuardTarget — 90 ms (0,5 %)</title><rect x="626.72" y="202.00" width="6.53" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).canSee — 70 ms (0,4 %)</title><rect x="626.72" y="220.00" width="5.08" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).isVulnerable — 40 ms (0,2 %)</title><rect x="626.72" y="238.00" width="2.90" height="17.00" fill="rgb(237,166,68)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).chase — 170 ms (0,9 %)</title><rect x="668.80" y="148.00" width="12.33" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 120 ms (0,6 %)</title><rect x="668.80" y="166.00" width="8.71" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 120 ms (0,6 %)</title><rect x="668.80" y="184.00" width="8.71" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>math.Min — 40 ms (0,2 %)</title><rect x="677.51" y="166.00" width="2.90" height="17.00" fill="rgb(186,218,143)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>sincos — 80 ms (0,4 %)</title><rect x="681.14" y="148.00" width="5.80" height="17.00" fill="rgb(235,150,60)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>math.Sincos — 80 ms (0,4 %)</title><rect x="681.14" y="166.00" width="5.80" height="17.00" fill="rgb(187,218,143)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).walk — 30 ms (0,2 %)</title><rect x="686.94" y="148.00" width="2.18" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).steer — 30 ms (0,2 %)</title><rect x="686.94" y="166.00" width="2.18" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).chase — 300 ms (1,6 %)</title><rect x="691.29" y="130.00" width="21.77" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 240 ms (1,3 %)</title><rect x="691.29" y="148.00" width="17.41" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 220 ms (1,2 %)</title><rect x="691.29" y="166.00" width="15.96" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).sprint — 30 ms (0,2 %)</title><rect x="708.71" y="148.00" width="2.18" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).steer — 30 ms (0,2 %)</title><rect x="708.71" y="166.00" width="2.18" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).jailFor — 100 ms (0,5 %)</title><rect x="713.06" y="130.00" width="7.26" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).decoyMove — 80 ms (0,4 %)</title><rect x="720.32" y="130.00" width="5.80" height="17.00" fill="rgb(231,128,49)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 30 ms (0,2 %)</title><rect x="720.32" y="148.00" width="2.18" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 30 ms (0,2 %)</title><rect x="720.32" y="166.00" width="2.18" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).rest — 80 ms (0,4 %)</title><rect x="726.12" y="130.00" width="5.80" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).roam — 40 ms (0,2 %)</title><rect x="726.12" y="148.00" width="2.90" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).rescueMove — 70 ms (0,4 %)</title><rect x="731.92" y="130.00" width="5.08" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).walk — 40 ms (0,2 %)</title><rect x="731.92" y="148.00" width="2.90" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).steer — 40 ms (0,2 %)</title><rect x="731.92" y="166.00" width="2.90" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).nearestItem — 60 ms (0,3 %)</title><rect x="737.00" y="130.00" width="4.35" height="17.00" fill="rgb(242,192,81)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).move — 330 ms (1,7 %)</title><rect x="769.65" y="112.00" width="23.94" height="17.00" fill="rgb(242,196,83)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).Blocked — 240 ms (1,3 %)</title><rect x="769.65" y="130.00" width="17.41" height="17.00" fill="rgb(232,134,52)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>CellIndex — 30 ms (0,2 %)</title><rect x="769.65" y="148.00" width="2.18" height="17.00" fill="rgb(240,184,77)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>cellCoord — 30 ms (0,2 %)</title><rect x="769.65" y="166.00" width="2.18" height="17.00" fill="rgb(236,158,64)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).tunnel — 70 ms (0,4 %)</title><rect x="787.07" y="130.00" width="5.08" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).captureTarget — 290 ms (1,5 %)</title><rect x="793.60" y="112.00" width="21.04" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 250 ms (1,3 %)</title><rect x="793.60" y="130.00" width="18.14" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 140 ms (0,7 %)</title><rect x="793.60" y="148.00" width="10.16" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>benchTicks — 7,82 s (41,1 %)</title><rect x="822.62" y="76.00" width="567.38" height="17.00" fill="rgb(242,196,83)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="88.50" font-size="11" fill="#1a1a1a">benchTicks 41,1 %</text></g>
+<g><title>(*World).Update — 7,82 s (41,1 %)</title><rect x="822.62" y="94.00" width="567.38" height="17.00" fill="rgb(234,148,59)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="106.50" font-size="11" fill="#1a1a1a">(*World).Update 41,1 %</text></g>
+<g><title>(*World).parallel — 4,01 s (21,1 %)</title><rect x="822.62" y="112.00" width="290.95" height="17.00" fill="rgb(236,160,65)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="124.50" font-size="11" fill="#1a1a1a">(*World).parallel 21,1 %</text></g>
+<g><title>(*batch).work — 4,00 s (21,0 %)</title><rect x="822.62" y="130.00" width="290.22" height="17.00" fill="rgb(232,132,51)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="142.50" font-size="11" fill="#1a1a1a">(*batch).work 21,0 %</text></g>
+<rect x="823.12" y="130.50" width="289.22" height="16.00" fill="none" stroke="#d00" stroke-width="2.2" rx="2"/>
+<g><title>(*mind).decide — 3,81 s (20,0 %)</title><rect x="822.62" y="148.00" width="276.44" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="160.50" font-size="11" fill="#1a1a1a">(*mind).decide 20,0 %</text></g>
+<g><title>(*mind).flee — 1,36 s (7,2 %)</title><rect x="822.62" y="166.00" width="98.68" height="17.00" fill="rgb(237,166,68)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="178.50" font-size="11" fill="#1a1a1a">(*mind).flee</text></g>
+<g><title>(*World).herd — 1,24 s (6,5 %)</title><rect x="822.62" y="184.00" width="89.97" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="825.62" y="196.50" font-size="11" fill="#1a1a1a">(*World).he…</text></g>
+<g><title>(*SpatialGrid).RowItems — 30 ms (0,2 %)</title><rect x="822.62" y="202.00" width="2.18" height="17.00" fill="rgb(231,126,48)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).toward — 40 ms (0,2 %)</title><rect x="912.59" y="184.00" width="2.90" height="17.00" fill="rgb(236,160,65)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).flowDir — 40 ms (0,2 %)</title><rect x="912.59" y="202.00" width="2.90" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).sprint — 30 ms (0,2 %)</title><rect x="915.49" y="184.00" width="2.18" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).tunnelNear — 30 ms (0,2 %)</title><rect x="917.67" y="184.00" width="2.18" height="17.00" fill="rgb(239,178,74)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).spot — 570 ms (3,0 %)</title><rect x="921.29" y="166.00" width="41.36" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="924.29" y="178.50" font-size="11" fill="#1a1a1a">(*mi…</text></g>
+<g><title>(*SpatialGrid).Nearest — 520 ms (2,7 %)</title><rect x="921.29" y="184.00" width="37.73" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="924.29" y="196.50" font-size="11" fill="#1a1a1a">(*S…</text></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 260 ms (1,4 %)</title><rect x="921.29" y="202.00" width="18.86" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).canSee — 40 ms (0,2 %)</title><rect x="921.29" y="220.00" width="2.90" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).rowCount — 50 ms (0,3 %)</title><rect x="940.16" y="202.00" width="3.63" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).colCount — 40 ms (0,2 %)</title><rect x="943.79" y="202.00" width="2.90" height="17.00" fill="rgb(242,192,81)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).lineClear — 30 ms (0,2 %)</title><rect x="959.02" y="184.00" width="2.18" height="17.00" fill="rgb(234,144,57)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).threat — 570 ms (3,0 %)</title><rect x="962.65" y="166.00" width="41.36" height="17.00" fill="rgb(232,134,52)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="965.65" y="178.50" font-size="11" fill="#1a1a1a">(*Wo…</text></g>
+<g><title>(*SpatialGrid).RowItems — 190 ms (1,0 %)</title><rect x="962.65" y="184.00" width="13.79" height="17.00" fill="rgb(231,126,48)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).CellRange — 30 ms (0,2 %)</title><rect x="976.44" y="184.00" width="2.18" height="17.00" fill="rgb(242,196,83)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>cellCoord — 30 ms (0,2 %)</title><rect x="976.44" y="202.00" width="2.18" height="17.00" fill="rgb(236,158,64)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).roam — 500 ms (2,6 %)</title><rect x="1004.01" y="166.00" width="36.28" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="1007.01" y="178.50" font-size="11" fill="#1a1a1a">(*m…</text></g>
+<g><title>sincos — 150 ms (0,8 %)</title><rect x="1004.01" y="184.00" width="10.88" height="17.00" fill="rgb(235,150,60)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>math.Sincos — 150 ms (0,8 %)</title><rect x="1004.01" y="202.00" width="10.88" height="17.00" fill="rgb(187,218,143)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).walk — 130 ms (0,7 %)</title><rect x="1014.89" y="184.00" width="9.43" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).steer — 120 ms (0,6 %)</title><rect x="1014.89" y="202.00" width="8.71" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*agentRand).Float64 — 30 ms (0,2 %)</title><rect x="1014.89" y="220.00" width="2.18" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).flowDir — 80 ms (0,4 %)</title><rect x="1024.32" y="184.00" width="5.80" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>unit — 70 ms (0,4 %)</title><rect x="1030.13" y="184.00" width="5.08" height="17.00" fill="rgb(234,144,57)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).guardMove — 310 ms (1,6 %)</title><rect x="1040.28" y="166.00" width="22.49" height="17.00" fill="rgb(239,178,74)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).spot — 260 ms (1,4 %)</title><rect x="1040.28" y="184.00" width="18.86" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 260 ms (1,4 %)</title><rect x="1040.28" y="202.00" width="18.86" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 160 ms (0,8 %)</title><rect x="1040.28" y="220.00" width="11.61" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).isGuardTarget — 30 ms (0,2 %)</title><rect x="1040.28" y="238.00" width="2.18" height="17.00" fill="rgb(233,142,56)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).canSee — 30 ms (0,2 %)</title><rect x="1040.28" y="256.00" width="2.18" height="17.00" fill="rgb(239,176,73)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).chase — 30 ms (0,2 %)</title><rect x="1059.15" y="184.00" width="2.18" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 30 ms (0,2 %)</title><rect x="1059.15" y="202.00" width="2.18" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).chase — 110 ms (0,6 %)</title><rect x="1062.78" y="166.00" width="7.98" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 110 ms (0,6 %)</title><rect x="1062.78" y="184.00" width="7.98" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 110 ms (0,6 %)</title><rect x="1062.78" y="202.00" width="7.98" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).rescueMove — 80 ms (0,4 %)</title><rect x="1070.76" y="166.00" width="5.80" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).flowDir — 50 ms (0,3 %)</title><rect x="1070.76" y="184.00" width="3.63" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).decoyMove — 70 ms (0,4 %)</title><rect x="1076.56" y="166.00" width="5.08" height="17.00" fill="rgb(231,128,49)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).rescueMove — 50 ms (0,3 %)</title><rect x="1076.56" y="184.00" width="3.63" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).jailFor — 40 ms (0,2 %)</title><rect x="1081.64" y="166.00" width="2.90" height="17.00" fill="rgb(233,140,55)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).nearestItem — 40 ms (0,2 %)</title><rect x="1084.54" y="166.00" width="2.90" height="17.00" fill="rgb(242,192,81)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).rest — 30 ms (0,2 %)</title><rect x="1087.44" y="166.00" width="2.18" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*mind).roam — 30 ms (0,2 %)</title><rect x="1087.44" y="184.00" width="2.18" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).move — 190 ms (1,0 %)</title><rect x="1099.05" y="148.00" width="13.79" height="17.00" fill="rgb(242,196,83)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).Blocked — 90 ms (0,5 %)</title><rect x="1099.05" y="166.00" width="6.53" height="17.00" fill="rgb(232,134,52)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).tunnel — 50 ms (0,3 %)</title><rect x="1105.58" y="166.00" width="3.63" height="17.00" fill="rgb(231,130,50)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>BuildAll — 1,14 s (6,0 %)</title><rect x="1113.56" y="112.00" width="82.71" height="17.00" fill="rgb(241,190,80)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="1116.56" y="124.50" font-size="11" fill="#1a1a1a">BuildAll</text></g>
+<rect x="1114.06" y="112.50" width="81.71" height="16.00" fill="none" stroke="#d00" stroke-width="2.2" rx="2"/>
+<g><title>(*SpatialGrid).buildColPrefix — 180 ms (0,9 %)</title><rect x="1113.56" y="130.00" width="13.06" height="17.00" fill="rgb(233,138,54)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>CellIndex — 150 ms (0,8 %)</title><rect x="1126.62" y="130.00" width="10.88" height="17.00" fill="rgb(240,184,77)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>cellCoord — 120 ms (0,6 %)</title><rect x="1126.62" y="148.00" width="8.71" height="17.00" fill="rgb(236,158,64)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).prepare — 730 ms (3,8 %)</title><rect x="1196.28" y="112.00" width="52.97" height="17.00" fill="rgb(238,172,71)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="1199.28" y="124.50" font-size="11" fill="#1a1a1a">(*Worl…</text></g>
+<g><title>BuildAll — 450 ms (2,4 %)</title><rect x="1196.28" y="130.00" width="32.65" height="17.00" fill="rgb(241,190,80)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<rect x="1196.78" y="130.50" width="31.65" height="16.00" fill="none" stroke="#d00" stroke-width="2.2" rx="2"/>
+<g><title>CellIndex — 70 ms (0,4 %)</title><rect x="1196.28" y="148.00" width="5.08" height="17.00" fill="rgb(240,184,77)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>cellCoord — 70 ms (0,4 %)</title><rect x="1196.28" y="166.00" width="5.08" height="17.00" fill="rgb(236,158,64)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).buildColPrefix — 60 ms (0,3 %)</title><rect x="1201.36" y="148.00" width="4.35" height="17.00" fill="rgb(233,138,54)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).tickCounters — 180 ms (0,9 %)</title><rect x="1228.93" y="130.00" width="13.06" height="17.00" fill="rgb(233,138,54)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).computeCenters — 100 ms (0,5 %)</title><rect x="1241.99" y="130.00" width="7.26" height="17.00" fill="rgb(242,192,81)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).rescues — 600 ms (3,2 %)</title><rect x="1249.24" y="112.00" width="43.53" height="17.00" fill="rgb(231,126,48)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="1252.24" y="124.50" font-size="11" fill="#1a1a1a">(*Wo…</text></g>
+<g><title>(*World).buildPreyFlows — 530 ms (2,8 %)</title><rect x="1292.78" y="112.00" width="38.45" height="17.00" fill="rgb(237,164,67)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="1295.78" y="124.50" font-size="11" fill="#1a1a1a">(*W…</text></g>
+<g><title>(*World).buildFlow — 530 ms (2,8 %)</title><rect x="1292.78" y="130.00" width="38.45" height="17.00" fill="rgb(235,150,60)" stroke="#fff" stroke-width="0.6" rx="1.5"/><text x="1295.78" y="142.50" font-size="11" fill="#1a1a1a">(*W…</text></g>
+<g><title>(*World).diagonalOK — 30 ms (0,2 %)</title><rect x="1292.78" y="148.00" width="2.18" height="17.00" fill="rgb(237,164,67)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).captures — 260 ms (1,4 %)</title><rect x="1331.23" y="112.00" width="18.86" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).parallel — 200 ms (1,1 %)</title><rect x="1331.23" y="130.00" width="14.51" height="17.00" fill="rgb(236,160,65)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*batch).work — 180 ms (0,9 %)</title><rect x="1331.23" y="148.00" width="13.06" height="17.00" fill="rgb(232,132,51)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<rect x="1331.73" y="148.50" width="12.06" height="16.00" fill="none" stroke="#d00" stroke-width="2.2" rx="2"/>
+<g><title>(*World).captureTarget — 180 ms (0,9 %)</title><rect x="1331.23" y="166.00" width="13.06" height="17.00" fill="rgb(241,188,79)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest — 130 ms (0,7 %)</title><rect x="1331.23" y="184.00" width="9.43" height="17.00" fill="rgb(241,186,78)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*SpatialGrid).Nearest.func1 — 60 ms (0,3 %)</title><rect x="1331.23" y="202.00" width="4.35" height="17.00" fill="rgb(232,136,53)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).refreshStats — 250 ms (1,3 %)</title><rect x="1350.09" y="112.00" width="18.14" height="17.00" fill="rgb(235,154,62)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).escapes — 210 ms (1,1 %)</title><rect x="1368.23" y="112.00" width="15.24" height="17.00" fill="rgb(242,194,82)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).guardsNear — 210 ms (1,1 %)</title><rect x="1368.23" y="130.00" width="15.24" height="17.00" fill="rgb(241,190,80)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<g><title>(*World).prisonTime — 80 ms (0,4 %)</title><rect x="1383.47" y="112.00" width="5.80" height="17.00" fill="rgb(237,162,66)" stroke="#fff" stroke-width="0.6" rx="1.5"/></g>
+<circle cx="812.6" cy="103.0" r="8" fill="#d00"/><text x="812.6" y="107.0" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">1</text>
+<circle cx="1186.3" cy="121.0" r="8" fill="#d00"/><text x="1186.3" y="125.0" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">2</text>
+<circle cx="18.0" cy="292.0" r="8" fill="#d00"/><text x="18.0" y="296.0" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">1</text><text x="32.0" y="296.0" font-size="12.5" fill="#222"><tspan font-weight="bold">80,9 %</tspan> (15,38 s) — Phases parallèles, réparties sur les workers</text>
+<circle cx="18.0" cy="312.0" r="8" fill="#d00"/><text x="18.0" y="316.0" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">2</text><text x="32.0" y="316.0" font-size="12.5" fill="#222"><tspan font-weight="bold">8,4 %</tspan> (1,59 s) — Étapes séquentielles : pendant ce temps, les autres workers attendent</text>
+</svg>

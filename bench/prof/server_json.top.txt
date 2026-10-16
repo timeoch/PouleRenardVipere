@@ -1,0 +1,69 @@
+File: v4.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v4.exe2026-10-16 15:18:35.9657563 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:36:05 CEST
+Duration: 15s, Total samples = 18.51s (123.39%)
+Showing nodes accounting for 14.58s, 78.77% of 18.51s total
+Dropped 183 nodes (cum <= 0.09s)
+Showing top 60 nodes out of 89
+      flat  flat%   sum%        cum   cum%
+     0.12s  0.65%  0.65%     11.60s 62.67%  main.(*batch).work
+     0.32s  1.73%  2.38%      9.59s 51.81%  main.(*mind).decide
+         0     0%  2.38%      9.22s 49.81%  golang.org/x/net/websocket.Handler.ServeHTTP
+         0     0%  2.38%      9.22s 49.81%  golang.org/x/net/websocket.Server.serveWebSocket
+         0     0%  2.38%      9.22s 49.81%  main.wsHandler.func1
+         0     0%  2.38%      9.22s 49.81%  net/http.(*ServeMux).ServeHTTP
+         0     0%  2.38%      9.22s 49.81%  net/http.(*conn).serve
+         0     0%  2.38%      9.22s 49.81%  net/http.serverHandler.ServeHTTP
+     0.01s 0.054%  2.43%      7.79s 42.09%  main.poolJobs.func1.1
+         0     0%  2.43%      7.44s 40.19%  main.(*session).step
+         0     0%  2.43%      7.43s 40.14%  main.(*World).Update
+     2.12s 11.45% 13.88%      4.60s 24.85%  main.(*SpatialGrid).Nearest
+     0.19s  1.03% 14.91%      4.18s 22.58%  main.(*mind).spot
+         0     0% 14.91%      3.85s 20.80%  main.(*World).parallel
+     0.29s  1.57% 16.48%      2.78s 15.02%  main.(*mind).roam
+         0     0% 16.48%      1.83s  9.89%  main.(*World).prepare
+     1.33s  7.19% 23.66%      1.78s  9.62%  main.BuildAll
+         0     0% 23.66%      1.63s  8.81%  encoding/json.Marshal (inline)
+         0     0% 23.66%      1.63s  8.81%  encoding/json/v2.Marshal
+     0.36s  1.94% 25.61%      1.58s  8.54%  main.(*World).threat
+     0.01s 0.054% 25.66%      1.57s  8.48%  encoding/json/v2.marshalEncode
+         0     0% 25.66%      1.55s  8.37%  encoding/json/v2.makeStructArshaler.func2
+     0.14s  0.76% 26.42%      1.54s  8.32%  encoding/json/v2.makeSliceArshaler.func2
+     0.14s  0.76% 27.17%      1.24s  6.70%  encoding/json/v2.makeIntArshaler.func1
+     0.22s  1.19% 28.36%      1.19s  6.43%  main.(*World).move
+         0     0% 28.36%      1.15s  6.21%  main.sincos (inline)
+     1.06s  5.73% 34.09%      1.15s  6.21%  math.Sincos
+     1.04s  5.62% 39.71%      1.04s  5.62%  main.(*SpatialGrid).RowItems (inline)
+     0.02s  0.11% 39.82%      0.96s  5.19%  strconv.AppendInt (inline)
+         0     0% 39.82%      0.95s  5.13%  main.wsHandler.func1.1
+     0.06s  0.32% 40.14%      0.94s  5.08%  internal/strconv.AppendInt
+         0     0% 40.14%      0.90s  4.86%  golang.org/x/net/websocket.Codec.Send
+     0.31s  1.67% 41.82%      0.88s  4.75%  internal/strconv.AppendUint
+         0     0% 41.82%      0.85s  4.59%  golang.org/x/net/websocket.(*hybiFrameWriter).Write
+     0.01s 0.054% 41.87%      0.84s  4.54%  bufio.(*Writer).Write
+     0.84s  4.54% 46.41%      0.84s  4.54%  main.(*SpatialGrid).rowCount (inline)
+     0.01s 0.054% 46.46%      0.82s  4.43%  internal/poll.(*FD).Write
+         0     0% 46.46%      0.82s  4.43%  net.(*conn).Write
+         0     0% 46.46%      0.82s  4.43%  net.(*netFD).Write
+         0     0% 46.46%      0.81s  4.38%  internal/poll.(*FD).execIO
+     0.81s  4.38% 50.84%      0.81s  4.38%  runtime.cgocall
+         0     0% 50.84%      0.81s  4.38%  syscall.SyscallN
+         0     0% 50.84%      0.81s  4.38%  syscall.syscalln
+         0     0% 50.84%      0.80s  4.32%  internal/poll.(*FD).Write.func2
+         0     0% 50.84%      0.80s  4.32%  syscall.WSASend
+     0.75s  4.05% 54.89%      0.75s  4.05%  main.(*World).computeCenters
+     0.61s  3.30% 58.18%      0.73s  3.94%  main.(*World).Blocked
+     0.69s  3.73% 61.91%      0.70s  3.78%  main.(*SpatialGrid).Nearest.func1 (inline)
+     0.10s  0.54% 62.45%      0.69s  3.73%  main.(*World).captureTarget
+     0.68s  3.67% 66.13%      0.68s  3.67%  main.(*SpatialGrid).colCount (inline)
+     0.04s  0.22% 66.34%      0.58s  3.13%  main.(*mind).guardMove
+     0.56s  3.03% 69.37%      0.57s  3.08%  main.cellCoord (inline)
+     0.52s  2.81% 72.18%      0.55s  2.97%  main.(*World).flowDir
+     0.05s  0.27% 72.45%      0.53s  2.86%  main.(*mind).walk
+         0     0% 72.45%      0.48s  2.59%  main.(*World).buildPreyFlows
+         0     0% 72.45%      0.47s  2.54%  bufio.(*Writer).Flush
+     0.44s  2.38% 74.82%      0.47s  2.54%  main.(*World).buildFlow
+     0.32s  1.73% 76.55%      0.45s  2.43%  main.(*mind).steer
+     0.39s  2.11% 78.66%      0.39s  2.11%  runtime.memmove
+     0.02s  0.11% 78.77%      0.38s  2.05%  main.(*World).captures

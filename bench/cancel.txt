@@ -1,0 +1,5 @@
+=== RUN   TestTournamentCancelLatency
+    tournament_test.go:77: annulation testée tous les 300 ticks : latence moyenne 736ms, pire 1.3101s (5 essais)
+    tournament_test.go:77: annulation testée tous les   1 ticks : latence moyenne 2.8ms, pire 5.8ms (5 essais)
+--- PASS: TestTournamentCancelLatency (24.72s)
+PASS

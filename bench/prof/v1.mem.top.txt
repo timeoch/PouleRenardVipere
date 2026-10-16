@@ -1,0 +1,25 @@
+File: v1.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v1.test.exe2026-10-16 15:18:11.0697079 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:21 CEST
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 3.66GB, 99.56% of 3.68GB total
+Dropped 3 nodes (cum <= 0.02GB)
+Showing top 15 nodes out of 18
+      flat  flat%   sum%        cum   cum%
+    1.89GB 51.40% 51.40%     1.89GB 51.40%  poule-renard-vipere.BuildAll
+    1.52GB 41.34% 92.74%     1.52GB 41.34%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+    0.18GB  4.79% 97.53%     3.66GB 99.56%  poule-renard-vipere.(*World).Update
+    0.07GB  2.03% 99.56%     0.07GB  2.03%  poule-renard-vipere.(*World).buildFlow
+         0     0% 99.56%     0.07GB  2.03%  poule-renard-vipere.(*World).buildPreyFlows
+         0     0% 99.56%     0.02GB  0.53%  poule-renard-vipere.(*World).escapes
+         0     0% 99.56%     0.02GB  0.53%  poule-renard-vipere.(*World).guardsNear
+         0     0% 99.56%     1.25GB 33.96%  poule-renard-vipere.(*World).herd
+         0     0% 99.56%     1.50GB 40.72%  poule-renard-vipere.(*World).parallel
+         0     0% 99.56%     0.61GB 16.47%  poule-renard-vipere.(*World).prepare
+         0     0% 99.56%     0.25GB  6.76%  poule-renard-vipere.(*World).threat
+         0     0% 99.56%     1.50GB 40.72%  poule-renard-vipere.(*batch).work
+         0     0% 99.56%     1.50GB 40.72%  poule-renard-vipere.(*mind).decide
+         0     0% 99.56%     1.25GB 33.96%  poule-renard-vipere.(*mind).flee
+         0     0% 99.56%     3.66GB 99.56%  poule-renard-vipere.BenchmarkUpdate.func1

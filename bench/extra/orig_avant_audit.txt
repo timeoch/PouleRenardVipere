@@ -1,0 +1,35 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkUpdate/Debut-12         	     100	   2504990 ns/op	         2.505 ms/tick	       399.2 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2416252 ns/op	         2.416 ms/tick	       413.9 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2429210 ns/op	         2.429 ms/tick	       411.7 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2434698 ns/op	         2.435 ms/tick	       410.7 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2356236 ns/op	         2.356 ms/tick	       424.4 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2395496 ns/op	         2.395 ms/tick	       417.5 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2394001 ns/op	         2.394 ms/tick	       417.7 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2426155 ns/op	         2.426 ms/tick	       412.2 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2393214 ns/op	         2.393 ms/tick	       417.8 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/Debut-12         	     100	   2372980 ns/op	         2.373 ms/tick	       421.4 tps	    2457 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2289699 ns/op	         2.290 ms/tick	       436.7 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2334270 ns/op	         2.334 ms/tick	       428.4 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2260923 ns/op	         2.261 ms/tick	       442.3 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2294773 ns/op	         2.295 ms/tick	       435.8 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2575221 ns/op	         2.575 ms/tick	       388.3 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2299975 ns/op	         2.300 ms/tick	       434.8 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2306124 ns/op	         2.306 ms/tick	       433.6 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2314633 ns/op	         2.315 ms/tick	       432.0 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2312071 ns/op	         2.312 ms/tick	       432.5 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	     100	   2386228 ns/op	         2.386 ms/tick	       419.1 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1938219 ns/op	         1.938 ms/tick	       515.9 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1967328 ns/op	         1.967 ms/tick	       508.3 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1946045 ns/op	         1.946 ms/tick	       513.9 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   2097272 ns/op	         2.097 ms/tick	       476.8 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1940465 ns/op	         1.940 ms/tick	       515.3 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1984320 ns/op	         1.984 ms/tick	       504.0 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1974593 ns/op	         1.975 ms/tick	       506.4 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1995027 ns/op	         1.995 ms/tick	       501.2 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1938283 ns/op	         1.938 ms/tick	       515.9 tps	       0 B/op	       0 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	     100	   1957954 ns/op	         1.958 ms/tick	       510.7 tps	       0 B/op	       0 allocs/op
+PASS

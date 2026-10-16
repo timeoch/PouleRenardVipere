@@ -1,0 +1,51 @@
+File: v3.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v3.test.exe2026-10-16 15:18:30.2169229 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:35:32 CEST
+Duration: 7.95s, Total samples = 7.77s (97.78%)
+Active filters:
+   focus=benchTicks|poolJobs|gcBgMarkWorker|bgsweep|bgscavenge
+Showing nodes accounting for 6.61s, 85.07% of 7.77s total
+Dropped 20 nodes (cum <= 0.04s)
+Showing top 40 nodes out of 61
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      7.64s 98.33%  poule-renard-vipere.(*World).Update
+         0     0%     0%      7.64s 98.33%  poule-renard-vipere.BenchmarkUpdate.func1
+         0     0%     0%      7.64s 98.33%  poule-renard-vipere.benchTicks
+         0     0%     0%      7.64s 98.33%  testing.(*B).launch
+         0     0%     0%      7.64s 98.33%  testing.(*B).runN
+         0     0%     0%      6.17s 79.41%  poule-renard-vipere.(*World).parallel
+     0.06s  0.77%  0.77%      6.17s 79.41%  poule-renard-vipere.(*batch).work
+     0.12s  1.54%  2.32%      5.25s 67.57%  poule-renard-vipere.(*mind).decide
+     0.61s  7.85% 10.17%      1.74s 22.39%  poule-renard-vipere.(*SpatialGrid).Nearest
+     0.04s  0.51% 10.68%      1.55s 19.95%  poule-renard-vipere.(*mind).flee
+     0.07s   0.9% 11.58%      1.47s 18.92%  poule-renard-vipere.(*mind).spot
+     1.21s 15.57% 27.16%      1.32s 16.99%  poule-renard-vipere.(*World).herd
+     0.06s  0.77% 27.93%      0.86s 11.07%  poule-renard-vipere.(*mind).roam
+     0.40s  5.15% 33.08%      0.80s 10.30%  poule-renard-vipere.(*World).threat
+     0.60s  7.72% 40.80%      0.70s  9.01%  poule-renard-vipere.(*SpatialGrid).Nearest.func1 (inline)
+     0.50s  6.44% 47.23%      0.65s  8.37%  poule-renard-vipere.BuildAll
+     0.15s  1.93% 49.16%      0.53s  6.82%  poule-renard-vipere.(*World).move
+         0     0% 49.16%      0.44s  5.66%  poule-renard-vipere.(*World).prepare
+         0     0% 49.16%      0.44s  5.66%  poule-renard-vipere.sincos
+     0.01s  0.13% 49.29%      0.38s  4.89%  poule-renard-vipere.(*World).captures
+     0.01s  0.13% 49.42%      0.36s  4.63%  poule-renard-vipere.(*mind).guardMove
+         0     0% 49.42%      0.33s  4.25%  math.Sin (inline)
+     0.33s  4.25% 53.67%      0.33s  4.25%  math.sin
+     0.33s  4.25% 57.92%      0.33s  4.25%  poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+     0.04s  0.51% 58.43%      0.33s  4.25%  poule-renard-vipere.(*World).captureTarget
+     0.27s  3.47% 61.90%      0.32s  4.12%  poule-renard-vipere.(*World).Blocked
+     0.27s  3.47% 65.38%      0.27s  3.47%  poule-renard-vipere.(*World).rescues
+     0.22s  2.83% 68.21%      0.27s  3.47%  poule-renard-vipere.(*mind).steer
+     0.27s  3.47% 71.69%      0.27s  3.47%  poule-renard-vipere.cellCoord (inline)
+         0     0% 71.69%      0.26s  3.35%  poule-renard-vipere.(*mind).walk
+     0.22s  2.83% 74.52%      0.25s  3.22%  poule-renard-vipere.unit (inline)
+     0.18s  2.32% 76.83%      0.23s  2.96%  poule-renard-vipere.(*World).buildFlow
+         0     0% 76.83%      0.23s  2.96%  poule-renard-vipere.(*World).buildPreyFlows
+     0.17s  2.19% 79.02%      0.17s  2.19%  poule-renard-vipere.(*SpatialGrid).rowCount (inline)
+     0.02s  0.26% 79.28%      0.15s  1.93%  poule-renard-vipere.CellIndex (inline)
+     0.14s  1.80% 81.08%      0.14s  1.80%  poule-renard-vipere.(*SpatialGrid).colCount (inline)
+     0.12s  1.54% 82.63%      0.12s  1.54%  poule-renard-vipere.(*SpatialGrid).buildColPrefix
+         0     0% 82.63%      0.11s  1.42%  math.Cos (inline)
+     0.09s  1.16% 83.78%      0.11s  1.42%  math.cos
+     0.10s  1.29% 85.07%      0.11s  1.42%  poule-renard-vipere.(*World).nearestItem

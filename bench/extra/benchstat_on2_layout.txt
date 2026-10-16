@@ -1,0 +1,31 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+                │ on2_88.txt  │             on2_64.txt              │
+                │   sec/op    │   sec/op     vs base                │
+Update/Debut-12   116.4m ± 5%   102.3m ± 4%  -12.06% (p=0.000 n=10)
+
+                │ on2_88.txt  │          on2_64.txt           │
+                │ gc-ms/tick  │ gc-ms/tick   vs base          │
+Update/Debut-12   42.31 ± 33%   36.76 ± 28%  ~ (p=0.579 n=10)
+
+                │ on2_88.txt │            on2_64.txt             │
+                │  gc/tick   │  gc/tick    vs base               │
+Update/Debut-12   46.70 ± 1%   44.03 ± 1%  -5.71% (p=0.000 n=10)
+
+                │ on2_88.txt │             on2_64.txt             │
+                │  ms/tick   │  ms/tick    vs base                │
+Update/Debut-12   116.3 ± 5%   102.3 ± 4%  -12.03% (p=0.000 n=10)
+
+                │ on2_88.txt │             on2_64.txt             │
+                │    tps     │    tps      vs base                │
+Update/Debut-12   8.593 ± 5%   9.772 ± 4%  +13.71% (p=0.000 n=10)
+
+                │  on2_88.txt  │           on2_64.txt           │
+                │     B/op     │     B/op      vs base          │
+Update/Debut-12   105.8Mi ± 0%   105.8Mi ± 0%  ~ (p=0.315 n=10)
+
+                │ on2_88.txt  │          on2_64.txt           │
+                │  allocs/op  │  allocs/op   vs base          │
+Update/Debut-12   9.089k ± 0%   9.089k ± 0%  ~ (p=0.411 n=10)

@@ -1,0 +1,156 @@
+File: v4.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v4.test.exe2026-10-16 15:18:39.03764 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:49 CEST
+-----------+-------------------------------------------------------
+     bytes:  240B
+  512.12kB   runtime/pprof.allFrames
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  18.62kB
+  521.37kB   runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  264kB
+  655.29kB   compress/flate.NewWriter (inline)
+             compress/gzip.(*Writer).Write
+             runtime/pprof.(*profileBuilder).flush
+             runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  568kB
+  847.46kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  72kB
+  548.84kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    1.14MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  568kB
+  847.46kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    1.14MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  64B
+  512.03kB   time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+     bytes:  512B
+  512.25kB   runtime.mallocgc
+             runtime.newobject
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+     bytes:  1MB
+    1.16MB   runtime/pprof.StartCPUProfile
+             testing/internal/testdeps.TestDeps.StartCPUProfile
+             testing.(*M).before
+             testing.(*M).Run
+             main.main
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  896B
+  512.44kB   testing.init
+             runtime.doInit1
+             runtime.doInit (inline)
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.mstart1
+             runtime.mstart0
+             runtime.mstart
+-----------+-------------------------------------------------------

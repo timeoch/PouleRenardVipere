@@ -1,0 +1,20 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkUpdate/Debut-12         	      30	 116405290 ns/op	        26.36 gc-ms/tick	        44.50 gc/tick	       116.4 ms/tick	         8.591 tps	110910557 B/op	    9089 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 122406133 ns/op	        52.14 gc-ms/tick	        46.07 gc/tick	       122.4 ms/tick	         8.170 tps	110910357 B/op	    9089 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 117823163 ns/op	        28.15 gc-ms/tick	        47.20 gc/tick	       117.8 ms/tick	         8.487 tps	110910261 B/op	    9089 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 118781220 ns/op	        43.59 gc-ms/tick	        46.73 gc/tick	       118.8 ms/tick	         8.419 tps	110910238 B/op	    9089 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 123754590 ns/op	        49.59 gc-ms/tick	        46.73 gc/tick	       123.8 ms/tick	         8.081 tps	110910248 B/op	    9089 allocs/op
+PASS
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkUpdate/Debut-12         	      30	 114709050 ns/op	        31.31 gc-ms/tick	        46.27 gc/tick	       114.7 ms/tick	         8.718 tps	110910471 B/op	    9090 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 114410443 ns/op	        33.13 gc-ms/tick	        46.67 gc/tick	       114.4 ms/tick	         8.740 tps	110910748 B/op	    9091 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 114711090 ns/op	        41.02 gc-ms/tick	        46.50 gc/tick	       114.7 ms/tick	         8.718 tps	110910334 B/op	    9090 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 115695767 ns/op	        54.63 gc-ms/tick	        47.13 gc/tick	       115.7 ms/tick	         8.643 tps	110910414 B/op	    9091 allocs/op
+BenchmarkUpdate/Debut-12         	      30	 116329950 ns/op	        44.24 gc-ms/tick	        47.20 gc/tick	       116.3 ms/tick	         8.596 tps	110910363 B/op	    9090 allocs/op
+PASS

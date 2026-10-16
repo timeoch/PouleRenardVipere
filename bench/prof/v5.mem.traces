@@ -1,0 +1,128 @@
+File: v4.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v4.test.exe2026-10-16 15:18:39.03764 +0200 CEST
+Type: alloc_space
+Time: 2026-10-16 15:35:59 CEST
+-----------+-------------------------------------------------------
+     bytes:  320kB
+  688.56kB   compress/flate.(*fastGen).addBlock
+             compress/flate.(*fastEncL1).encode
+             compress/flate.(*compressor).deflateFast
+             compress/flate.(*compressor).close
+             compress/flate.(*Writer).Close (inline)
+             compress/gzip.(*Writer).Close
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  96B
+  512.05kB   runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  18.62kB
+  521.37kB   runtime/pprof.(*profileBuilder).emitLocation
+             runtime/pprof.(*profileBuilder).appendLocsForStack
+             runtime/pprof.(*profileBuilder).build
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  8kB
+  516.01kB   runtime/pprof.(*profMap).lookup
+             runtime/pprof.(*profileBuilder).addCPUData
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  568kB
+  847.46kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  9.25kB
+  516.64kB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  80B
+  512.04kB   context.withCancel (inline)
+             context.WithCancel
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    2.29MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     bytes:  112B
+  512.05kB   runtime.mallocgc
+             runtime.newobject
+             runtime.acquireSudog
+             runtime.semacquire1
+             runtime.semacquire (inline)
+             runtime.gcMarkDone
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+     bytes:  32B
+  512.02kB   syscall.UTF16ToString
+             internal/syscall/windows/registry.Key.GetMUIStringValue
+             time.matchZoneKey
+             time.toEnglishName
+             time.abbrev
+             time.initLocalFromTZI
+             time.initLocal
+             sync.(*Once).doSlow
+             sync.(*Once).Do (inline)
+             time.(*Location).get
+             time.Time.locabs
+             time.Time.appendFormat
+             time.Time.AppendFormat
+             time.Time.Format
+             time.Time.String
+             runtime/pprof.peBuildID
+             runtime/pprof.(*profileBuilder).readMapping
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  40kB
+  532.26kB   poule-renard-vipere.BuildAll
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  1008kB
+    1.14MB   poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+     bytes:  160B
+  512.08kB   compress/gzip.NewWriterLevel
+             runtime/pprof.newProfileBuilder
+             runtime/pprof.profileWriter
+-----------+-------------------------------------------------------
+     bytes:  896B
+  512.44kB   testing.init
+             runtime.doInit1
+             runtime.doInit (inline)
+             runtime.main
+-----------+-------------------------------------------------------
+     bytes:  2kB
+     513kB   runtime.mallocgc
+             runtime.newobject
+             runtime.allocm
+             runtime.newm
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.mstart1
+             runtime.mstart0
+             runtime.mstart
+-----------+-------------------------------------------------------

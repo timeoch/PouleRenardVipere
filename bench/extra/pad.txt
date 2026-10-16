@@ -1,0 +1,40 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkWorkers/w04-12         	     100	    940126 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9401 ms/tick	      1064 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	    957332 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9573 ms/tick	      1045 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	   1076432 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.076 ms/tick	       929.0 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	    975573 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9756 ms/tick	      1025 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	    937435 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9374 ms/tick	      1067 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1042566 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.043 ms/tick	       959.2 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1000108 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.000 ms/tick	       999.9 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1035598 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.036 ms/tick	       965.6 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1057691 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.058 ms/tick	       945.5 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1035772 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.036 ms/tick	       965.5 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1021207 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.021 ms/tick	       979.2 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1021569 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.022 ms/tick	       978.9 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1035637 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.036 ms/tick	       965.6 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	    994678 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9947 ms/tick	      1005 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1032276 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.032 ms/tick	       968.7 tps	       1 B/op	       0 allocs/op
+PASS
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkWorkers/w04-12         	     100	   1056647 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.057 ms/tick	       946.4 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	   1025048 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.025 ms/tick	       975.6 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	    944221 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9442 ms/tick	      1059 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	    952413 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9524 ms/tick	      1050 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w04-12         	     100	   1066945 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.067 ms/tick	       937.3 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1025764 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.026 ms/tick	       974.9 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	    948392 ns/op	         0 gc-ms/tick	         0 gc/tick	         0.9484 ms/tick	      1054 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1024815 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.025 ms/tick	       975.8 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1044460 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.044 ms/tick	       957.4 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w08-12         	     100	   1006303 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.006 ms/tick	       993.7 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1040350 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.040 ms/tick	       961.2 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1031743 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.032 ms/tick	       969.2 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1007696 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.008 ms/tick	       992.4 tps	       1 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1048306 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.048 ms/tick	       953.9 tps	       0 B/op	       0 allocs/op
+BenchmarkWorkers/w12-12         	     100	   1046644 ns/op	         0 gc-ms/tick	         0 gc/tick	         1.047 ms/tick	       955.4 tps	       0 B/op	       0 allocs/op
+PASS

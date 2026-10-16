@@ -1,0 +1,140 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+                    │ bench/chunk.txt │
+                    │     sec/op      │
+Chunk/w4/lot0032-12      955.6µ ± ∞ ¹
+Chunk/w4/lot0064-12      945.1µ ± ∞ ¹
+Chunk/w4/lot0128-12      948.3µ ± ∞ ¹
+Chunk/w4/lot0256-12      960.2µ ± ∞ ¹
+Chunk/w4/lot0512-12      970.8µ ± ∞ ¹
+Chunk/w4/lot1024-12      1.004m ± ∞ ¹
+Chunk/w4/lot2250-12      1.032m ± ∞ ¹
+Chunk/w8/lot0032-12      1.010m ± ∞ ¹
+Chunk/w8/lot0064-12      1.028m ± ∞ ¹
+Chunk/w8/lot0128-12      1.025m ± ∞ ¹
+Chunk/w8/lot0256-12      1.048m ± ∞ ¹
+Chunk/w8/lot0512-12      1.103m ± ∞ ¹
+Chunk/w8/lot1024-12      1.172m ± ∞ ¹
+Chunk/w8/lot2250-12      1.375m ± ∞ ¹
+geomean                  1.036m
+¹ need >= 6 samples for confidence interval at level 0.95
+
+                    │ bench/chunk.txt │
+                    │   gc-ms/tick    │
+Chunk/w4/lot0032-12       0.000 ± ∞ ¹
+Chunk/w4/lot0064-12       0.000 ± ∞ ¹
+Chunk/w4/lot0128-12       0.000 ± ∞ ¹
+Chunk/w4/lot0256-12       0.000 ± ∞ ¹
+Chunk/w4/lot0512-12       0.000 ± ∞ ¹
+Chunk/w4/lot1024-12       0.000 ± ∞ ¹
+Chunk/w4/lot2250-12       0.000 ± ∞ ¹
+Chunk/w8/lot0032-12       0.000 ± ∞ ¹
+Chunk/w8/lot0064-12       0.000 ± ∞ ¹
+Chunk/w8/lot0128-12       0.000 ± ∞ ¹
+Chunk/w8/lot0256-12       0.000 ± ∞ ¹
+Chunk/w8/lot0512-12       0.000 ± ∞ ¹
+Chunk/w8/lot1024-12       0.000 ± ∞ ¹
+Chunk/w8/lot2250-12       0.000 ± ∞ ¹
+geomean                             ²
+¹ need >= 6 samples for confidence interval at level 0.95
+² summaries must be >0 to compute geomean
+
+                    │ bench/chunk.txt │
+                    │     gc/tick     │
+Chunk/w4/lot0032-12       0.000 ± ∞ ¹
+Chunk/w4/lot0064-12       0.000 ± ∞ ¹
+Chunk/w4/lot0128-12       0.000 ± ∞ ¹
+Chunk/w4/lot0256-12       0.000 ± ∞ ¹
+Chunk/w4/lot0512-12       0.000 ± ∞ ¹
+Chunk/w4/lot1024-12       0.000 ± ∞ ¹
+Chunk/w4/lot2250-12       0.000 ± ∞ ¹
+Chunk/w8/lot0032-12       0.000 ± ∞ ¹
+Chunk/w8/lot0064-12       0.000 ± ∞ ¹
+Chunk/w8/lot0128-12       0.000 ± ∞ ¹
+Chunk/w8/lot0256-12       0.000 ± ∞ ¹
+Chunk/w8/lot0512-12       0.000 ± ∞ ¹
+Chunk/w8/lot1024-12       0.000 ± ∞ ¹
+Chunk/w8/lot2250-12       0.000 ± ∞ ¹
+geomean                             ²
+¹ need >= 6 samples for confidence interval at level 0.95
+² summaries must be >0 to compute geomean
+
+                    │ bench/chunk.txt │
+                    │     ms/tick     │
+Chunk/w4/lot0032-12      955.6m ± ∞ ¹
+Chunk/w4/lot0064-12      945.1m ± ∞ ¹
+Chunk/w4/lot0128-12      948.3m ± ∞ ¹
+Chunk/w4/lot0256-12      960.2m ± ∞ ¹
+Chunk/w4/lot0512-12      970.8m ± ∞ ¹
+Chunk/w4/lot1024-12       1.004 ± ∞ ¹
+Chunk/w4/lot2250-12       1.032 ± ∞ ¹
+Chunk/w8/lot0032-12       1.010 ± ∞ ¹
+Chunk/w8/lot0064-12       1.028 ± ∞ ¹
+Chunk/w8/lot0128-12       1.025 ± ∞ ¹
+Chunk/w8/lot0256-12       1.048 ± ∞ ¹
+Chunk/w8/lot0512-12       1.103 ± ∞ ¹
+Chunk/w8/lot1024-12       1.172 ± ∞ ¹
+Chunk/w8/lot2250-12       1.375 ± ∞ ¹
+geomean                   1.036
+¹ need >= 6 samples for confidence interval at level 0.95
+
+                    │ bench/chunk.txt │
+                    │       tps       │
+Chunk/w4/lot0032-12      1.046k ± ∞ ¹
+Chunk/w4/lot0064-12      1.058k ± ∞ ¹
+Chunk/w4/lot0128-12      1.055k ± ∞ ¹
+Chunk/w4/lot0256-12      1.041k ± ∞ ¹
+Chunk/w4/lot0512-12      1.030k ± ∞ ¹
+Chunk/w4/lot1024-12       996.2 ± ∞ ¹
+Chunk/w4/lot2250-12       969.5 ± ∞ ¹
+Chunk/w8/lot0032-12       990.0 ± ∞ ¹
+Chunk/w8/lot0064-12       972.6 ± ∞ ¹
+Chunk/w8/lot0128-12       975.8 ± ∞ ¹
+Chunk/w8/lot0256-12       954.2 ± ∞ ¹
+Chunk/w8/lot0512-12       906.7 ± ∞ ¹
+Chunk/w8/lot1024-12       853.1 ± ∞ ¹
+Chunk/w8/lot2250-12       727.5 ± ∞ ¹
+geomean                   965.3
+¹ need >= 6 samples for confidence interval at level 0.95
+
+                    │ bench/chunk.txt │
+                    │      B/op       │
+Chunk/w4/lot0032-12       1.000 ± ∞ ¹
+Chunk/w4/lot0064-12       1.000 ± ∞ ¹
+Chunk/w4/lot0128-12       0.000 ± ∞ ¹
+Chunk/w4/lot0256-12       0.000 ± ∞ ¹
+Chunk/w4/lot0512-12       0.000 ± ∞ ¹
+Chunk/w4/lot1024-12       0.000 ± ∞ ¹
+Chunk/w4/lot2250-12       0.000 ± ∞ ¹
+Chunk/w8/lot0032-12       0.000 ± ∞ ¹
+Chunk/w8/lot0064-12       1.000 ± ∞ ¹
+Chunk/w8/lot0128-12       1.000 ± ∞ ¹
+Chunk/w8/lot0256-12       1.000 ± ∞ ¹
+Chunk/w8/lot0512-12       0.000 ± ∞ ¹
+Chunk/w8/lot1024-12       1.000 ± ∞ ¹
+Chunk/w8/lot2250-12       0.000 ± ∞ ¹
+geomean                             ²
+¹ need >= 6 samples for confidence interval at level 0.95
+² summaries must be >0 to compute geomean
+
+                    │ bench/chunk.txt │
+                    │    allocs/op    │
+Chunk/w4/lot0032-12       0.000 ± ∞ ¹
+Chunk/w4/lot0064-12       0.000 ± ∞ ¹
+Chunk/w4/lot0128-12       0.000 ± ∞ ¹
+Chunk/w4/lot0256-12       0.000 ± ∞ ¹
+Chunk/w4/lot0512-12       0.000 ± ∞ ¹
+Chunk/w4/lot1024-12       0.000 ± ∞ ¹
+Chunk/w4/lot2250-12       0.000 ± ∞ ¹
+Chunk/w8/lot0032-12       0.000 ± ∞ ¹
+Chunk/w8/lot0064-12       0.000 ± ∞ ¹
+Chunk/w8/lot0128-12       0.000 ± ∞ ¹
+Chunk/w8/lot0256-12       0.000 ± ∞ ¹
+Chunk/w8/lot0512-12       0.000 ± ∞ ¹
+Chunk/w8/lot1024-12       0.000 ± ∞ ¹
+Chunk/w8/lot2250-12       0.000 ± ∞ ¹
+geomean                             ²
+¹ need >= 6 samples for confidence interval at level 0.95
+² summaries must be >0 to compute geomean

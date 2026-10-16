@@ -1,0 +1,1906 @@
+File: v0.test.exe
+Build ID: C:\Users\timti\PouleRenardVipere\bench\bin\v0.test.exe2026-10-16 15:18:01.340045 +0200 CEST
+Type: cpu
+Time: 2026-10-16 15:35:05 CEST
+Duration: 6.09s, Total samples = 6.97s (114.36%)
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).guardMove
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      20ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   runtime.(*mheap).initSpan
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).run1.func1
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).buildFlow
+             poule-renard-vipere.(*World).buildPreyFlows
+             poule-renard-vipere.NewWorldWith
+             poule-renard-vipere.warmWorld
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     100ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      90ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     330ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     170ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     390ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      50ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     260ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     430ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      70ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     230ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      60ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      90ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     330ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     390ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     190ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      70ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      80ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      40ms   runtime.procyieldAsm
+             runtime.procyield (inline)
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.goschedImpl
+             runtime.gopreempt_m (inline)
+             runtime.newstack
+             runtime.morestack
+-----------+-------------------------------------------------------
+     250ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     270ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     140ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     130ms   runtime.memmove
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      20ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      60ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     380ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      40ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.runSafePointFn
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.goschedImpl
+             runtime.gopreempt_m (inline)
+             runtime.asyncPreempt2.func1
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.pcvalue
+             runtime.pcdatavalue1
+             runtime.(*inlineUnwinder).resolveInternal (inline)
+             runtime.(*inlineUnwinder).next
+             runtime.tracebackPCs
+             runtime.callers.func1
+             runtime.systemstack
+             runtime.callers
+             runtime.mProf_Malloc
+             runtime.profilealloc
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+     140ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.(*scavengerState).run
+             runtime.bgscavenge
+-----------+-------------------------------------------------------
+      10ms   indexbytebody
+             runtime.findnull
+             runtime.gostringnocopy (inline)
+             runtime.(*moduledata).funcName
+             runtime.srcFunc.name (inline)
+             runtime.isAsyncSafePoint
+             runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      30ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      40ms   runtime.typePointers.next
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).guardMove
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      20ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.tryDeferToSpanScan
+             runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrainN
+             runtime.gcAssistAlloc1
+             runtime.gcAssistAlloc.func2
+             runtime.systemstack
+             runtime.gcAssistAlloc
+             runtime.deductAssistCredit
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      40ms   runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      80ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.pMask.read (inline)
+             runtime.(*gcWork).tryStealSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.typePointers.next
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.tryDeferToSpanScan
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).flowDir
+             poule-renard-vipere.(*mind).roam
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*spanSet).pop
+             runtime.(*mheap).nextSpanForSweep
+             runtime.sweepone
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.(*spanQueue).steal
+             runtime.(*gcWork).tryStealSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).nearestItem
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.preemptall
+             runtime.forEachPInternal
+             runtime.forEachP.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      30ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.sysUsedOS
+             runtime.sysUsed (inline)
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+     100ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      40ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      40ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      20ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.freeSomeWbufs
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.casgstatus
+             runtime.casGToWaiting (inline)
+             runtime.casGToWaitingForSuspendG
+             runtime.stopTheWorldWithSema
+             runtime.gcStart.func2
+             runtime.systemstack
+             runtime.gcStart
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanblock
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.findObject
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   runtime.asyncPreempt
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   internal/runtime/atomic.(*Uintptr).Store (inline)
+             runtime.(*spanSet).push
+             runtime.(*sweepLocked).sweep
+             runtime.sweepone
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.preemptall
+             runtime.forEachPInternal
+             runtime.forEachP.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      40ms   runtime.sysUnusedOS
+             runtime.sysUnused (inline)
+             runtime.(*pageAlloc).scavengeOne
+             runtime.(*pageAlloc).scavenge.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.preemptall
+             runtime.forEachPInternal
+             runtime.forEachP.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      30ms   runtime.preemptM
+             runtime.preemptone
+             runtime.preemptall
+             runtime.forEachPInternal
+             runtime.forEachP.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).rescues
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.levelIndexToOffAddr (inline)
+             runtime.(*pageAlloc).find
+             runtime.(*pageAlloc).alloc
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.unlock2
+             runtime.unlockWithRank (inline)
+             runtime.unlock (inline)
+             runtime.freeSomeWbufs
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.semawakeup
+             runtime.notewakeup
+             runtime.startm
+             runtime.wakep
+             runtime.goschedImpl
+             runtime.gopreempt_m (inline)
+             runtime.newstack
+             runtime.morestack
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*mind).steer
+             poule-renard-vipere.(*mind).walk
+             poule-renard-vipere.(*mind).roam
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      40ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      50ms   runtime.preemptM
+             runtime.suspendG
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.stealWork
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.(*lfstack).empty (inline)
+             runtime.gcMarkWorkAvailable (inline)
+             runtime.gcShouldScheduleWorker
+             runtime.checkIdleGCNoP
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.typePointers.next
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.pcvalue
+             runtime.pcdatavalue
+             runtime.(*stkframe).getStackMap
+             runtime.scanframeworker
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.typePointers.next
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.findObject
+             runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObjectsSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.(*pageAlloc).find.func1
+             runtime.(*pageAlloc).find
+             runtime.(*pageAlloc).alloc
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.suspendG
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.semawakeup
+             runtime.notewakeup
+             runtime.startm
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.goschedImpl
+             runtime.gopreempt_m (inline)
+             runtime.newstack
+             runtime.morestack
+-----------+-------------------------------------------------------
+      30ms   runtime.memclrNoHeapPointers
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*unwinder).next
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   runtime.semawakeup
+             runtime.notewakeup
+             runtime.runSafePointFn
+             runtime.findRunnable
+             runtime.schedule
+             runtime.goschedImpl
+             runtime.gopreempt_m (inline)
+             runtime.asyncPreempt2.func1
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.forEachPInternal
+             runtime.forEachP.func1
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.scanConservative
+             runtime.xRegScan
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.semawakeup
+             runtime.notewakeup
+             runtime.startTheWorldWithSema
+             runtime.gcStart.func4
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.asyncPreempt
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.mProf_Malloc
+             runtime.profilealloc
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*pallocBits).findSmallN
+             runtime.(*pallocBits).find
+             runtime.(*pageAlloc).find
+             runtime.(*pageAlloc).alloc
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.findfunc
+             runtime.(*unwinder).next
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   gcWriteBarrier
+             runtime.(*m).clearAllpSnapshot
+             runtime.findRunnable
+             runtime.schedule
+             runtime.preemptPark
+             runtime.newstack
+             runtime.morestack
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObjectsSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.typePointers.nextFast (inline)
+             runtime.scanObject
+             runtime.gcDrainN
+             runtime.gcAssistAlloc1
+             runtime.gcAssistAlloc.func2
+             runtime.systemstack
+             runtime.gcAssistAlloc
+             runtime.deductAssistCredit
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.findObject
+             runtime.scanObjectSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.semawakeup
+             runtime.notewakeup
+             runtime.startm
+             runtime.wakep
+             runtime.startTheWorldWithSema
+             runtime.gcMarkTermination.func3
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      20ms   runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.freeSomeWbufs
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.(*mspan).nextFreeIndex
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.spanClass.sizeclass (inline)
+             runtime.tryDeferToSpanScan
+             runtime.scanObjectsSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   runtime.(*mspan).init
+             runtime.(*mheap).initSpan
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*activeSweep).begin (inline)
+             runtime.sweepone
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.tryDeferToSpanScan
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.unlock2
+             runtime.unlockWithRank (inline)
+             runtime.unlock (inline)
+             runtime.freeDeadSpanSPMCs
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      20ms   runtime.preemptM
+             runtime.suspendG
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObjectsSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.checkdead
+             runtime.mput
+             runtime.stopm
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).guardMove
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).guardMove
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.asyncPreempt
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).Blocked
+             poule-renard-vipere.(*World).move
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObjectsSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrainN
+             runtime.gcAssistAlloc1
+             runtime.gcAssistAlloc.func2
+             runtime.systemstack
+             runtime.gcAssistAlloc
+             runtime.deductAssistCredit
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      20ms   runtime.unlock2
+             runtime.unlockWithRank (inline)
+             runtime.unlock (inline)
+             runtime.freeDeadSpanSPMCs
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.(*m).becomeSpinning (inline)
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.(*mspan).init
+             runtime.(*mheap).initSpan
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.nextFreeFast (inline)
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   internal/runtime/atomic.(*Uint64).Load (inline)
+             runtime.(*scavengerState).init.func3
+             runtime.(*scavengerState).run
+             runtime.bgscavenge
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptPark
+             runtime.newstack
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      20ms   runtime.procyieldAsm
+             runtime.procyield (inline)
+             runtime.suspendG
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.procyieldAsm
+             runtime.procyield (inline)
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.findRunnable
+             runtime.schedule
+             runtime.goschedImpl
+             runtime.gopreempt_m (inline)
+             runtime.newstack
+             runtime.morestack
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).move
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      20ms   runtime.preemptM
+             runtime.suspendG
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.getGCMask (inline)
+             runtime.(*mspan).typePointersOfUnchecked
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).guardMove
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*fixalloc).alloc
+             runtime.(*mheap).allocMSpanLocked
+             runtime.(*mheap).allocSpan
+             runtime.(*mheap).alloc.func1
+             runtime.systemstack
+             runtime.(*mheap).alloc
+             runtime.(*mcentral).grow
+             runtime.(*mcentral).cacheSpan
+             runtime.(*mcache).refill
+             runtime.(*mcache).nextFree
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*spanInlineMarkBits).tryAcquire
+             runtime.tryDeferToSpanScan
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.procyieldAsm
+             runtime.procyield (inline)
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.runSafePointFn
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObjectsSmall
+             runtime.scanSpan
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      20ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*randomEnum).next (inline)
+             runtime.stealWork
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).guardMove
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   runtime.semasleep
+             runtime.lock2
+             runtime.lockWithRank (inline)
+             runtime.lock (inline)
+             runtime.wakep
+             runtime.resetspinning
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.(*sweepLocked).sweep
+             runtime.sweepone
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.spanOf (inline)
+             runtime.spanOfHeap
+             runtime.addspecial
+             runtime.setprofilebucket
+             runtime.mProf_Malloc.func1
+             runtime.systemstack
+             runtime.mProf_Malloc
+             runtime.profilealloc
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*pageAlloc).chunkOf (inline)
+             runtime.(*pageAlloc).free
+             runtime.(*mheap).freeSpanLocked
+             runtime.(*mheap).freeSpan.func1
+             runtime.systemstack
+             runtime.(*mheap).freeSpan (inline)
+             runtime.(*sweepLocked).sweep
+             runtime.sweepone
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   runtime.(*gcControllerState).findRunnableGCWorker
+             runtime.findRunnable
+             runtime.schedule
+             runtime.park_m
+             runtime.mcall
+-----------+-------------------------------------------------------
+      10ms   runtime.preemptM
+             runtime.preemptone
+             runtime.(*gcControllerState).enlistWorker
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*World).refreshStats
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.scanblock
+             runtime.markrootBlock
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.readvarint (inline)
+             runtime.step
+             runtime.pcvalue
+             runtime.pcdatavalue
+             runtime.(*stkframe).getStackMap
+             runtime.scanframeworker
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.asyncPreempt
+             poule-renard-vipere.(*SpatialGrid).Nearest
+             poule-renard-vipere.(*mind).spot
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.spanClass.sizeclass (inline)
+             runtime.tryDeferToSpanScan
+             runtime.wbBufFlush1
+             runtime.wbBufFlush.func1
+             runtime.wbBufFlush
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.typePointers.next
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.pcvalue
+             runtime.funcspdelta (inline)
+             runtime.(*unwinder).resolveInternal
+             runtime.(*unwinder).initAt
+             runtime.(*unwinder).init (inline)
+             runtime.scanstack
+             runtime.markroot.func1
+             runtime.markroot
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerDedicated (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.gcTrigger.test
+             runtime.mallocgcSmallNoscan
+             runtime.mallocgc
+             runtime.growslice
+             poule-renard-vipere.(*SpatialGrid).RowItems (inline)
+             poule-renard-vipere.(*World).threat
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.typePointers.next
+             runtime.scanObject
+             runtime.gcDrain
+             runtime.gcDrainMarkWorkerIdle (inline)
+             runtime.gcBgMarkWorker.func2
+             runtime.systemstack
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------
+      10ms   runtime.sweepone
+             runtime.bgsweep
+-----------+-------------------------------------------------------
+      10ms   poule-renard-vipere.(*mind).steer
+             poule-renard-vipere.(*mind).walk
+             poule-renard-vipere.(*mind).roam
+             poule-renard-vipere.(*mind).decide
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.newstack
+             poule-renard-vipere.(*World).captureTarget
+             poule-renard-vipere.(*batch).work
+             poule-renard-vipere.(*World).parallel
+             poule-renard-vipere.(*World).captures
+             poule-renard-vipere.(*World).Update
+             poule-renard-vipere.benchTicks
+             poule-renard-vipere.BenchmarkUpdate.func1
+             testing.(*B).runN
+             testing.(*B).launch
+-----------+-------------------------------------------------------
+      10ms   runtime.(*memRecordCycle).add (inline)
+             runtime.mProf_FlushLocked
+             runtime.mProf_Flush
+             runtime.gcMarkTermination
+             runtime.gcMarkDone
+             runtime.gcBgMarkWorker
+-----------+-------------------------------------------------------

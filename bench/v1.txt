@@ -1,0 +1,35 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+BenchmarkUpdate/Debut-12         	      30	   2230520 ns/op	         0.09114 gc-ms/tick	         0.2333 gc/tick	         2.231 ms/tick	       448.3 tps	  839602 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2371097 ns/op	         0 gc-ms/tick	         0.2333 gc/tick	         2.371 ms/tick	       421.7 tps	  839610 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2673153 ns/op	         0.7706 gc-ms/tick	         0.2333 gc/tick	         2.673 ms/tick	       374.1 tps	  839777 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2794887 ns/op	         0.4709 gc-ms/tick	         0.2667 gc/tick	         2.795 ms/tick	       357.8 tps	  839607 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2659417 ns/op	         0 gc-ms/tick	         0.2000 gc/tick	         2.659 ms/tick	       376.0 tps	  839603 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2539710 ns/op	         0.04559 gc-ms/tick	         0.2333 gc/tick	         2.540 ms/tick	       393.7 tps	  839605 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2439137 ns/op	         0 gc-ms/tick	         0.2333 gc/tick	         2.439 ms/tick	       410.0 tps	  839604 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2247477 ns/op	         0.7480 gc-ms/tick	         0.2333 gc/tick	         2.247 ms/tick	       444.9 tps	  839610 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2295687 ns/op	         0.4587 gc-ms/tick	         0.2333 gc/tick	         2.296 ms/tick	       435.6 tps	  839607 B/op	      64 allocs/op
+BenchmarkUpdate/Debut-12         	      30	   2321217 ns/op	         0 gc-ms/tick	         0.2000 gc/tick	         2.321 ms/tick	       430.8 tps	  839603 B/op	      64 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2386740 ns/op	         0.05020 gc-ms/tick	         0.3000 gc/tick	         2.387 ms/tick	       419.0 tps	 1258179 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2320800 ns/op	         0.1004 gc-ms/tick	         0.3000 gc/tick	         2.321 ms/tick	       430.9 tps	 1258180 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2572427 ns/op	         0.03728 gc-ms/tick	         0.3000 gc/tick	         2.572 ms/tick	       388.7 tps	 1258179 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2329247 ns/op	         0.3338 gc-ms/tick	         0.3000 gc/tick	         2.329 ms/tick	       429.3 tps	 1258175 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2301987 ns/op	         0 gc-ms/tick	         0.3000 gc/tick	         2.302 ms/tick	       434.4 tps	 1258175 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2300130 ns/op	         0.4321 gc-ms/tick	         0.3000 gc/tick	         2.300 ms/tick	       434.8 tps	 1258177 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2500040 ns/op	         0 gc-ms/tick	         0.3000 gc/tick	         2.500 ms/tick	       400.0 tps	 1258176 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2361277 ns/op	         0.1800 gc-ms/tick	         0.3000 gc/tick	         2.361 ms/tick	       423.5 tps	 1258177 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2551583 ns/op	         0 gc-ms/tick	         0.3000 gc/tick	         2.552 ms/tick	       391.9 tps	 1258176 B/op	    6440 allocs/op
+BenchmarkUpdate/MiPartie_t1500-12         	      30	   2398013 ns/op	         0 gc-ms/tick	         0.3333 gc/tick	         2.398 ms/tick	       417.0 tps	 1258177 B/op	    6440 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1953320 ns/op	         0.05068 gc-ms/tick	         0.1667 gc/tick	         1.953 ms/tick	       511.9 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1948873 ns/op	         0 gc-ms/tick	         0.1667 gc/tick	         1.949 ms/tick	       513.1 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   2019013 ns/op	         0 gc-ms/tick	         0.1667 gc/tick	         2.019 ms/tick	       495.3 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   2169200 ns/op	         0 gc-ms/tick	         0.2000 gc/tick	         2.169 ms/tick	       461.0 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1935877 ns/op	         0 gc-ms/tick	         0.1667 gc/tick	         1.936 ms/tick	       516.6 tps	  893801 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1935660 ns/op	         0 gc-ms/tick	         0.1667 gc/tick	         1.936 ms/tick	       516.6 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   2240477 ns/op	         0 gc-ms/tick	         0.2000 gc/tick	         2.240 ms/tick	       446.3 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1971260 ns/op	         0.1375 gc-ms/tick	         0.1667 gc/tick	         1.971 ms/tick	       507.3 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1933250 ns/op	         0.8773 gc-ms/tick	         0.1667 gc/tick	         1.933 ms/tick	       517.3 tps	  893802 B/op	    6591 allocs/op
+BenchmarkUpdate/Classique_t1500-12        	      30	   1991847 ns/op	         0 gc-ms/tick	         0.1667 gc/tick	         1.992 ms/tick	       502.0 tps	  893802 B/op	    6591 allocs/op
+PASS

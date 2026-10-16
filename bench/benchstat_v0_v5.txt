@@ -1,0 +1,60 @@
+goos: windows
+goarch: amd64
+pkg: poule-renard-vipere
+cpu: 12th Gen Intel(R) Core(TM) i5-12450H
+                          │     v0.txt      │               v5.txt                │
+                          │     sec/op      │   sec/op     vs base                │
+Update/Debut-12             135802.9µ ± 20%   879.7µ ± 4%  -99.35% (p=0.000 n=10)
+Update/MiPartie_t1500-12     117.508m ±  6%   1.086m ± 7%  -99.08% (p=0.000 n=10)
+Update/Classique_t1500-12    70823.0µ ±  5%   901.2µ ± 5%  -98.73% (p=0.000 n=10)
+geomean                        104.2m         951.4µ       -99.09%
+
+                          │   v0.txt    │                 v5.txt                  │
+                          │ gc-ms/tick  │ gc-ms/tick  vs base                     │
+Update/Debut-12             38.22 ± 42%    0.00 ± 0%  -100.00% (p=0.000 n=10)
+Update/MiPartie_t1500-12    23.94 ± 20%    0.00 ± 0%  -100.00% (p=0.000 n=10)
+Update/Classique_t1500-12   9.239 ± 27%   0.000 ± 0%  -100.00% (p=0.000 n=10)
+geomean                     20.37                     ?                       ¹ ²
+¹ summaries must be >0 to compute geomean
+² ratios must be >0 to compute geomean
+
+                          │   v0.txt   │                 v5.txt                 │
+                          │  gc/tick   │  gc/tick   vs base                     │
+Update/Debut-12             47.02 ± 2%   0.00 ± 0%  -100.00% (p=0.000 n=10)
+Update/MiPartie_t1500-12    32.80 ± 1%   0.00 ± 0%  -100.00% (p=0.000 n=10)
+Update/Classique_t1500-12   15.21 ± 1%   0.00 ± 0%  -100.00% (p=0.000 n=10)
+geomean                     28.63                   ?                       ¹ ²
+¹ summaries must be >0 to compute geomean
+² ratios must be >0 to compute geomean
+
+                          │     v0.txt      │               v5.txt                │
+                          │     ms/tick     │   ms/tick    vs base                │
+Update/Debut-12             135800.0m ± 20%   879.6m ± 4%  -99.35% (p=0.000 n=10)
+Update/MiPartie_t1500-12      117.500 ±  6%    1.087 ± 7%  -99.08% (p=0.000 n=10)
+Update/Classique_t1500-12    70820.0m ±  5%   901.2m ± 5%  -98.73% (p=0.000 n=10)
+geomean                         104.2         951.5m       -99.09%
+
+                          │   v0.txt    │                  v5.txt                  │
+                          │     tps     │      tps       vs base                   │
+Update/Debut-12             7.364 ± 17%   1137.000 ± 4%  +15338.93% (p=0.000 n=10)
+Update/MiPartie_t1500-12    8.510 ±  6%    920.500 ± 8%  +10716.69% (p=0.000 n=10)
+Update/Classique_t1500-12   14.12 ±  4%    1109.50 ± 5%   +7757.65% (p=0.000 n=10)
+geomean                     9.601           1.051k       +10848.00%
+
+                          │    v0.txt    │                 v5.txt                  │
+                          │     B/op     │    B/op     vs base                     │
+Update/Debut-12             105.8Mi ± 0%    0.0Mi ± ?  -100.00% (p=0.000 n=10)
+Update/MiPartie_t1500-12    102.0Mi ± 0%    0.0Mi ± ?  -100.00% (p=0.000 n=10)
+Update/Classique_t1500-12   59.03Mi ± 0%   0.00Mi ± ?  -100.00% (p=0.000 n=10)
+geomean                     86.05Mi                    ?                       ¹ ²
+¹ summaries must be >0 to compute geomean
+² ratios must be >0 to compute geomean
+
+                          │   v0.txt    │                  v5.txt                  │
+                          │  allocs/op  │  allocs/op   vs base                     │
+Update/Debut-12             9.090k ± 0%   0.000k ± 0%  -100.00% (p=0.000 n=10)
+Update/MiPartie_t1500-12    8.791k ± 0%   0.000k ± 0%  -100.00% (p=0.000 n=10)
+Update/Classique_t1500-12   5.939k ± 0%   0.000k ± 0%  -100.00% (p=0.000 n=10)
+geomean                     7.800k                     ?                       ¹ ²
+¹ summaries must be >0 to compute geomean
+² ratios must be >0 to compute geomean
