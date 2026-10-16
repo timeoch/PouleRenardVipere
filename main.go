@@ -1237,6 +1237,7 @@ func main() {
 	workers := flag.Int("workers", 0, "workers de la phase parallèle d'une partie (0 : la moitié des cœurs logiques)")
 	trames := flag.String("trames", "bin", "format des trames envoyées au navigateur : bin ou json")
 	pprofAddr := flag.String("pprof", "", "adresse du profileur net/http/pprof (ex. localhost:6060), désactivé si vide")
+	tWorkers := flag.Int("tournoi-workers", 0, "parties jouées en même temps pendant un tournoi (0 : cœurs logiques - 1)")
 	flag.Parse()
 
 	rules, err := ParseRules(*regles)
@@ -1245,6 +1246,7 @@ func main() {
 		os.Exit(2)
 	}
 	DefaultWorkers = *workers
+	TournamentWorkers = *tWorkers
 	jsonFrames = *trames == "json"
 	serverDefaults.Seed = *seed
 	serverDefaults.Rules = rules

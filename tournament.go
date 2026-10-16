@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -41,10 +42,17 @@ func (t *Tally) Add(r GameResult) {
 }
 
 // PlayGame joue une partie complète ; false si ctx est annulé avant la fin.
+//
+// Arrêt précoce : l'annulation de ctx est relayée dans un booléen atomique,
+// lu à chaque tick pour le prix d'une lecture mémoire. Une partie abandonnée
+// (tournoi arrêté, onglet fermé) s'arrête au tick suivant au lieu de finir sa
+// tranche de 300 ticks.
 func PlayGame(ctx context.Context, cfg Config) (GameResult, bool) {
+	var stop atomic.Bool
+	defer context.AfterFunc(ctx, func() { stop.Store(true) })()
 	w := NewWorldWith(cfg)
 	for !w.Finished {
-		if w.Tick%300 == 0 && ctx.Err() != nil {
+		if w.Tick%cancelEvery == 0 && stop.Load() {
 			return GameResult{}, false
 		}
 		w.Update()
@@ -56,6 +64,22 @@ func PlayGame(ctx context.Context, cfg Config) (GameResult, bool) {
 	return r, true
 }
 
+// cancelEvery : intervalle de test de l'annulation, en ticks. 300 dans la
+// première version ; gardé en variable pour mesurer l'écart (voir les tests).
+var cancelEvery = 1
+
+// TournamentWorkers : parties jouées en même temps (option -tournoi-workers).
+// 0 : tous les cœurs logiques sauf un.
+var TournamentWorkers = 0
+
+func tournamentWorkers(n int) int {
+	k := TournamentWorkers
+	if k <= 0 {
+		k = runtime.NumCPU() - 1
+	}
+	return min(max(1, k), n)
+}
+
 // RunTournament joue n parties (graines cfg.Seed … cfg.Seed+n-1) sur tous les
 // cœurs sauf un, et appelle onResult après chacune depuis une seule goroutine.
 // Chaque partie reste déterministe : seul l'ordre d'arrivée varie.
@@ -63,7 +87,7 @@ func RunTournament(ctx context.Context, cfg Config, n int, onResult func(GameRes
 	jobs := make(chan int64)
 	results := make(chan GameResult)
 	var wg sync.WaitGroup
-	for k := 0; k < min(max(1, runtime.NumCPU()-1), n); k++ {
+	for k := 0; k < tournamentWorkers(n); k++ {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
@@ -125,8 +149,8 @@ func clockText(ticks int) string {
 }
 
 func runTournamentCLI(cfg Config, n int) {
-	fmt.Printf("Tournoi : %d parties, graines %d à %d, 3 × %d agents, %s par manche, règles : %s, %d cœurs\n",
-		n, cfg.Seed, cfg.Seed+int64(n)-1, cfg.PerSpecies, clockText(cfg.MaxTicks), cfg.Rules, min(max(1, runtime.NumCPU()-1), n))
+	fmt.Printf("Tournoi : %d parties, graines %d à %d, 3 × %d agents, %s par manche, règles : %s, %d parties en parallèle\n",
+		n, cfg.Seed, cfg.Seed+int64(n)-1, cfg.PerSpecies, clockText(cfg.MaxTicks), cfg.Rules, tournamentWorkers(n))
 	start := time.Now()
 	t := Tally{Total: n}
 	RunTournament(context.Background(), cfg, n, func(r GameResult) {
@@ -138,7 +162,8 @@ func runTournamentCLI(cfg Config, n int) {
 		fmt.Printf("[%3d/%d] graine %-6d %-8s en %5.1f s simulées | libres P/R/V %4d %4d %4d\n",
 			t.Done, n, r.Seed, winner, float64(r.Ticks)/float64(TargetTPS), r.Free[0], r.Free[1], r.Free[2])
 	})
-	fmt.Printf("\nBilan en %.0f s de calcul :\n", time.Since(start).Seconds())
+	el := time.Since(start)
+	fmt.Printf("\nBilan en %.1f s de calcul (%.2f parties/s) :\n", el.Seconds(), float64(n)/el.Seconds())
 	for sp := range t.Wins {
 		fmt.Printf("  %-8s %3d victoires (%4.1f %%)\n", speciesNames[sp], t.Wins[sp], 100*float64(t.Wins[sp])/float64(n))
 	}
