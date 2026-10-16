@@ -735,7 +735,8 @@ func (m *mind) rest(i int, a *Agent, home *Camp, inHome bool) {
 	switch {
 	case inHome:
 		a.WanderAng += (m.rng.Float64() - 0.5) * 0.4
-		m.walk(a, math.Cos(a.WanderAng)+(home.X-a.X)/home.R, math.Sin(a.WanderAng)+(home.Y-a.Y)/home.R, true)
+		sn, cs := sincos(a.WanderAng)
+		m.walk(a, cs+(home.X-a.X)/home.R, sn+(home.Y-a.Y)/home.R, true)
 	case hd < HomeRetreatRadius:
 		dx, dy := w.toward(a, a.Species)
 		m.walk(a, dx, dy, false)
@@ -857,8 +858,9 @@ func (m *mind) guardMove(i int, a *Agent, home *Camp, prey Species, inHome bool)
 	}
 	// Ronde autour du camp.
 	a.WanderAng += 0.004 + (m.rng.Float64()-0.5)*0.01
-	tx := home.X + math.Cos(a.WanderAng)*(home.R+120)
-	ty := home.Y + math.Sin(a.WanderAng)*(home.R+120)
+	sn, cs := sincos(a.WanderAng)
+	tx := home.X + cs*(home.R+120)
+	ty := home.Y + sn*(home.R+120)
 	m.walk(a, tx-a.X, ty-a.Y, inHome)
 	w.mark(i, StGuard, -1)
 }
@@ -866,7 +868,7 @@ func (m *mind) guardMove(i int, a *Agent, home *Camp, prey Species, inHome bool)
 func (m *mind) roam(a *Agent, inHome bool) {
 	w := m.w
 	a.WanderAng += (m.rng.Float64() - 0.5) * 0.3
-	dx, dy := math.Cos(a.WanderAng), math.Sin(a.WanderAng)
+	dy, dx := sincos(a.WanderAng)
 	prey := w.preyOf(a.Species)
 	if w.Stats[prey].Free > 0 {
 		cx, cy := unit(w.flowDir(&w.preyFlow[prey], a.X, a.Y, w.centerX[prey], w.centerY[prey]))
@@ -930,7 +932,8 @@ func (m *mind) steer(a *Agent, dx, dy, speed float64) {
 	w := m.w
 	d := hypot(dx, dy)
 	if d < 1e-9 {
-		dx, dy, d = math.Cos(a.WanderAng), math.Sin(a.WanderAng), 1
+		dy, dx = sincos(a.WanderAng)
+		d = 1
 	}
 	speed *= w.Tuning.Speed
 	switch w.Terrain[CellIndex(a.X, a.Y)] {
