@@ -592,3 +592,44 @@ func BenchmarkWorkers(b *testing.B) {
 		})
 	}
 }
+
+// BenchmarkChunk : taille des lots de la phase parallèle. 2 250 = découpage
+// fixe en 4 parts égales (un lot par worker).
+//
+//	go test -run='^$' -bench=BenchmarkChunk -benchtime=100x -count=10 .
+func BenchmarkChunk(b *testing.B) {
+	c := benchCases[1]
+	defer func(old int64) { chunkAgents = old }(chunkAgents)
+	for _, n := range []int{4, 8} {
+		for _, size := range []int64{32, 64, 128, 256, 512, 1024, 2250} {
+			b.Run(fmt.Sprintf("w%d/lot%04d", n, size), func(b *testing.B) {
+				chunkAgents = size
+				benchTicks(b, warmWorld(c.name, c.cfg, c.warmup, n))
+			})
+		}
+	}
+}
+
+// BenchmarkSpawnPerAgent : la parallélisation naïve, une goroutine par agent
+// et par phase, à comparer à BenchmarkWorkers.
+func BenchmarkSpawnPerAgent(b *testing.B) {
+	c := benchCases[1]
+	w := warmWorld(c.name, c.cfg, c.warmup, runtime.GOMAXPROCS(0))
+	w.spawnPerAgent = true
+	benchTicks(b, w)
+}
+
+// BenchmarkPopulation : coût d'un tick selon l'effectif, pour voir quand le
+// tableau des agents sort du cache L2 (3 × 3 000 agents = 576 Ko à 64 octets,
+// 3 × 10 000 = 1,9 Mo). À comparer entre les tags naive_layout et défaut.
+//
+//	go test -run='^$' -bench=BenchmarkPopulation -benchtime=30x -count=10 .
+func BenchmarkPopulation(b *testing.B) {
+	for _, n := range []int{1000, 3000, 10000} {
+		b.Run(fmt.Sprintf("n%05d", n), func(b *testing.B) {
+			cfg := DefaultConfig(MasterSeed)
+			cfg.PerSpecies = n
+			benchTicks(b, warmWorld(fmt.Sprintf("pop%d", n), cfg, 300, *benchWorkers))
+		})
+	}
+}

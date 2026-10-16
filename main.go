@@ -230,6 +230,8 @@ type World struct {
 	batch     batch
 	capTarget []int32 // proie au contact de chaque agent (phaseCapture)
 
+	spawnPerAgent bool // tentative abandonnée, mesurée par BenchmarkSpawnPerAgent
+
 	vulnFn     func(*Agent) bool
 	prisonerFn func(*Agent) bool
 	awakeFn    func(*Agent) bool

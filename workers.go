@@ -14,6 +14,9 @@ import (
 // prisonnier ne fait rien, un chasseur teste des lignes de vue) : des petits
 // lots pris à la demande équilibrent mieux la charge qu'un découpage en N
 // parts égales, surtout avec des cœurs performants et des cœurs économes.
+// Entre 32 et 256, les écarts restent dans le bruit (BenchmarkChunk) ; un
+// découpage fixe est 9 % plus lent à 4 workers et 36 % à 8. Variable pour
+// les mesures.
 var chunkAgents int64 = 128
 
 // DefaultWorkers : nombre de workers d'une partie quand la configuration n'en
@@ -151,6 +154,10 @@ func (w *World) initWorkers(n int) {
 // parallel exécute une phase sur w.Workers goroutines (celle de la partie et
 // w.Workers-1 workers du pool), puis attend la fin de tous les lots.
 func (w *World) parallel(phase uint8) {
+	if w.spawnPerAgent {
+		w.spawnEach(phase)
+		return
+	}
 	b := &w.batch
 	b.w, b.phase = w, phase
 	b.next.Store(0)
@@ -167,4 +174,28 @@ func (w *World) parallel(phase uint8) {
 	}
 	b.work()
 	b.wg.Wait()
+}
+
+// spawnEach : première tentative de parallélisation, gardée pour la mesure
+// (BenchmarkSpawnPerAgent) : une goroutine et un contexte de décision neufs
+// par agent et par phase, sans pool. Trois fois 9 000 goroutines par tick.
+func (w *World) spawnEach(phase uint8) {
+	var wg sync.WaitGroup
+	for i := range w.Agents {
+		wg.Add(1)
+		go func(i int) {
+			defer wg.Done()
+			switch phase {
+			case phaseDecide:
+				m := &mind{}
+				m.init(w)
+				m.decide(i)
+			case phaseMove:
+				w.move(i)
+			case phaseCapture:
+				w.capTarget[i] = int32(w.captureTarget(i))
+			}
+		}(i)
+	}
+	wg.Wait()
 }
